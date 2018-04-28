@@ -18,7 +18,7 @@ public class CPlayerAttackEffect : MonoBehaviour
     }
     private void Update()
     {
-        if (m_manager.m_nAttackCombo == 0 && !m_manager.m_bAttack)
+        if (m_manager.m_nAttackCombo == 0 && !m_manager.m_bAttack)// && !m_manager._PlayerAni_Contorl._isSweat)
             EffectOff();
     }
 

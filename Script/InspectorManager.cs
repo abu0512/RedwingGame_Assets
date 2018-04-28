@@ -44,6 +44,7 @@ public class InspectorManager : MonoBehaviour
 
     public float fPlayerHornTime;
     public int nPlayerHitAddPower;
+    public float fPlayerSweatCountTime; // 흘리기후 몇초동안 반격할수있는 시간을 유지하는지
 
 
 
