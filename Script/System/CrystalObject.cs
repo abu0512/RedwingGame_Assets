@@ -8,7 +8,9 @@ public class CrystalObject : MonoBehaviour
     private Camera _viewCamera;
 
     [SerializeField]
-    private GameObject _hitEffect;
+    private GameObject _destroyEffect;
+    [SerializeField]
+    private GameObject _beamReady;
 
     [SerializeField]
     private GameObject _beam;
