@@ -74,15 +74,12 @@ public class CrystalObject : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-<<<<<<< HEAD
             CPlayerManager._instance._PlayerAni_Contorl.InteractionOn();
-=======
             Vector3 pos = transform.position;
             pos.y = CPlayerManager._instance.transform.position.y;
             CPlayerManager._instance.transform.LookAt(pos);
             CPlayerManager._instance._PlayerAni_Contorl.InteractionOn();
             _on = true;
->>>>>>> 7b70d089255b243d1bbd931c3a04ec5650dcdd34
         }
     }
 
