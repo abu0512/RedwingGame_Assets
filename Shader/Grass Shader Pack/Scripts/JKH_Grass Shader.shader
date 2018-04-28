@@ -15,7 +15,7 @@
 		_WindTex ("Wind Texture", 2D) = "white" {}
 		_Occ ("Occlusion Intensity", Range(0,1)) = 1.0
 		_Cutoff ("Cutoff", Range(0,1)) = 0.097
-		_Alpha ("Cutoff/Occlusion (A)", 2D) = "white" {}
+		_Alpha ("Cutoff/Occlusion (A)", 2D) = "white" {} 
 		_Length ("Length", Range(0,1)) = 0.05
 		_Div ("Length Division Factor", Range(0,10000)) = 50
 		_Height ("Grass Height Map (A)", 2D) = "white" {}
@@ -32,9 +32,9 @@
 		_SubSmooth3("Subsmooth" , Range(0,1)) = 0
 		_BumpMap5("SubNormal", 2D) = "bump" {}
 		_Upssoom("보ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ",float) = 0
-		_RMulti("R채널의 곱하기" ,Range(1,2)) = 1
-		_GMulti("G채널의 곱하기" ,Range(1,2)) = 1
-		_BMulti("B채널의 곱하기" ,Range(1,2)) = 1
+		_RMulti("R채널의 곱하기" ,float) = 1
+		_GMulti("G채널의 곱하기" ,float) = 1
+		_BMulti("B채널의 곱하기" ,float) = 1
 
 	}
 		
@@ -116,7 +116,7 @@
 			o.Albedo = lerp(o.Albedo,notex2 , saturate(IN.color.g * _GMulti));
 			o.Albedo = lerp(o.Albedo,notex3 , saturate(IN.color.b * _BMulti));
 
-			o.Smoothness = lerp(_SubSmooth, _Spec * IN.ite / 20, saturate(IN.color.r * _RMulti));
+			o.Smoothness = lerp(_SubSmooth, _Spec * IN.ite / 10, saturate(IN.color.r * _RMulti));
 			o.Smoothness = lerp(o.Smoothness, _SubSmooth2, saturate(IN.color.g * _GMulti));
 			o.Smoothness = lerp(o.Smoothness, _SubSmooth3, saturate(IN.color.b * _BMulti));
 
@@ -144,7 +144,7 @@
 			o.Albedo = lerp(notex.rgb, Df.rgb, saturate(IN.color.r * _RMulti));
 			o.Albedo = lerp(o.Albedo,notex2 , saturate(IN.color.g * _GMulti));
 			o.Albedo = lerp(o.Albedo,notex3 , saturate(IN.color.b * _BMulti));
-			o.Smoothness = lerp(_SubSmooth,_Spec * IN.ite / 20, saturate(IN.color.r * _RMulti));
+			o.Smoothness = lerp(_SubSmooth,_Spec * IN.ite / 10, saturate(IN.color.r * _RMulti));
 			o.Smoothness = lerp(o.Smoothness, _SubSmooth2, saturate(IN.color.g * _GMulti));
 			o.Smoothness = lerp(o.Smoothness, _SubSmooth3, saturate(IN.color.b * _BMulti));
 			float h = tex2D (_Height, IN.uv_Height).a;
@@ -296,7 +296,7 @@
 		}
 		ENDCG
 		
-		CGPROGRAM
+		/*CGPROGRAM
 		#pragma surface surf Standard alphatest:_Cutoff vertex:vert
 		#define ITERATION 11
 		void vert (inout appdata_full v, out Input o) {
@@ -404,7 +404,7 @@
 			o.ite = ite;
 			vertCustom (v, ITERATION);
 		}
-		ENDCG
+		ENDCG*/
 		
 
 	}
