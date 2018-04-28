@@ -10,17 +10,20 @@ public class CrystalObject : MonoBehaviour
     [SerializeField]
     private Camera _centerCamera;
 
-    [SerializeField]
-    private GameObject _destroyEffect;
-    [SerializeField]
-    private GameObject _beamReady;
-    [SerializeField]
-    private GameObject _destroyAfterEffect;
-
-    [SerializeField]
+    private GameObject _crystal;
     private GameObject _beam;
-    [SerializeField]
-    private GameObject _beamObejct;
+
+    //[SerializeField]
+    //private GameObject _destroyEffect;
+    //[SerializeField]
+    //private GameObject _beamReady;
+    //[SerializeField]
+    //private GameObject _destroyAfterEffect;
+
+    //[SerializeField]
+    //private GameObject _beam;
+    //[SerializeField]
+    //private GameObject _beamObejct;
 
     private int _state;
     private bool _isCrash;
@@ -37,8 +40,12 @@ public class CrystalObject : MonoBehaviour
 
 	void Start ()
     {
+        _beam = transform.Find("UpBeam").gameObject;
+        _beam.SetActive(false);
+        _crystal = transform.Find("Crystal").gameObject;
         _viewCamera.gameObject.SetActive(false);
         _centerCamera.gameObject.SetActive(false);
+        _maxValue = 3.0f;
     }
 	
 	void Update ()
@@ -99,6 +106,8 @@ public class CrystalObject : MonoBehaviour
             return;
 
         CPlayerManager._instance._PlayerAni_Contorl.PlayerAniFile.speed = 1.0f;
+        _beam.SetActive(true);
+        _crystal.SetActive(false);
 
         _state = 1;
         _on = false;

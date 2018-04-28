@@ -15,6 +15,16 @@ public class FairyMeteorAddForceDemo : MonoBehaviour {
 
     public void Start()
     {
+        InspectorManager._InspectorManager.fMoveSpeed = 100;
         rgbd.AddForce(direction * strength);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "StatueObject")
+        {
+            gameObject.SetActive(false);
+            other.GetComponent<StatueObject>().SetDestroyEffect();
+        }
     }
 }
