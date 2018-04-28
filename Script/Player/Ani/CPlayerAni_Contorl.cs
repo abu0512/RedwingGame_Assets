@@ -59,6 +59,8 @@ public class CPlayerAni_Contorl : CPlayerBase
     public bool isSweatCount;
     private bool _isSweatCount { get { return isSweatCount; } set { value = isSweatCount; } }
 
+    private bool isSweatCountTime;
+
     void Start ()
     {
         _CPlayerSwap = GetComponent<CPlayerSwap>();
@@ -82,6 +84,7 @@ public class CPlayerAni_Contorl : CPlayerBase
                 {
                     ShieldAniGetKey();
                     ShieldAni();
+                    SweatCountStart();
                     SweatCount();
                 }
                 else
@@ -97,13 +100,13 @@ public class CPlayerAni_Contorl : CPlayerBase
     {
         if (Input.GetMouseButtonDown(1))
         {
-            if (Input.GetKey(KeyCode.A) && _PlayerManager.m_PlayerStm > InspectorManager._InspectorManager.fSweatStm)
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) && _PlayerManager.m_PlayerStm > InspectorManager._InspectorManager.fSweatStm)
             {
                 fSweatTime = 0;
                 _PlayerAni_State_Shild = PlayerAni_State_Shild.SweatL;
                 _PlayerManager.m_PlayerStm -= InspectorManager._InspectorManager.fSweatStm;
             }
-            if (Input.GetKey(KeyCode.D) && _PlayerManager.m_PlayerStm > InspectorManager._InspectorManager.fSweatStm)
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && _PlayerManager.m_PlayerStm > InspectorManager._InspectorManager.fSweatStm)
             {
                 fSweatTime = 0;
                 _PlayerAni_State_Shild = PlayerAni_State_Shild.SweatR;
@@ -397,18 +400,32 @@ public class CPlayerAni_Contorl : CPlayerBase
         isSweat = true;
     }
 
-    void SweatCount()
+    void SweatCountStart()
     {
         if (!isSweatCount)
             return;
-        
+
         if (_PlayerManager._isPlayerHorn)
-        {            
-            if (Input.GetMouseButton(1))
-            {
-                _PlayerAni_State_Shild = PlayerAni_State_Shild.SweatCount;
-            }
+        {
+            StartCoroutine("TimeSweatCountTime");
+            isSweatCountTime = true;
         }
+    }
+    void SweatCount()
+    {
+        if (!isSweatCountTime)
+            return;
+
+        if(Input.GetMouseButton(1))
+        {
+            _PlayerAni_State_Shild = PlayerAni_State_Shild.SweatCount;
+        }
+    }
+    IEnumerator TimeSweatCountTime()
+    {
+        yield return new WaitForSeconds(InspectorManager._InspectorManager.fPlayerSweatCountTime);
+        isSweatCountTime = false;
+        _PlayerManager._isPlayerHorn = false;
     }
 
     public void AniStiff()

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CSwapSystem : MonoBehaviour
 {
+    public GameObject BlinkIn;
+    public GameObject BlinkOut;
+
     public static CSwapSystem _instance = null;
 
     public Avatar _ShildAvatar;

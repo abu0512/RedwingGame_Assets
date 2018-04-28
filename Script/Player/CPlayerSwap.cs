@@ -141,13 +141,12 @@ public class CPlayerSwap : CPlayerBase
         if (m_bSwapAttack)
         {
             m_fSwapAttackTime += Time.deltaTime;
-
+            _PlayerManager._PlayerAni_Contorl._PlayerAni_State_Scythe = PlayerAni_State_Scythe.Skill1;
             if (m_fSwapAttackTime >= 0.1f)
             {
-                CPlayerManager._instance.PlayerHitCamera(2.5f);
-                _PlayerManager._PlayerAni_Contorl.Animation_Change(5);
+                CPlayerManager._instance.PlayerHitCamera(2.0f);
             }
-            if (m_fSwapAttackTime >= 0.5f)
+            if (m_fSwapAttackTime >= 0.4f)
             {
                 m_bSwapAttack = false;
             }

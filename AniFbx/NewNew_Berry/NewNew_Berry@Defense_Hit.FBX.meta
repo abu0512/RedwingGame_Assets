@@ -310,6 +310,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.06647399
+        functionName: SoundType
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e5fe9d570e9ec9449883488f5dd91694,
+          type: 3}
+        floatParameter: 0
+        intParameter: 6
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
