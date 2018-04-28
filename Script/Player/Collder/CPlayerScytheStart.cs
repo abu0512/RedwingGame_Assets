@@ -6,6 +6,7 @@ public class CPlayerScytheStart : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
+        //CPlayerManager._instance._PlayerAni_Contorl.InteractionOn
         if (other.tag == "Boss" || other.tag == "Guard" || other.tag == "Queen")
         {
             CPlayerManager._instance.PlayerHitCamera(3.0f, 0.2f);

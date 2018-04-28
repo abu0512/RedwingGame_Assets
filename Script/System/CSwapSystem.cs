@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CSwapSystem : MonoBehaviour
 {
+    public GameObject BlinkIn;
+    public GameObject BlinkOut;
+
     public static CSwapSystem _instance = null;
 
     public Avatar _ShildAvatar;
@@ -56,10 +59,7 @@ public class CSwapSystem : MonoBehaviour
         isCamera = false;
     }
 
-
-
-
-    void ObjSwap(bool shild, bool scythe)
+    public void ObjSwap(bool shild, bool scythe)
     {
         _ShildObj.SetActive(shild);
         _ScytheObj.SetActive(scythe);

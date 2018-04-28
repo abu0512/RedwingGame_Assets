@@ -276,7 +276,6 @@ public class QueenMushroom : MonsterBase
     {
         Stat.Hp += Heal;
         Stat.Hp = Mathf.Clamp(Stat.Hp, 0, Stat.MaxHp);
-        Debug.Log(Heal + "만큼의 공주 버섯 체력이 회복 됌!");
     }
 
     protected override void Awake()
