@@ -45,7 +45,7 @@ public class CrystalObject : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //CPlayerManager._instance._PlayerAni_Contorl.
+            CPlayerManager._instance._PlayerAni_Contorl.
         }
     }
 
