@@ -191,10 +191,10 @@ public class CPlayerAni_Contorl : CPlayerBase
             _PlayerAni_State_Shild = PlayerAni_State_Shild.ShildRun;
             _PlayerManager.m_PlayerStm -= InspectorManager._InspectorManager.fShildRunStm;
         }
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            InteractionOn();
-        }
+        //if(Input.GetKeyDown(KeyCode.F))
+        //{
+        //    InteractionOn();
+        //}
             
     }
     void ShieldAni()
