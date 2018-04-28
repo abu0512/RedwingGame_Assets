@@ -392,6 +392,7 @@ public class CPlayerAni_Contorl : CPlayerBase
     
     void SweatStart()
     {
+        _PlayerManager._isPlayerHorn = false;
         _PlayerManager._PlayerShild._isShildCounter = true;
         isSweat = true;
     }
@@ -402,8 +403,7 @@ public class CPlayerAni_Contorl : CPlayerBase
             return;
         
         if (_PlayerManager._isPlayerHorn)
-        {
-            CPlayerAttackEffect._instance.Effect9();
+        {            
             if (Input.GetMouseButton(1))
             {
                 _PlayerAni_State_Shild = PlayerAni_State_Shild.SweatCount;
