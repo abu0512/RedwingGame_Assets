@@ -102,11 +102,19 @@ public class CCameraFind : MonoBehaviour
 
         if (isDash)
         {
-            m_fLerpSpeed = 15f;
-            fTime += Time.deltaTime;
-            if (fTime > 0.7f)
+            if(fTime < 0.01f)
             {
-                isDash = false;
+                m_fLerpSpeed = 0f;
+            }
+
+            fTime += Time.deltaTime;
+            if (fTime > 0.1f)
+            {
+                m_fLerpSpeed += Time.deltaTime * 50f;
+                if(m_fLerpSpeed > 100f)
+                {
+                    isDash = false;
+                }
             }
         }
         else
@@ -114,6 +122,9 @@ public class CCameraFind : MonoBehaviour
             m_fLerpSpeed = 100f;
             fTime = 0.0f;
         }
+
+        Debug.Log("isDash : " + isDash);
+        Debug.Log("m_fLerpSpeed : " + m_fLerpSpeed);
 
 
     }

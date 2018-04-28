@@ -49,10 +49,6 @@ public class SoundManager : MonoBehaviour
             _Volume = 0;
        
         bgmVolume.setValue(_Volume);
-
-
-        Debug.Log(CPlayerManager._instance.m_bMove);
-
     }
 
 

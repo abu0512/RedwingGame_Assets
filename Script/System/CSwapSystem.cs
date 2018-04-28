@@ -59,10 +59,7 @@ public class CSwapSystem : MonoBehaviour
         isCamera = false;
     }
 
-
-
-
-    void ObjSwap(bool shild, bool scythe)
+    public void ObjSwap(bool shild, bool scythe)
     {
         _ShildObj.SetActive(shild);
         _ScytheObj.SetActive(scythe);
