@@ -187,7 +187,7 @@ public class CPlayerManager : MonoBehaviour
         PlayerHornOn();
         //SweatSlowTime();
 
-        Debug.Log("fPowerGauge : " + nPowerGauge);
+        //Debug.Log("fPowerGauge : " + nPowerGauge);
         m_fPlayerHp = Mathf.Clamp(m_fPlayerHp, 0, m_fPlayerMaxHp);
         nPowerGauge = Mathf.Clamp(nPowerGauge, 0, 300);
     }
