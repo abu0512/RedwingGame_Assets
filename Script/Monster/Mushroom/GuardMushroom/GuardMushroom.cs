@@ -267,7 +267,6 @@ public class GuardMushroom : MonsterBase
     {
         Stat.Hp += Heal;
         Stat.Hp = Mathf.Clamp(Stat.Hp, 0, Stat.MaxHp);
-        Debug.Log(Heal + "만큼의 호위 버섯 체력이 회복 됌!");
     }
 
     public override void OnDead()

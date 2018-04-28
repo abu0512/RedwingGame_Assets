@@ -48,7 +48,6 @@ public class StunBullet : MonoBehaviour
             if (other.tag == "Player")
             {
                 CPlayerSturn._instance.isSturn = true;
-                Debug.Log("ㅇ");
                 CPlayerManager._instance.PlayerHp(0.2f, 1, _queenMushroom.AttackDamage);
             }
             else if (other.tag == "Shild")
