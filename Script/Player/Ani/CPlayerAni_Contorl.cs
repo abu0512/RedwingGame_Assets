@@ -17,6 +17,7 @@ public enum PlayerAni_State_Shild
     SweatR,
     ShildRun,
     SweatCount,
+    Interaction,
     None,
 }
 public enum PlayerAni_State_Scythe
@@ -187,6 +188,10 @@ public class CPlayerAni_Contorl : CPlayerBase
             _PlayerAni_State_Shild = PlayerAni_State_Shild.ShildRun;
             _PlayerManager.m_PlayerStm -= InspectorManager._InspectorManager.fShildRunStm;
         }
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            InteractionOn();
+        }
             
     }
     void ShieldAni()
@@ -261,6 +266,11 @@ public class CPlayerAni_Contorl : CPlayerBase
             case PlayerAni_State_Shild.SweatCount:
                 {
                     Animation_Change(12);
+                }
+                break;
+            case PlayerAni_State_Shild.Interaction:
+                {
+                    Animation_Change(13);
                 }
                 break;
         }
@@ -421,6 +431,11 @@ public class CPlayerAni_Contorl : CPlayerBase
     public void isSweatCountEvent()
     {
         isSweatCount = false;
+    }
+
+    public void InteractionOn()
+    {
+        _PlayerAni_State_Shild = PlayerAni_State_Shild.Interaction;
     }
 
 
