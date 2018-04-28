@@ -76,6 +76,7 @@ public class CPlayerSwordCollder : MonoBehaviour
                     other.GetComponent<WitchBoss>().OnDamage(InspectorManager._InspectorManager.nDamgeScythe[nCombo], InspectorManager._InspectorManager.nGroggyScythe[nCombo]);
                 }
             }
+            CPlayerManager._instance._nPowerGauge += InspectorManager._InspectorManager.nPlayerHitAddPower;
             if (nCombo == 0) CPlayerManager._instance.PlayerHitCamera(3.5f, 0.1f);
             if (nCombo == 1) CPlayerManager._instance.PlayerHitCamera(3.2f, 0.1f);
             if (nCombo == 2) CPlayerManager._instance.PlayerHitCamera(2.8f, 0.1f);

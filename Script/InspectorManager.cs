@@ -43,6 +43,7 @@ public class InspectorManager : MonoBehaviour
     public float fShildRunStm;
 
     public float fPlayerHornTime;
+    public int nPlayerHitAddPower;
 
 
 

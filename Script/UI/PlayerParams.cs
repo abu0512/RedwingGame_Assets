@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerParams : CharacterUI 
 {
+    public static PlayerParams _instance = null;
+
     protected CPlayerManager _CPlayerManager;
     protected CPlayerManager CPlayerManager { get { return _CPlayerManager; } set { _CPlayerManager = value; } }
 
@@ -14,13 +16,22 @@ public class PlayerParams : CharacterUI
     public GameObject[] PlayerType;
     public GameObject[] PlayerWType;
 
+
+    public GameObject[] PlayerPawerGauge;
+    public int nGauge;
+
     public override void InitParams()
     {
+        PlayerParams._instance = this;
+
         names = "Player";
         maxHP = CPlayerManager._instance.m_PlayerMaxHp;
         curHP = CPlayerManager._instance.m_PlayerHp;
         maxSP = CPlayerManager._instance.m_PlayerMaxStm;
         curSP = maxSP;
+
+        for (int i = 0; i < PlayerPawerGauge.Length; i++)
+            PlayerPawerGauge[i].SetActive(false);
     }
 
     private void Awake()
@@ -70,6 +81,29 @@ public class PlayerParams : CharacterUI
         }
     }
 
+    public void Gauge()
+    {
+        int i = CPlayerManager._instance._nPowerGauge;
+
+        if (i >= 50) GaugeActive(0, true);
+        if (i >= 100) GaugeActive(1, true);
+        if (i >= 150) GaugeActive(2, true);
+        if (i >= 200) GaugeActive(3, true);
+        if (i >= 250) GaugeActive(4, true);
+        if (i >= 300) GaugeActive(5, true);
+
+    }
+    void GaugeActive(int type, bool isType)
+    {
+        PlayerPawerGauge[type].SetActive(isType);
+        nGauge = type + 1;
+    }
+    public void GaugeOff()
+    {
+        for (int i = 0; i < PlayerPawerGauge.Length; i++)
+            PlayerPawerGauge[i].SetActive(false);
+    }
+
     void Update()
     {
         // Player 캐릭터의 체력과 스테미너의 값을 받아온다.
@@ -84,5 +118,7 @@ public class PlayerParams : CharacterUI
 
         // Player 캐릭터 타입 + 무기 타입 실시간 상태 변화
         SetPlayerType();
+
+        Gauge();
     }
 }

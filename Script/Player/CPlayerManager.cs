@@ -79,6 +79,10 @@ public class CPlayerManager : MonoBehaviour
     private bool _isPush;
     public bool isPush { get { return _isPush; } set { _isPush = value; } }
 
+    // 플레이어 파워 응축 
+    private int nPowerGauge;
+    public int _nPowerGauge { get { return nPowerGauge; } set { nPowerGauge = value; } }
+
     public Quaternion vPlayerQuaternion = Quaternion.identity; // 플레이어 로테이션
     public CharacterController _PlayerController; // 현재 캐릭터가 가지고있는 캐릭터 컨트롤러 콜라이더.
     public bool m_bMove; // 플레이어가 이동중인지
@@ -127,12 +131,13 @@ public class CPlayerManager : MonoBehaviour
         m_fMoveSpeed = 6;
         m_fGravity = 20;
         m_fGravity = 10;
-        m_fPlayerMaxHp = 200;
+        m_fPlayerMaxHp = 20000;
         m_fPlayerHp = m_fPlayerMaxHp;
         m_fPlayerMaxStm = 100;
         m_fPlayerStm = m_fPlayerMaxStm;
         m_fPlayerGauge = 100;
         m_nAttackCombo = 0;
+        nPowerGauge = 0;
         isDead = false;
 
         m_bMove = true;
@@ -182,7 +187,9 @@ public class CPlayerManager : MonoBehaviour
         PlayerHornOn();
         //SweatSlowTime();
 
+        Debug.Log("fPowerGauge : " + nPowerGauge);
         m_fPlayerHp = Mathf.Clamp(m_fPlayerHp, 0, m_fPlayerMaxHp);
+        nPowerGauge = Mathf.Clamp(nPowerGauge, 0, 300);
     }
 
 
