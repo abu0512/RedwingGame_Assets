@@ -55,8 +55,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4858813185005912}
-  - component: {fileID: 114773349595701172}
   - component: {fileID: 114097255905403480}
+  - component: {fileID: 114885283765616702}
   m_Layer: 0
   m_Name: CameraBase
   m_TagString: Untagged
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
---- !u!114 &114773349595701172
+--- !u!114 &114885283765616702
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1705306634323580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaff9d60e11b9cc408499ce31a5138af, type: 3}
+  m_Script: {fileID: 11500000, guid: 6672c3e6fa89a9f469c5f807aab4b873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _obj: {fileID: 0}
