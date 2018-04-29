@@ -35,11 +35,22 @@ public class CPlayerSturn : MonoBehaviour
 
     IEnumerator SturnCoolTime()
     {
-        _SturnEffect.SetActive(true);
-        CPlayerManager._instance._CPlayerAniEvent.MoveTypes(1);
-        CPlayerManager._instance.m_isRotationAttack = false;
+        SturnOn();
         yield return new WaitForSeconds(InspectorManager._InspectorManager.fSturnTime);
-        _SturnEffect.SetActive(false);
+        SturnOff();
+    }
+
+    void SturnOn()
+    {
+        _SturnEffect.SetActive(true); // 스턴이펙트
+        // 플레이어 움직임막아줌
+        CPlayerManager._instance._CPlayerAniEvent.MoveTypes(1); 
+        CPlayerManager._instance.m_isRotationAttack = false;
+    }
+    void SturnOff()
+    {
+        _SturnEffect.SetActive(false); // 스턴이펙트 해제
+        // 플레이어 움직임막아줌
         CPlayerManager._instance._CPlayerAniEvent.MoveTypes(2);
         CPlayerManager._instance.m_isRotationAttack = true;
         isSturn = false;

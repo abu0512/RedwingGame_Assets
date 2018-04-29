@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398da7c06cc158943bd9769c9ada362a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fStmAuto: 0.8
+  fStmAuto: 11
   fStmAutoTime: 0.1
   fStmDash: 35
   fRotation: 800
@@ -79,3 +79,11 @@ MonoBehaviour:
   fScytheStartSkillDamge: 200
   fScytheSkill2Damge: 300
   fSturnTime: 2
+  fPlayerAttackStiff: 0.1
+  fSweatStm: 0
+  fShildRunDamge: 0
+  fShildRunStm: 0
+  fPlayerHornTime: 0
+  nPlayerHitAddPower: 5
+  fPlayerSweatCountTime: 1
+  fLockOnSpeed: 5

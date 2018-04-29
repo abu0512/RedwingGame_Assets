@@ -46,7 +46,7 @@ public class CCameraFind : MonoBehaviour
     {
         TargetLockOn(_obj);
         MouseRot();
-      
+        BlinkCamera();
     }
     void MouseRot()
     {
@@ -83,7 +83,7 @@ public class CCameraFind : MonoBehaviour
             if (isLockOn)
             {
                 isLockOn = false;
-                m_fLerpSpeed = 100;
+                //m_fLerpSpeed = 100;
             }
             else
                 isLockOn = true;
@@ -95,38 +95,35 @@ public class CCameraFind : MonoBehaviour
     }
     void CameraUpdater()
     {
-
         // 플레이어 중심에 설정한 오브젝트 좌표값을 받아옴
         Transform target = CameraFollowObj.transform;
-        transform.position = Vector3.Lerp(transform.position, target.position, m_fLerpSpeed * Time.deltaTime);
-
-        if (isDash)
+        transform.position = Vector3.Lerp(transform.position, target.position, m_fLerpSpeed * Time.deltaTime);   
+    }
+    public void BlinkCameraOn()
+    {
+        fTime = 0.0f;
+        m_fLerpSpeed = 0.0f;
+        isDash = true;
+    }
+    void BlinkCamera()
+    {
+        if (!isDash)
         {
-            if(fTime < 0.01f)
-            {
-                m_fLerpSpeed = 0f;
-            }
-
-            fTime += Time.deltaTime;
-            if (fTime > 0.1f)
-            {
-                m_fLerpSpeed += Time.deltaTime * 20f;
-                if(m_fLerpSpeed > 100f)
-                {
-                    isDash = false;
-                }
-            }
+            m_fLerpSpeed = 100.0f;
+            return;
         }
-        else
+        
+        CCameraRayObj._instance.MaxCamera(3.0f);
+        fTime += Time.deltaTime;
+        m_fLerpSpeed += Time.deltaTime * 20.0f;
+        if (fTime > 0.6f)
         {
-            m_fLerpSpeed = 100f;
-            fTime = 0.0f;
+            CCameraRayObj._instance.MaxCamera(3.5f);
         }
-
-        Debug.Log("isDash : " + isDash);
-        Debug.Log("m_fLerpSpeed : " + m_fLerpSpeed);
-
-
+        if(fTime > 0.8f)
+        {
+            isDash = false;
+        }
     }
 
     void TargetLockOn(Transform target)
@@ -143,13 +140,13 @@ public class CCameraFind : MonoBehaviour
             CPlayerLockOnRot._instance.LockRot(target);
         }
 
-        if (Vector3.Distance(transform.position, target.position) < 4.0f)
+        if (Vector3.Distance(transform.position, target.position) < 2.0f)
         {
             
         }
         else
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(curPos), Time.deltaTime * 5f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(curPos), Time.deltaTime * InspectorManager._InspectorManager.fLockOnSpeed);
         }
     }
 }
