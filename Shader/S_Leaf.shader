@@ -6,6 +6,7 @@ Shader "Custom/Map/S_Lerf" {
 		_Shininess ("Shininess", Range (0.01, 1)) = 0.078125
 		_MainTex ("Base (RGB) TransGloss (A)", 2D) = "white" {}
 		_Cutoff ("Alpha cutoff", Range(0,1)) = 0.5
+		_BumpMap("Normal",2D) = "Bump"{}
 
 		[Header( OutVertex )]
 		_OutTex( "OutTex", 2D ) = "white" {}
@@ -57,6 +58,7 @@ Shader "Custom/Map/S_Lerf" {
 			fixed4 c = tex2D( _MainTex, IN.uv_MainTex );
 			o.Albedo = c.rgb * _Color.rgb;
 			o.Emission = c.rgb * _EmissionColor.rgb;
+			o.Normal = UnpackNormal (tex2D(_BumpMap,IN.uv_BumpMap));
 			o.Gloss = c.a;
 			o.Alpha = c.a * _Color.a;
 			o.Specular = _Shininess;
