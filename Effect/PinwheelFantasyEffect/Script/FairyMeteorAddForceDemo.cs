@@ -15,8 +15,7 @@ public class FairyMeteorAddForceDemo : MonoBehaviour {
 
     public void Start()
     {
-        InspectorManager._InspectorManager.fMoveSpeed = 100;
-        rgbd.AddForce(direction * strength);
+        rgbd.velocity = (direction * strength);
     }
 
     private void OnTriggerEnter(Collider other)

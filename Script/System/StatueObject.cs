@@ -7,20 +7,25 @@ public class StatueObject : MonoBehaviour
     private Animator _anim;
     [SerializeField]
     private GameObject _destroy;
-    [SerializeField]
     private GameObject _laser;
     [SerializeField]
     private GameObject _center;
     private float _destTime;
     private bool _dest;
+    private bool _laserStart;
     private bool _laserCrash;
+    private Vector3 _initPos;
+    private CrystalObject _crystal;
 
     public GameObject DestroyEffect { get { return _destroy; } }
-
+    public CrystalObject Crystal { get { return _crystal; } set { _crystal = value; } }
 	void Start ()
     {
-        _anim = GetComponent<Animator>();
-        _laser.SetActive(false);
+        _anim = GetComponentInChildren<Animator>();
+        _laser = transform.Find("Laser").gameObject;
+        _laser.gameObject.SetActive(false);
+        _laser.GetComponentInChildren<StatueLaser>().Statue = this;
+        _initPos = _laser.transform.position;
     }
 	
 	void Update ()
@@ -30,14 +35,21 @@ public class StatueObject : MonoBehaviour
 
     private void DestroyUpdate()
     {
-        if (_dest)
+        if (!_laserStart)
             return;
 
         _laser.transform.LookAt(_center.transform.position);
         Vector3 scale = _laser.transform.localScale;
-        scale.z += 0.1f;
+        scale.z += 100.0f * Time.deltaTime;
         _laser.transform.localScale = scale;
-        print("AAAAAA");
+        _laser.transform.position = _initPos + _laser.transform.forward * (_laser.transform.localScale.z / 2.0f) - _laser.transform.forward;
+    }
+
+    public void LaserCrash()
+    {
+        _laserCrash = true;
+        _crystal.ViewCamera.gameObject.SetActive(false);
+        _laserStart = false;
     }
 
     public void SetDestroyEffect()
@@ -52,6 +64,7 @@ public class StatueObject : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         _destroy.SetActive(false);
-        _laser.SetActive(true);
+        _laser.gameObject.SetActive(true);
+        _laserStart = true;
     }
 }
