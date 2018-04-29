@@ -92,6 +92,11 @@ public class WitchBoss : MonsterBase
         GroggyCheck();
         AnimDelayUpdate();
         FootholdUpdate();
+
+        if(_isTel)
+        {
+            CCameraFind._instance.isLockOn = false;
+        }
     }
 
     public void SetState(WitchState state)

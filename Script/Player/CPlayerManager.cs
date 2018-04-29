@@ -131,7 +131,7 @@ public class CPlayerManager : MonoBehaviour
         m_fMoveSpeed = 6;
         m_fGravity = 20;
         m_fGravity = 10;
-        m_fPlayerMaxHp = 500;
+        m_fPlayerMaxHp = 99999;
         m_fPlayerHp = m_fPlayerMaxHp;
         m_fPlayerMaxStm = 100;
         m_fPlayerStm = m_fPlayerMaxStm;
@@ -170,10 +170,6 @@ public class CPlayerManager : MonoBehaviour
         {
             EDITOR_ROTATIONSPEED = EDITOR_ROTATIONSPEED * 1000;
         }
-        else if (_CPlayerDash.m_isDash)
-        {
-            EDITOR_ROTATIONSPEED = EDITOR_ROTATIONSPEED * 1000;
-        }
         else
         {
             if (EDITOR_ROTATIONSPEED <= InspectorManager._InspectorManager.fRotation)
@@ -185,8 +181,6 @@ public class CPlayerManager : MonoBehaviour
         PlayerRotationSave();
         PlayerRotation();
         PlayerHornOn();
-        //SweatSlowTime();
-        //Debug.Log("fPowerGauge : " + nPowerGauge);
         m_fPlayerHp = Mathf.Clamp(m_fPlayerHp, 0, m_fPlayerMaxHp);
         nPowerGauge = Mathf.Clamp(nPowerGauge, 0, 300);
     }
@@ -254,7 +248,6 @@ public class CPlayerManager : MonoBehaviour
                 m_fPlayerHp -= sizeHp;
                 if(_CPlayerAni_Contorl._isSweat)
                 {
-                    Debug.Log("흘리기성공");
                     CPlayerAttackEffect._instance.Effect9();
                     isSweatTimeScal = true;
                     _CPlayerAni_Contorl.isSweatCount = true;

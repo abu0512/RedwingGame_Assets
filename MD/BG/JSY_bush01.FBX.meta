@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 920412e87c939854db79af9dbd19839a
-timeCreated: 1522090386
+guid: 4ef7f6aa6678d774ab743e82038cca04
+timeCreated: 1525023265
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Object009
+    4300000: JSY_Bush01
   materials:
     importMaterials: 0
     materialName: 0
