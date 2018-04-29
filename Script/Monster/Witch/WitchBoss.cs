@@ -39,7 +39,7 @@ public class WitchBoss : MonsterBase
     private float _spawnTime;
     private bool _footHoldOn;
     private WitchMonsterSpawnerObject _spawner;
-    public GameObject _cube;
+    private bool _isGravity;
 
     private WitchWeaponCollider _collider;
 
@@ -62,7 +62,7 @@ public class WitchBoss : MonsterBase
     public bool CloseTelCheck { get { return _closeTelCheck; } set { _closeTelCheck = value; } }
     public bool TelAttack { get { return _telAttack; } set { _telAttack = value; } }
     public bool IsTel { get { return _isTel; } set { _isTel = value; } }
-
+    public bool IsGravity { get { return _isGravity; } set { _isGravity = value; } }
     protected override void Awake()
     {
         base.Awake();
@@ -70,7 +70,7 @@ public class WitchBoss : MonsterBase
         _stateSystem.Witch = this;
         _skillSystem = GetComponent<WitchSkillSystem>();
         _skillSystem.Witch = this;
-        _curState = WitchState.Idle;
+        _curState = WitchState.Groggy;
         _player = FindObjectOfType<CPlayerManager>();
         _receiveDamage = 0.0f;
         _collider = FindObjectOfType<WitchWeaponCollider>();
@@ -88,7 +88,7 @@ public class WitchBoss : MonsterBase
     {
         base.Update();
         //RotateToTarget(_player.transform.position);
-        //if (Input.GetMouseButtonDown(0)) OnDamage(0.0f, 50.0f);
+        if (Input.GetMouseButtonDown(0)) _isGravity = true;
         GroggyCheck();
         AnimDelayUpdate();
         FootholdUpdate();
@@ -99,8 +99,26 @@ public class WitchBoss : MonsterBase
         }
     }
 
+    protected override void MoveUpdate()
+    {
+        Vector3 nextPos = transform.position;
+
+        if (_isMoving)
+            nextPos = Vector3.MoveTowards(transform.position, _destination, _stat.MoveSpeed * Time.deltaTime);
+
+        Vector3 deltaMove = nextPos - transform.position;
+
+        if (_isGravity)
+            deltaMove.y += Physics.gravity.y * Time.deltaTime;
+
+        _controller.Move(deltaMove);
+    }
+
     public void SetState(WitchState state)
     {
+        if (_curState == state)
+            return;
+
         _stateSystem.SetState(state);
     }
 
