@@ -12,9 +12,11 @@ public class WitchStateIdle : WitchFSMStateBase
 
     void Update ()
     {
-		if (Vector3.Distance(transform.position, Witch.Target.transform.position) <= 15.0f)
+		if (Witch.DistanceCheck(15.0f))
         {
+
             Witch.SetState(WitchState.Chase);
+            return;
         }
 	}
 

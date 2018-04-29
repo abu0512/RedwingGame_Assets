@@ -36,16 +36,17 @@ public class WitchStateSystem : MonoBehaviour
             _states.Add(state, s);
         }
 
-        _states[WitchState.Idle].enabled = true;
-        _states[WitchState.Idle].BeginState();
+        _states[WitchState.Groggy].enabled = true;
+        _states[WitchState.Groggy].BeginState();
     }
 
     void Start ()
     {
-		
-	}
-	
-	void Update ()
+        Witch.Anim.SetInteger("State", (int)WitchState.Groggy);
+
+    }
+
+    void Update ()
     {
 		
 	}

@@ -5,15 +5,46 @@ using UnityEngine;
 public class WitchStateGroggy : WitchFSMStateBase
 {
     private float _delayTime;
+    private bool _init;
 
     public override void BeginState()
     {
+        if (!_init)
+            return;
+
         _delayTime = 0.0f;
         Witch.Anim.speed = 1.0f;
     }
 
     void Update()
     {
+        InitGroggyUpdate();
+        NonInitGroggyUpdate();
+    }
+
+    public override void EndState()
+    {
+
+    }
+
+    private void InitGroggyUpdate()
+    {
+        if (_init)
+            return;
+
+        if (Witch.DistanceCheck(Witch.Stat.ChaseDistance))
+        {
+            _init = true;
+            Witch.SetState(WitchState.GroggyRelease);
+            return;
+        }
+    }
+
+    private void NonInitGroggyUpdate()
+    {
+        if (!_init)
+            return;
+
         _delayTime += Time.deltaTime;
 
         if (_delayTime >= WitchValueManager.I.GroggyDuration)
@@ -22,10 +53,6 @@ public class WitchStateGroggy : WitchFSMStateBase
             Witch.SetState(WitchState.GroggyRelease);
             return;
         }
-    }
-
-    public override void EndState()
-    {
     }
 }
 
