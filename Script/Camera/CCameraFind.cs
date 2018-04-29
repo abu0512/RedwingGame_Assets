@@ -123,10 +123,6 @@ public class CCameraFind : MonoBehaviour
             fTime = 0.0f;
         }
 
-        Debug.Log("isDash : " + isDash);
-        Debug.Log("m_fLerpSpeed : " + m_fLerpSpeed);
-
-
     }
 
     void TargetLockOn(Transform target)

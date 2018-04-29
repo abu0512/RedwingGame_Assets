@@ -48,8 +48,13 @@ public class StatueObject : MonoBehaviour
     public void LaserCrash()
     {
         _laserCrash = true;
-        _crystal.ViewCamera.gameObject.SetActive(false);
         _laserStart = false;
+    }
+
+    public void EndCamera()
+    {
+        _crystal.ViewCamera.gameObject.SetActive(false);
+
     }
 
     public void SetDestroyEffect()
