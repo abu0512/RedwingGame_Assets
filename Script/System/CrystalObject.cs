@@ -13,6 +13,9 @@ public class CrystalObject : MonoBehaviour
     private GameObject _crystal;
     private GameObject _beam;
 
+    [SerializeField]
+    private StatueObject _statue;
+
     //[SerializeField]
     //private GameObject _destroyEffect;
     //[SerializeField]
@@ -57,8 +60,7 @@ public class CrystalObject : MonoBehaviour
                 OnUpdate();
                 break;
             case 1:
-                _viewCamera.depth = 0;
-                _viewCamera.gameObject.SetActive(true);
+
                 break;
         }
 
@@ -80,6 +82,7 @@ public class CrystalObject : MonoBehaviour
             CPlayerManager._instance.transform.LookAt(pos);
             CPlayerManager._instance._PlayerAni_Contorl.InteractionOn();
             _on = true;
+            _statue.Crystal = this;
         }
     }
 
@@ -112,6 +115,9 @@ public class CrystalObject : MonoBehaviour
 
         _state = 1;
         _on = false;
+
+        _viewCamera.depth = 0;
+        _viewCamera.gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
