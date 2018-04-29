@@ -41,6 +41,7 @@ public class CPlayerSwap : CPlayerBase
     public bool isBlink;
     private float fBlinkTime;
 
+    private bool isBlinkSwapKey;
     void Start()
     {
         m_fDisMin = 1.5f;
@@ -56,6 +57,7 @@ public class CPlayerSwap : CPlayerBase
 
         isCoolTimeSwap = true;
         isBlink = false;
+        isBlinkSwapKey = false;
 
     }
     void Update ()
@@ -68,14 +70,12 @@ public class CPlayerSwap : CPlayerBase
         if (Input.GetKeyDown(KeyCode.LeftShift) && _PlayerMode == PlayerMode.Scythe && _PlayerManager.m_PlayerStm > 30f)
         {
             CSwapSystem._instance.ObjSwap(false, false);
-            CCameraFind._instance.isDash = true;
-            isBlink = true;
+            CCameraFind._instance.BlinkCameraOn();
             RayCastChack();
+            BlinkStart();
             _PlayerManager.m_PlayerStm -= 30f;
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
-            _PlayerManager._PlayerAni_Contorl._PlayerAni_State_Scythe = PlayerAni_State_Scythe.Skill1;
     }
 
     void SwapKey()
@@ -97,9 +97,12 @@ public class CPlayerSwap : CPlayerBase
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E))
+                if(!isBlinkSwapKey)
                 {
-                    ShildReset();
+                    if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E))
+                    {
+                        ShildReset();
+                    }
                 }
             }
         }
@@ -194,33 +197,39 @@ public class CPlayerSwap : CPlayerBase
         }
         else
         {
-            // 직선방면으로 오브젝트가 없을시 m_fMoveDir만큼 이동
-            transform.position += transform.forward * m_fMoveDir; // 캐릭터 거리 이동
+            transform.position += transform.forward * m_fMoveDir;
         }
-        
+    }
+    
+    void BlinkStart()
+    {
+        isBlinkSwapKey = true;
+        _EffectTelpo[0].SetActive(false);
+        _EffectTelpo[1].SetActive(false);
+        isBlink = true;
+        fBlinkTime = 0;
     }
 
     void BlinkPlayer()
     {
         if (!isBlink)
-        {
-            _EffectTelpo[0].SetActive(false);
-            _EffectTelpo[1].SetActive(false);
-            fBlinkTime = 0;
             return;
-        }
-        InspectorManager._InspectorManager.fMoveSpeed = 6;
+
         fBlinkTime += Time.deltaTime;
         
-        
-        if (fBlinkTime > 1.2f)
+        if (fBlinkTime > 0.4f)
         {
-            InspectorManager._InspectorManager.fMoveSpeed = 5;
+            isBlinkSwapKey = false;
             CSwapSystem._instance.ObjSwap(false, true);
             _EffectTelpo[1].SetActive(true);
         }
-        if(fBlinkTime > 1.3f)
+        if (fBlinkTime > 0.8f)
         {
+            _EffectTelpo[0].SetActive(false);
+        }
+        if (fBlinkTime > 2.0f)
+        {
+            _EffectTelpo[1].SetActive(false);
             isBlink = false;
         }
     }
@@ -250,14 +259,13 @@ public class CPlayerSwap : CPlayerBase
         EffectModle(true, false);
         _PlayerMode = PlayerMode.Shield;
         _PlayerManager.isPush = true;
+        isBlink = false;
         Common();
     }
     void Common()
     {
         _PlayerManager.SwapHpType((int)_PlayerMode + 1);
-        _PlayerManager.m_bMove = true;
-        _PlayerManager.m_bAttack = false;
-        _PlayerManager.m_isRotationAttack = true;
+        _PlayerManager._CPlayerAniEvent.MoveOn();
         isEffect = true;
         isCoolTimeSwap = false;
         StartCoroutine("CoolTimeSwap");

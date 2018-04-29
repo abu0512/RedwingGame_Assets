@@ -42,7 +42,7 @@ public class MonsterBase : MonoBehaviour
         MoveUpdate();
         RotateUpdate();
     }
-
+    
     /// <summary>
     /// 움직임을 처리하는 함수
     /// </summary>

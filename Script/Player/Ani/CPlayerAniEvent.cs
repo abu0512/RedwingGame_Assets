@@ -40,6 +40,16 @@ public class CPlayerAniEvent : CPlayerBase
         }
         return type;
     }
+    public void MoveOn()
+    {
+        MoveTypes(2);
+        RotationTrue();
+    }
+    public void MoveOff()
+    {
+        MoveTypes(1);
+        RotationFalse();
+    }
 
     public int CameraType(int type)
     {

@@ -160,7 +160,7 @@ public class CPlayerAni_Contorl : CPlayerBase
                 }
             }
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && _PlayerManager.m_bMove == false)
+        else if (Input.GetKeyUp(KeyCode.Space) && !_PlayerManager.m_bMove)
         {
             _CPlayerAniEvent.MoveTypes(2);
         }
@@ -372,14 +372,6 @@ public class CPlayerAni_Contorl : CPlayerBase
     {
         m_bDefenseIdle = true;
         _PlayerAni_State_Shild = PlayerAni_State_Shild.Defense_ModeIdle;
-    }
-
-    public void DashStart()
-    {
-        _CPlayerDash.m_isDash = true;
-        _PlayerManager.m_bMove = false;
-        _PlayerManager.m_nAttackCombo = 0;
-        _PlayerManager.m_PlayerStm -= InspectorManager._InspectorManager.fStmDash;
     }
 
     void MoveMent()
