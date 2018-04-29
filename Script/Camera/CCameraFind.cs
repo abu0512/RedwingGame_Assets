@@ -110,7 +110,7 @@ public class CCameraFind : MonoBehaviour
             fTime += Time.deltaTime;
             if (fTime > 0.1f)
             {
-                m_fLerpSpeed += Time.deltaTime * 50f;
+                m_fLerpSpeed += Time.deltaTime * 20f;
                 if(m_fLerpSpeed > 100f)
                 {
                     isDash = false;
