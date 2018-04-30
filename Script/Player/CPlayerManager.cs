@@ -244,15 +244,12 @@ public class CPlayerManager : MonoBehaviour
         if (type == 1)
         {
             if(!isPlayerHorn)
-            {
                 m_fPlayerHp -= sizeHp;
-                if(_CPlayerAni_Contorl._isSweat)
-                {
-                    CPlayerAttackEffect._instance.Effect9();
-                    isSweatTimeScal = true;
-                    _CPlayerAni_Contorl.isSweatCount = true;
-                    isPlayerHorn = true;
-                }
+
+            if(_CPlayerAni_Contorl._isSweat)
+            {                    
+                _CPlayerAni_Contorl.isSweatCount = true;
+                PlayerHornOn();
             }
         }
             
@@ -350,13 +347,14 @@ public class CPlayerManager : MonoBehaviour
 
     public void PlayerHornOn()
     {
+        if (!_CPlayerAni_Contorl._isSweat)
+            return;
+
         if (_CPlayerAni_Contorl._isSweat)
         {
             isPlayerHorn = true;
             StartCoroutine("StartHorn");
         }
-        else
-            return;
     }
 
     IEnumerator StartHorn()
