@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: witch_CircleMissile_one A 1
-  m_Shader: {fileID: 4800000, guid: e8ff840ee7a9c1e4aa7cbc5020bf1c27, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6deb8bb57a57757498074ad2f690ed4d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -47,15 +47,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 449e50fee546f804dbfbdf9fef9eabd2, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 3f877bd87cea7114da154c06a52a7932, type: 3}
+        m_Scale: {x: 0.49, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
-        m_Texture: {fileID: 2800000, guid: 3804596fdf1f6884184b547f2af622c0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7a7024c0534514b46952ee8eda8a2b41, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex3:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e8e66f1cec2cb3341b717e0711d7b1aa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -78,7 +78,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 1
+    - _DstBlend: 10
     - _Fade: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -101,15 +101,15 @@ Material:
     - _rot1: 0
     - _rot2: 0
     - _tex1U: 0
-    - _tex1V: 0
+    - _tex1V: 1.24
     - _tex2U: 0
-    - _tex2V: 1
-    - _tex3U: 0
-    - _tex3V: -0.3
-    - _tex3pow: 0
+    - _tex2V: 0
+    - _tex3U: 0.41
+    - _tex3V: 0.84
+    - _tex3pow: 0.662
     m_Colors:
     - _AlphaColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Color: {r: 0.44156238, g: 0.06325685, b: 0.5735295, a: 1}
+    - _Color: {r: 0.09098637, g: 0, b: 0.22361054, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FadeColor: {r: 0.1541097, g: 0.013678635, b: 0.16911763, a: 1}
     - _RimColor: {r: 0.666734, g: 0.2205882, b: 1, a: 1}

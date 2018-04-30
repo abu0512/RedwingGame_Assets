@@ -13,6 +13,7 @@ public enum WitchState
     GuardAttack,
     GroggyRelease,
     AttackRelease,
+    MonsterSpawn,
 }
 
 [RequireComponent(typeof(WitchStateSystem))]
@@ -24,6 +25,7 @@ public class WitchBoss : MonsterBase
     private int _phase;
     private CPlayerManager _player;
     private float _receiveDamage;
+    private float _receiveDamage2;
     private bool _coroutineOn;
     public bool _isAttacking;
     [SerializeField]
@@ -49,6 +51,9 @@ public class WitchBoss : MonsterBase
     protected Material _damageMat; // 맞았을 때 매터리얼
     public GameObject _bossMat;
 
+    [SerializeField]
+    private int _attackIdx;
+
     // properties
     public WitchState State { get { return _curState; } set { _curState = value; } }
     public int Phase { get { return _phase; } set { _phase = value; } }
@@ -56,6 +61,7 @@ public class WitchBoss : MonsterBase
     public WitchSkillSystem SkillSys { get { return _skillSystem; } }
     public CPlayerManager Target { get { return _player; } }
     public float ReceiveDamage { get { return _receiveDamage; } set { _receiveDamage = value; } }
+    public float ReceiveDamage2 { get { return _receiveDamage2; } set { _receiveDamage2 = value; } }
     public bool IsAttacking { get { return _isAttacking; } }
     public float CloseDistance { get { return _closeDistance; } }
     public WitchWeaponCollider Collider { get { return _collider; } }
@@ -63,6 +69,8 @@ public class WitchBoss : MonsterBase
     public bool TelAttack { get { return _telAttack; } set { _telAttack = value; } }
     public bool IsTel { get { return _isTel; } set { _isTel = value; } }
     public bool IsGravity { get { return _isGravity; } set { _isGravity = value; } }
+    public int AttackIdx { get { return _attackIdx; } }
+
     protected override void Awake()
     {
         base.Awake();
@@ -93,8 +101,8 @@ public class WitchBoss : MonsterBase
         GroggyCheck();
         AnimDelayUpdate();
         FootholdUpdate();
-
-        if(_isTel)
+        _attackIdx = Anim.GetInteger("AttackIdx");
+        if (_isTel)
         {
             CCameraFind._instance.isLockOn = false;
         }
@@ -134,6 +142,7 @@ public class WitchBoss : MonsterBase
     {
         base.OnDamage(damage, value);
         _receiveDamage += damage;
+        _receiveDamage2 += damage;
         StartCoroutine(Co_ChangeMat());
         AddGroggyValue(value);
         OnAnimDelay();
@@ -173,11 +182,11 @@ public class WitchBoss : MonsterBase
             _footHoldTime = 0.0f;
         }
 
-        else if (_spawnTime >= WitchValueManager.I.MonsterSpawnTime)
-        {
-            _spawner.OnSpawn();
-            _spawnTime = 0.0f;
-        }
+        //else if (_spawnTime >= WitchValueManager.I.MonsterSpawnTime)
+        //{
+        //    _spawner.OnSpawn();
+        //    _spawnTime = 0.0f;
+        //}
     }
 
     public void FootholdOnSkill()
