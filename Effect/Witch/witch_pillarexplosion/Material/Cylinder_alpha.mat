@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Cylinder_alpha
-  m_Shader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 2788449c8b2785c4f8047d3705d25ba6, type: 3}
   m_ShaderKeywords: _CUSTOMVERTEXST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -47,15 +47,15 @@ Material:
         m_Scale: {x: 0.3, y: 0.3}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e48f87f07ce0cc54884048ca32618c54, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: -1.02}
+        m_Texture: {fileID: 2800000, guid: d4f49e84f1ab4d84da6a0921ad4f32d1, type: 3}
+        m_Scale: {x: 1, y: 0.33}
+        m_Offset: {x: 0, y: 0}
     - _MainTex2:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e43481b8b75443a47aaefe1b05f447e8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex3:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 24cc8c1fc0bb7d14fb7d8f76ce8ec793, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -80,12 +80,12 @@ Material:
     - _CustomVertexSt: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Hide: 0.24
-    - _InvFade: 1
+    - _InvFade: 3
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -95,22 +95,22 @@ Material:
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _UVSec: 0
     - _ZWrite: 1
     - _Zwrite: 0
     - _rot1: 0
     - _rot2: 0
-    - _tex1U: 0
-    - _tex1V: 0
+    - _tex1U: 2.5
+    - _tex1V: -5.18
     - _tex2U: 0
     - _tex2V: 0
     - _tex2pow: 0
-    - _tex3U: 0
-    - _tex3V: 0
-    - _tex3pow: 0
+    - _tex3U: 1
+    - _tex3V: -1.47
+    - _tex3pow: 0.191
     m_Colors:
     - _AlphaColor: {r: 0.8659109, g: 0.53742, b: 1.014, a: 1}
-    - _Color: {r: 2.269, g: 0.7507721, b: 1.7245321, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0, g: 0, b: 0, a: 1}

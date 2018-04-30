@@ -352,28 +352,6 @@ AnimationClip:
     path: w_p_alpha (1)
     classID: 23
     script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 0.33333334
-        value: 4.609463
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Range
-    path: w_p_light (1)
-    classID: 108
-    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -423,13 +401,6 @@ AnimationClip:
       script: {fileID: 0}
       typeID: 23
       customType: 22
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 4055179742
-      attribute: 514968105
-      script: {fileID: 0}
-      typeID: 108
-      customType: 25
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3986466109
@@ -830,28 +801,6 @@ AnimationClip:
     attribute: material._TintColor.a
     path: w_p_alpha (1)
     classID: 23
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 0.33333334
-        value: 4.609463
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Range
-    path: w_p_light (1)
-    classID: 108
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0

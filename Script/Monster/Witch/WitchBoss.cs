@@ -25,7 +25,7 @@ public class WitchBoss : MonsterBase
     private CPlayerManager _player;
     private float _receiveDamage;
     private bool _coroutineOn;
-    private bool _isAttacking;
+    public bool _isAttacking;
     [SerializeField]
     private float _closeDistance;
     private bool _closeTelCheck;

@@ -39,6 +39,7 @@ public class CPlayerSwordCollder : MonoBehaviour
 
                 else
                 {
+                    other.GetComponent<WitchBossEffect>().OnShieldEffect(nCombo);
                     other.GetComponent<WitchBoss>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo], InspectorManager._InspectorManager.nGroggyShild[nCombo]);
                 }
             }
@@ -72,6 +73,8 @@ public class CPlayerSwordCollder : MonoBehaviour
 
                 else
                 {
+                    other.GetComponent<WitchBossEffect>().OnScytheEffect(nCombo);
+                    CPlayerManager._instance.m_PlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
                     CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
                     other.GetComponent<WitchBoss>().OnDamage(InspectorManager._InspectorManager.nDamgeScythe[nCombo], InspectorManager._InspectorManager.nGroggyScythe[nCombo]);
                 }
