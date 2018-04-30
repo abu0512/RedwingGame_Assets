@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3e4b44896c97b824c87fdc4ae9029035
-timeCreated: 1525013679
+timeCreated: 1525086707
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -342,6 +342,14 @@ ModelImporter:
           type: 3}
         floatParameter: 0
         intParameter: 4
+        messageOptions: 0
+      - time: 0.3877551
+        functionName: HitEffect1Off
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 36881a4ec6d333047b9ad2f73905cb75,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
         messageOptions: 0
       transformMask:
       - path: 

@@ -255,6 +255,14 @@ public class CPlayerManager : MonoBehaviour
         if (type == 1)
         {
             if(!isPlayerHorn)
+<<<<<<< HEAD
+                m_fPlayerHp -= sizeHp;
+
+            if(_CPlayerAni_Contorl._isSweat)
+            {                    
+                _CPlayerAni_Contorl.isSweatCount = true;
+                PlayerHornOn();
+=======
             {
                 if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
                 {
@@ -279,6 +287,7 @@ public class CPlayerManager : MonoBehaviour
                         isPlayerHorn = true;
                     }
                 }
+>>>>>>> ece69f9549a57d66bbbbc1fef9d9148616c59580
             }
         }
             
@@ -376,13 +385,14 @@ public class CPlayerManager : MonoBehaviour
 
     public void PlayerHornOn()
     {
+        if (!_CPlayerAni_Contorl._isSweat)
+            return;
+
         if (_CPlayerAni_Contorl._isSweat)
         {
             isPlayerHorn = true;
             StartCoroutine("StartHorn");
         }
-        else
-            return;
     }
 
     IEnumerator StartHorn()

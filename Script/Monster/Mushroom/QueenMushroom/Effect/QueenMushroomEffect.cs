@@ -7,8 +7,13 @@ public class QueenMushroomEffect : MonoBehaviour
     public GameObject[] ShildHitEffects;
     public GameObject[] ScytheHitEffects;
     public GameObject PCSwapEffect;
+<<<<<<< HEAD
+    public GameObject EffectPosition;
+
+=======
 
     public GameObject EffectPosition;
+>>>>>>> ece69f9549a57d66bbbbc1fef9d9148616c59580
     public float[] ShildHitTime;
     public float[] ScytheHitTime;
     public float SwapTime;

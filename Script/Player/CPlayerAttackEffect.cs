@@ -18,15 +18,29 @@ public class CPlayerAttackEffect : MonoBehaviour
     }
     private void Update()
     {
-        if (m_manager.m_nAttackCombo == 0 && !m_manager.m_bAttack)// && !m_manager._PlayerAni_Contorl._isSweat)
+
+        if (m_manager.m_nAttackCombo == 0 && !m_manager.m_bAttack)
+        {
             EffectOff();
+        }
+        if (m_manager._PlayerAni_Contorl._PlayerAni_State_Shild == PlayerAni_State_Shild.IdleRun)
+        {
+            _AttackEffect[6].SetActive(false);
+        }
+    }
+
+    public void ShildAttackEffcet(bool one, bool two, bool three)
+    {
+        _AttackEffect[0].SetActive(one);
+        _AttackEffect[1].SetActive(two);
+        _AttackEffect[2].SetActive(three);
     }
 
     public void EffectOff()
     {
-        if(m_manager._PlayerSwap._PlayerMode == PlayerMode.Shield)
+        if (m_manager._PlayerSwap._PlayerMode == PlayerMode.Shield)
         {
-            for (int i = 0; i < _AttackEffect.Length; i++)
+            for (int i = 3; i < _AttackEffect.Length - 1; i++)
                 _AttackEffect[i].SetActive(false);
         }
         else
@@ -35,24 +49,29 @@ public class CPlayerAttackEffect : MonoBehaviour
                 _ScytheAttackEffect[i].SetActive(false);
         }
     }
+    public void HitEffect1Off()
+    {
+        _AttackEffect[0].SetActive(false);
+    }
+
     public void Effect1()
     {
         if (m_manager._PlayerSwap._PlayerMode == PlayerMode.Shield)
-            _AttackEffect[0].SetActive(true);
+            ShildAttackEffcet(true, false, false);
         else
             _ScytheAttackEffect[0].SetActive(true);
     }
     public void Effect2()
     {
         if (m_manager._PlayerSwap._PlayerMode == PlayerMode.Shield)
-            _AttackEffect[1].SetActive(true);
+            ShildAttackEffcet(false, true, false);
         else
             _ScytheAttackEffect[1].SetActive(true);
     }
     public void Effect3()
     {
         if (m_manager._PlayerSwap._PlayerMode == PlayerMode.Shield)
-            _AttackEffect[2].SetActive(true);
+            ShildAttackEffcet(false, false, true);
         else
             _ScytheAttackEffect[2].SetActive(true);
     }
@@ -65,7 +84,7 @@ public class CPlayerAttackEffect : MonoBehaviour
         _ScytheAttackEffect[3].SetActive(true);
     }
     public void Effect6()
-    {   
+    {
         _ScytheAttackEffect[4].SetActive(true);
     }
     public void Effect7()
@@ -76,9 +95,17 @@ public class CPlayerAttackEffect : MonoBehaviour
     {
         _AttackEffect[5].SetActive(true);
     }
-    public void Effect9()
+    public void Effect9(int type = 1)
     {
-        _AttackEffect[6].SetActive(true);
+        if (type == 1)
+        {
+            _AttackEffect[6].SetActive(false);
+            _AttackEffect[6].SetActive(true);
+        }
+        if (type == 2)
+        {
+            _AttackEffect[6].SetActive(false);
+        }
     }
 
     public void EffectOnOff(bool one, bool two, bool three, bool four)
