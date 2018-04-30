@@ -46,7 +46,7 @@ public class MonsterBase : MonoBehaviour
     /// <summary>
     /// 움직임을 처리하는 함수
     /// </summary>
-    private void MoveUpdate()
+    protected virtual void MoveUpdate()
     {
         if (!_isMoving)
             return;
