@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: witch_launcher_puzim 1
-  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: e8ff840ee7a9c1e4aa7cbc5020bf1c27, type: 3}
   m_ShaderKeywords: _CUSTOMVERTEXST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,10 +39,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ceb7364f6a201904797c4ab8c1a62342, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: a2c4c42e9ce31d14f9f8df43e843cabe, type: 3}
+        m_Scale: {x: 1.98, y: 0.61}
+        m_Offset: {x: 0.33, y: 0.29}
     - _MainTex2:
+        m_Texture: {fileID: 2800000, guid: 9d7b042c1c4bccd4989f3fa877243968, type: 3}
+        m_Scale: {x: 1, y: 0.9}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex3:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -63,7 +67,7 @@ Material:
     - _CustomVertexSt: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 1
+    - _DstBlend: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -74,18 +78,21 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 3
+    - _SrcBlend: 5
     - _UVSec: 0
     - _ZWrite: 1
     - _Zwrite: 0
     - _rot1: 0
     - _rot2: 0
-    - _tex1U: 0
+    - _tex1U: 1.84
     - _tex1V: 0
-    - _tex2U: 0
-    - _tex2V: 0
+    - _tex2U: 0.13
+    - _tex2V: -2.12
     - _tex2pow: 0
+    - _tex3U: 0
+    - _tex3V: 0
+    - _tex3pow: 0.27
     m_Colors:
-    - _Color: {r: 0.7743408, g: 1, b: 0.3455882, a: 1}
+    - _Color: {r: 1.78489, g: 0.85453695, b: 3.1410005, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 0.6503027, g: 0.7028188, b: 0.71323526, a: 0.622}
+    - _TintColor: {r: 0.32413766, g: 0, b: 1, a: 1}

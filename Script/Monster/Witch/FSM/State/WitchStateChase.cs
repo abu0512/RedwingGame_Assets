@@ -29,6 +29,13 @@ public class WitchStateChase : WitchFSMStateBase
         }
         else
         {
+            if (Witch.ReceiveDamage2 / Witch.Stat.MaxHp >= 0.1f)
+            {
+                Witch.ReceiveDamage2 = 0.0f;
+                Witch.ReceiveDamage = 0.0f;
+                Witch.SetState(WitchState.MonsterSpawn);
+                return;
+            }
 
             if (Witch.ReceiveDamage >= WitchValueManager.I.TeleportDamage)
             {

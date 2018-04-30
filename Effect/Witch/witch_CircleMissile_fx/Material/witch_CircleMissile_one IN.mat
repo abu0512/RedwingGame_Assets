@@ -47,11 +47,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3804596fdf1f6884184b547f2af622c0, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 7a7024c0534514b46952ee8eda8a2b41, type: 3}
+        m_Scale: {x: 0.58, y: 0.66}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
-        m_Texture: {fileID: 2800000, guid: 7a7024c0534514b46952ee8eda8a2b41, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3804596fdf1f6884184b547f2af622c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex3:
@@ -78,7 +78,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 1
+    - _DstBlend: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -96,16 +96,16 @@ Material:
     - _ZWrite: 1
     - _Zwrite: 0
     - _rot1: 0
-    - _rot2: -0.33
+    - _rot2: 0
     - _tex1U: 0
     - _tex1V: -0.76
     - _tex2U: 0
-    - _tex2V: -0.66
-    - _tex3U: 0.42
+    - _tex2V: 0
+    - _tex3U: 0
     - _tex3V: -0.83
-    - _tex3pow: 0.14
+    - _tex3pow: 0.219
     m_Colors:
     - _AlphaColor: {r: 0.4583162, g: 0.19852936, b: 1, a: 1}
-    - _Color: {r: 0.2996362, g: 0.053200707, b: 0.60294116, a: 1}
+    - _Color: {r: 0.7062645, g: 0.16955014, b: 0.8235294, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TintColor: {r: 0.6158753, g: 0.19679932, b: 0.7647059, a: 0.322}
