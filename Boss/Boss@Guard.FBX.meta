@@ -230,7 +230,7 @@ ModelImporter:
     9500000: //RootNode
     13700000: Weapons001
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -242,7 +242,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event EndGuardAttack has a time (2.227642) outside the
+    animationImportWarnings: Event EndGuardAttack has a time (1.398374) outside the
       clip's valid range (0.000000..1.333333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
