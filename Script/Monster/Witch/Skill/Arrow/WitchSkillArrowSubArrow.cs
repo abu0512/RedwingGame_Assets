@@ -68,7 +68,6 @@ public class WitchSkillArrowSubArrow : MonoBehaviour
             other.tag == "Player" ||
             other.tag == "Shild")
         {
-            print(other.name);
             if (other.tag == "Player")
             {
                 CPlayerManager._instance.PlayerHp(0.2f, 1, WitchValueManager.I.ArrowDamage);
