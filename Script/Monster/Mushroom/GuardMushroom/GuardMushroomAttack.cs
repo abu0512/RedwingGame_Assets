@@ -39,7 +39,6 @@ public class GuardMushroomAttack : GuardMushroomStateBase
         GuardMushroom.NowisHit();
         GuardMushroom.PlayerisDead();
         GuardMushroom.QueenisADead();
-        GuardMushroom.itDelayAnim();
 
         Dltime += Time.deltaTime;
 
