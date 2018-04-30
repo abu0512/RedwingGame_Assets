@@ -355,7 +355,7 @@ public class GuardMushroom : MonsterBase
         _attackDelay = 2.5f;
         _attackTimer = 0;
         _SbombTimer = 0;
-        _berserkermovespeed = 5f;
+        _berserkermovespeed = 4f;
         _berserkerattackDamage = 20f;
         _berserkerattackDelay = 1f;
         _angle = 180f;

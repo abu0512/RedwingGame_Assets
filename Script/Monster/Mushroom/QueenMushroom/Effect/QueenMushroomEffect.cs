@@ -6,12 +6,26 @@ public class QueenMushroomEffect : MonoBehaviour
 {
     public GameObject[] ShildHitEffects;
     public GameObject[] ScytheHitEffects;
+    public GameObject PCSwapEffect;
 
 
     public float[] ShildHitTime;
     public float[] ScytheHitTime;
+    public float SwapTime;
 
     private Vector3 _home;
+
+    public void QueenSwapEffect()
+    {
+        _home.y += 2.3f;
+        PCSwapEffect.transform.position = _home;
+        PCSwapEffect.SetActive(true);
+
+        SwapTime += Time.deltaTime;
+        if (SwapTime > 1f)
+            PCSwapEffect.SetActive(false);
+
+    }
 
     public void QueenMHitEffect()
     {
@@ -98,6 +112,8 @@ public class QueenMushroomEffect : MonoBehaviour
             ShildHitTime[i] = 0;
             ScytheHitTime[i] = 0;
         }
+
+        SwapTime = 0;
     }
     void Update()
     {
