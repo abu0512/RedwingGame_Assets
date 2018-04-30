@@ -90,5 +90,5 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmiColor: {r: 0.9069482, g: 0.4811248, b: 1.2830001, a: 1}
+    - _EmiColor: {r: 0.61414135, g: 0.2910147, b: 0.8995, a: 1}
     - _EmissionColor: {r: 0.72615963, g: 0.18879402, b: 0.917, a: 1}
