@@ -256,13 +256,28 @@ public class CPlayerManager : MonoBehaviour
         {
             if(!isPlayerHorn)
             {
-                m_fPlayerHp -= sizeHp;
-                if(_CPlayerAni_Contorl._isSweat)
+                if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
                 {
-                    CPlayerAttackEffect._instance.Effect9();
-                    isSweatTimeScal = true;
-                    _CPlayerAni_Contorl.isSweatCount = true;
-                    isPlayerHorn = true;
+                    m_fPlayerHp -= sizeHp;
+                    if (_CPlayerAni_Contorl._isSweat)
+                    {
+                        CPlayerAttackEffect._instance.Effect9();
+                        isSweatTimeScal = true;
+                        _CPlayerAni_Contorl.isSweatCount = true;
+                        isPlayerHorn = true;
+                    }
+                }
+
+                else
+                {
+                    m_fscyPlayerHp -= sizeHp;
+                    if (_CPlayerAni_Contorl._isSweat)
+                    {
+                        CPlayerAttackEffect._instance.Effect9();
+                        isSweatTimeScal = true;
+                        _CPlayerAni_Contorl.isSweatCount = true;
+                        isPlayerHorn = true;
+                    }
                 }
             }
         }
