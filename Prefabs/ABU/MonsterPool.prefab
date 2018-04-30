@@ -52,5 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterRcs:
-  - {fileID: 1858428481571880, guid: e7362421edd98ea4ebc3190e926a3031, type: 2}
-  - {fileID: 1575063901691184, guid: 1845b7a479680674abeaec4ba9164d92, type: 2}
+  - {fileID: 1823657517345074, guid: a7d83f6ac52eb774d803aa87e4b31c99, type: 2}
+  - {fileID: 1932507499598284, guid: 3a845826a9cdfbd4cbbc596798338a85, type: 2}

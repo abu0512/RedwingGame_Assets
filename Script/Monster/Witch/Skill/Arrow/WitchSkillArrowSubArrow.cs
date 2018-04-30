@@ -90,7 +90,7 @@ public class WitchSkillArrowSubArrow : MonoBehaviour
 
         if (_deadTime <= 5.0f)
             return;
-        print(name);
+
         gameObject.SetActive(false);
     }
 }
