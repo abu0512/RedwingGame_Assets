@@ -75,7 +75,6 @@ public class CPlayerSwap : CPlayerBase
             BlinkStart();
             _PlayerManager.m_PlayerStm -= 30f;
         }
-
     }
 
     void SwapKey()
