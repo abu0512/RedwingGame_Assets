@@ -131,7 +131,7 @@ public class CPlayerManager : MonoBehaviour
         m_fMoveSpeed = 6;
         m_fGravity = 20;
         m_fGravity = 10;
-        m_fPlayerMaxHp = 99999;
+        m_fPlayerMaxHp = 500;
         m_fPlayerHp = m_fPlayerMaxHp;
         m_fPlayerMaxStm = 100;
         m_fPlayerStm = m_fPlayerMaxStm;
