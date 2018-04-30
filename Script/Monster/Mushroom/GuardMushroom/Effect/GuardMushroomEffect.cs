@@ -92,7 +92,7 @@ public class GuardMushroomEffect : MonoBehaviour
             {
                 ShildHitTime[i] += Time.deltaTime;
 
-                if (ShildHitTime[i] > 1f)
+                if (ShildHitTime[i] > 0.5f)
                 {
                     ShildHitEffects[i].SetActive(false);
                     ShildHitTime[i] = 0;
@@ -103,7 +103,7 @@ public class GuardMushroomEffect : MonoBehaviour
             {
                 ScytheHitTime[i] += Time.deltaTime;
 
-                if (ScytheHitTime[i] > 1f)
+                if (ScytheHitTime[i] > 0.5f)
                 {
                     ScytheHitEffects[i].SetActive(false);
                     ScytheHitTime[i] = 0;

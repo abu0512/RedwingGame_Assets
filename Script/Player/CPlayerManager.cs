@@ -42,6 +42,16 @@ public class CPlayerManager : MonoBehaviour
     private float m_fPlayerMaxHp;
     public float m_PlayerMaxHp { get { return m_fPlayerMaxHp; } set { m_fPlayerMaxHp = value; } }
 
+    // 플레이어 딜러형 HP
+    [SerializeField]
+    private float m_fscyPlayerHp;
+    public float m_ScyPlayerHp { get { return m_fscyPlayerHp; } set { m_fscyPlayerHp = value; } }
+
+    // 플레이어 딜러형 MaxHP
+    [SerializeField]
+    private float m_fscyPlayerMaxHp;
+    public float m_ScyPlayerMaxHp { get { return m_fscyPlayerMaxHp; } set { m_fscyPlayerMaxHp = value; } }
+
     // 플레이어 스테미나
     [SerializeField]
     private float m_fPlayerStm;
@@ -133,6 +143,7 @@ public class CPlayerManager : MonoBehaviour
         m_fGravity = 10;
         m_fPlayerMaxHp = 500;
         m_fPlayerHp = m_fPlayerMaxHp;
+        m_fscyPlayerMaxHp = m_fPlayerMaxHp / 2;
         m_fPlayerMaxStm = 100;
         m_fPlayerStm = m_fPlayerMaxStm;
         m_fPlayerGauge = 100;
@@ -316,11 +327,11 @@ public class CPlayerManager : MonoBehaviour
         // 2 흑화 -> 실드
         if (type == 1)
         {
-            m_fPlayerHp = m_fPlayerHp * 2;
+            m_fPlayerHp = m_fscyPlayerHp * 2;
         }// 1 실드 -> 흑화
         else
         {
-            m_fPlayerHp = m_fPlayerHp / 2;
+            m_fscyPlayerHp = m_fPlayerHp / 2;
         }
     }
     // 쉴드 상태에서 n초간 카운터 어택 유지
