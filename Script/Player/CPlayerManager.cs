@@ -255,14 +255,24 @@ public class CPlayerManager : MonoBehaviour
         if (type == 1)
         {
             if (!isPlayerHorn)
-                m_fPlayerHp -= sizeHp;
+            {
+                if (_PlayerSwap._PlayerMode == PlayerMode.Shield)
+                {
+                    m_fPlayerHp -= sizeHp;
+                }
+                else
+                {
+                    m_fscyPlayerHp -= sizeHp;
+                }
+            }
+      
 
             if (_CPlayerAni_Contorl._isSweat)
             {
                 _CPlayerAni_Contorl.isSweatCount = true;
                 PlayerHornOn();
                 {
-                    if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
+                    if (_PlayerSwap._PlayerMode == PlayerMode.Shield)
                     {
                         m_fPlayerHp -= sizeHp;
                         if (_CPlayerAni_Contorl._isSweat)

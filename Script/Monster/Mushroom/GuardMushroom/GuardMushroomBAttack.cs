@@ -41,7 +41,7 @@ public class GuardMushroomBAttack : GuardMushroomStateBase
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 1f)
+        if (Dltime > 0.78f)
         {
                 GuardMushroom.SetState(GuardMushroomState.BChase);
                 Dltime = 0;

@@ -22,11 +22,18 @@ public class GuardMushroomEffect : MonoBehaviour
         _home.y += 2.3f;
         PCSwapEffect.transform.position = _home;
         PCSwapEffect.SetActive(true);
+    }
 
-        SwapTime += Time.deltaTime;
-        if(SwapTime > 1f)
-        PCSwapEffect.SetActive(false);
+    public void GuardSwapCheck()
+    {
+        if (PCSwapEffect.activeInHierarchy)
+            SwapTime += Time.deltaTime;
 
+        if (SwapTime > 0.7f)
+        {
+            PCSwapEffect.SetActive(false);
+            SwapTime = 0;
+        }
     }
 
     public void GuardMHitEffect()
@@ -126,5 +133,6 @@ public class GuardMushroomEffect : MonoBehaviour
     {
         _home = transform.position;
         SetHitEffect();
+        GuardSwapCheck();
     }
 }

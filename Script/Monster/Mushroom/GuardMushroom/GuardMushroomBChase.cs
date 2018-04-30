@@ -22,13 +22,10 @@ public class GuardMushroomBChase : GuardMushroomStateBase
 
         GuardMushroom.GoToDestination(GuardMushroom.Player.position, GuardMushroom.BerserkerMoveSpeed, GuardMushroom.rotAnglePerSecond);
 
-        if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance)
+        if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance && GuardMushroom.AttackTimer > GuardMushroom.BerserkerAttackDelay)
         {
-            if (GuardMushroom.AttackTimer > GuardMushroom.BerserkerAttackDelay)
-            {
                 GuardMushroom.SetState(GuardMushroomState.BAttack);
                 return;
-            }
         }
     }
 }

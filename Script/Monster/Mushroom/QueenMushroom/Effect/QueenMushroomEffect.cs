@@ -20,10 +20,17 @@ public class QueenMushroomEffect : MonoBehaviour
         PCSwapEffect.transform.position = _home;
         PCSwapEffect.SetActive(true);
 
-        SwapTime += Time.deltaTime;
-        if (SwapTime > 1f)
+        if (SwapTime > 0.7f)
+        {
             PCSwapEffect.SetActive(false);
+            SwapTime = 0;
+        }
+    }
 
+    public void QueenSwapCheck()
+    {
+        if (PCSwapEffect.activeInHierarchy)
+            SwapTime += Time.deltaTime;
     }
 
     public void QueenMHitEffect()
@@ -118,5 +125,6 @@ public class QueenMushroomEffect : MonoBehaviour
     {
         _home = transform.position;
         SetHitEffect();
+        QueenSwapCheck();
     }
 }
