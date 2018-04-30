@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2b0e75ae4c1ca884fa387a86a77dda13
-timeCreated: 1525086706
+guid: 508f700951439d74684edbb3770d20c4
+timeCreated: 1525113158
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -265,12 +265,12 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\n\t'Bip001 L Foot' has translation animation
-      that will be discarded.\n\t'Bip001 R Calf' has translation animation that will
-      be discarded.\n\t'Bip001 R Foot' has translation animation that will be discarded.\n"
+      might lower retargeting quality:\n\t'Bip001 L Calf' has translation animation
+      that will be discarded.\n\t'Bip001 R Foot' has translation animation that will
+      be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -282,7 +282,7 @@ ModelImporter:
       name: idle
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 34
+      lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

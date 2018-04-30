@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4858813185005912}
   - component: {fileID: 114097255905403480}
   - component: {fileID: 114885283765616702}
+  - component: {fileID: 114967889347400422}
   m_Layer: 0
   m_Name: CameraBase
   m_TagString: Untagged
@@ -278,6 +279,20 @@ MonoBehaviour:
   m_fLerpSpeed: 0
   isDash: 0
   isLockOn: 0
+--- !u!114 &114967889347400422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705306634323580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b635876e13671949a8589907c073843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyEvent1:
+  - event:/SFX/AMB/AMB_nightforest
+  _Volume: 0
 --- !u!114 &114982362880976938
 MonoBehaviour:
   m_ObjectHideFlags: 1

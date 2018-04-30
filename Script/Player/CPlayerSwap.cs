@@ -250,6 +250,8 @@ public class CPlayerSwap : CPlayerBase
     }
     void ShildReset()
     {
+        _EffectTelpo[0].SetActive(false);
+        _EffectTelpo[1].SetActive(false);
         _PlayerManager.PlayerHitCamera(3.5f, 0.8f);
         CSwapSystem._instance.ShildObjs();
         StopCoroutine("ScytheHpDown");
