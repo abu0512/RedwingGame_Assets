@@ -256,7 +256,7 @@ ModelImporter:
     13700000: Berry
     13700002: Scythe
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

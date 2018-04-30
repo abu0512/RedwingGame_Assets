@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Floor01
   m_Shader: {fileID: 4800000, guid: 9b3594250296cef4a9717b532454ef6e, type: 3}
-  m_ShaderKeywords: _MULTIDIR_ON _NORMALMAP
+  m_ShaderKeywords: _MULTIDIR_ON _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -84,7 +84,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Div: 50
     - _DstBlend: 0
-    - _GlossMapScale: 1
+    - _GlossMapScale: 0.1
     - _Glossiness: 0.05
     - _GlossyReflections: 1
     - _Length: 0.05
@@ -94,7 +94,7 @@ Material:
     - _Occ: 0.4
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
+    - _SmoothnessTextureChannel: 1
     - _Spec: 0.778
     - _Spec2: 0.4
     - _SpecularHighlights: 1
