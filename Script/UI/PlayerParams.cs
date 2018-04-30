@@ -17,8 +17,6 @@ public class PlayerParams : CharacterUI
     public GameObject[] PlayerType;
     public GameObject[] PlayerWType;
 
-
-    //public GameObject[] PlayerPawerGauge;
     public int nGauge;
     private float ScycurHP;
     private float ScymaxHP;
@@ -35,9 +33,6 @@ public class PlayerParams : CharacterUI
         maxSP = CPlayerManager._instance.m_PlayerMaxStm;
         curSP = maxSP;
         PowerGauge = CPlayerManager._instance._nPowerGauge;
-
-        //for (int i = 0; i < PlayerPawerGauge.Length; i++)
-        //    PlayerPawerGauge[i].SetActive(false);
     }
 
     private void Awake()
@@ -87,7 +82,7 @@ public class PlayerParams : CharacterUI
         else if (50 < PowerGauge && PowerGauge <= 100)
         {
             float i = PowerGauge - 50;
-            GaugeBar[0].fillAmount = 50 / 50;
+            GaugeBar[0].fillAmount = 1 / 1;
             GaugeBar[1].fillAmount = i / 50;
             for (int j = 2; j < GaugeBar.Length; j++)
             {
@@ -98,8 +93,8 @@ public class PlayerParams : CharacterUI
         {
             float i = PowerGauge - 100;
 
-            GaugeBar[0].fillAmount = 50 / 50;
-            GaugeBar[1].fillAmount = 100 / 100;
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = 1 / 1;
             GaugeBar[2].fillAmount = i / 50;
             for (int j = 3; j < GaugeBar.Length; j++)
             {
@@ -110,9 +105,9 @@ public class PlayerParams : CharacterUI
         {
             float i = PowerGauge - 150;
 
-            GaugeBar[0].fillAmount = 50 / 50;
-            GaugeBar[1].fillAmount = 100 / 100;
-            GaugeBar[2].fillAmount = 150 / 150;
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = 1 / 1;
+            GaugeBar[2].fillAmount = 1 / 1;
             GaugeBar[3].fillAmount = i / 50;
             for (int j = 4; j < GaugeBar.Length; j++)
             {
@@ -123,10 +118,10 @@ public class PlayerParams : CharacterUI
         {
             float i = PowerGauge - 200;
 
-            GaugeBar[0].fillAmount = 50 / 50;
-            GaugeBar[1].fillAmount = 100 / 100;
-            GaugeBar[2].fillAmount = 150 / 150;
-            GaugeBar[3].fillAmount = 200 / 200;
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = 1 / 1;
+            GaugeBar[2].fillAmount = 1 / 1;
+            GaugeBar[3].fillAmount = 1 / 1;
             GaugeBar[4].fillAmount = i / 50;
             for (int j = 5; j < GaugeBar.Length; j++)
             {
@@ -137,11 +132,11 @@ public class PlayerParams : CharacterUI
         {
             float i = PowerGauge - 250;
 
-            GaugeBar[0].fillAmount = 50 / 50;
-            GaugeBar[1].fillAmount = 100 / 100;
-            GaugeBar[2].fillAmount = 150 / 150;
-            GaugeBar[3].fillAmount = 200 / 200;
-            GaugeBar[4].fillAmount = 250 / 250;
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = 1 / 1;
+            GaugeBar[2].fillAmount = 1 / 1;
+            GaugeBar[3].fillAmount = 1 / 1;
+            GaugeBar[4].fillAmount = 1 / 1;
             GaugeBar[5].fillAmount = i / 50;
         }
     }
@@ -176,24 +171,6 @@ public class PlayerParams : CharacterUI
         }
     }
 
-    //public void Gauge()
-    //{
-    //    int i = CPlayerManager._instance._nPowerGauge;
-
-    //    if (0 <= i && i <= 50) GaugeActive(0, true);
-    //    if (50 < i && i <= 100) GaugeActive(1, true);
-    //    if (100 < i && i <= 150) GaugeActive(2, true);
-    //    if (150 < i && i <= 200) GaugeActive(3, true);
-    //    if (200 < i && i <= 250) GaugeActive(4, true);
-    //    if (250 < i && i <= 300) GaugeActive(5, true);
-    //}
-
-    //void GaugeActive(int type, bool isType)
-    //{
-    //    PlayerPawerGauge[type].SetActive(isType);
-    //    nGauge = type + 1;
-    //}
-
     public void GaugeOff()
     {
         CPlayerManager._instance._nPowerGauge = 0;
@@ -201,7 +178,6 @@ public class PlayerParams : CharacterUI
 
     void Update()
     {
-        Debug.Log(CPlayerManager._instance._nPowerGauge);
         // Player 캐릭터의 체력과 스테미너의 값을 받아온다.
         SetHp();
         SetScyHP();
