@@ -248,7 +248,7 @@ ModelImporter:
     7400000: Run
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -261,9 +261,9 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\n\t'Bip001 R Finger11' has translation animation
-      that will be discarded.\n\t'Bip001 L Foot' has translation animation that will
-      be discarded.\n\t'Bip001 R Calf' has translation animation that will be discarded.\n"
+      might lower retargeting quality:\n\t'Bip001 L Foot' has translation animation
+      that will be discarded.\n\t'Bip001 R Calf' has translation animation that will
+      be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3

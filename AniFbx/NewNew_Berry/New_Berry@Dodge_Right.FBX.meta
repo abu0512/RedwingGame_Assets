@@ -268,7 +268,7 @@ ModelImporter:
     13700002: Shield_Mesh
     13700004: Sword_Mesh
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
