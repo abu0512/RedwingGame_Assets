@@ -282,7 +282,7 @@ public class QueenMushroom : MonsterBase
     {
         base.Awake();
         _homePosition = (new Vector3(GoHomePositionX, GoHomePositionY, GoHomePositionZ));
-        _stat.ChaseDistance = 300f;
+        _stat.ChaseDistance = 20f;
         _stat.AttackDistance = 10f;
         _stat.MoveSpeed = 3.5f;
         _stat.MaxHp = 200f;
