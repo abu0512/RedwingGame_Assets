@@ -66,7 +66,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 1
+    - _DstBlend: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -90,5 +90,5 @@ Material:
     - _tex3V: 0
     - _tex3pow: 0
     m_Colors:
-    - _Color: {r: 2.7249997, g: 0.6011028, b: 0.6011028, a: 1}
+    - _Color: {r: 2.1440442, g: 1.8918037, b: 1.8918037, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
