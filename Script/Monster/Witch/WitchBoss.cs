@@ -76,6 +76,7 @@ public class WitchBoss : MonsterBase
         _collider = FindObjectOfType<WitchWeaponCollider>();
         //_footHoldSpawnTime = WitchValueManager.I.FootholdContinueTime;
         _spawner = FindObjectOfType<WitchMonsterSpawnerObject>();
+        _isGravity = true;
     }
 
     void Start ()
@@ -88,7 +89,7 @@ public class WitchBoss : MonsterBase
     {
         base.Update();
         //RotateToTarget(_player.transform.position);
-        if (Input.GetMouseButtonDown(0)) _isGravity = true;
+        //if (Input.GetMouseButtonDown(0)) _isGravity = true;
         GroggyCheck();
         AnimDelayUpdate();
         FootholdUpdate();
