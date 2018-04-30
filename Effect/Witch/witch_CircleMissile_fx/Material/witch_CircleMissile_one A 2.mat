@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: witch_CircleMissile_one A 2
-  m_Shader: {fileID: 4800000, guid: e8ff840ee7a9c1e4aa7cbc5020bf1c27, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6deb8bb57a57757498074ad2f690ed4d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -109,7 +109,7 @@ Material:
     - _tex3pow: 0.046
     m_Colors:
     - _AlphaColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Color: {r: 1.5234207, g: 0.42211762, b: 2.496, a: 1}
+    - _Color: {r: 1.0337769, g: 0.1469585, b: 1.8169411, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FadeColor: {r: 0.1541097, g: 0.013678635, b: 0.16911763, a: 1}
     - _RimColor: {r: 0.666734, g: 0.2205882, b: 1, a: 1}

@@ -21,8 +21,9 @@ public class CPlayerScytheStart : MonoBehaviour
             if (other.tag == "Guard")
             {
                 other.GetComponent<MonsterBase>().isHit = true;
+                other.GetComponent<GuardMushroomEffect>().GuardSwapEffect();
 
-                if(CPlayerManager._instance._PlayerAni_Contorl._PlayerAni_State_Scythe == PlayerAni_State_Scythe.Skill2)
+                if (CPlayerManager._instance._PlayerAni_Contorl._PlayerAni_State_Scythe == PlayerAni_State_Scythe.Skill2)
                     other.GetComponent<GuardMushroom>().OnDamage(Damge2);
                 else
                     other.GetComponent<GuardMushroom>().OnDamage(Damge1);
@@ -31,6 +32,7 @@ public class CPlayerScytheStart : MonoBehaviour
             else if (other.tag == "Queen")
             {
                 other.GetComponent<MonsterBase>().isHit = true;
+                other.GetComponent<QueenMushroomEffect>().QueenSwapEffect();
 
                 if (CPlayerManager._instance._PlayerAni_Contorl._PlayerAni_State_Scythe == PlayerAni_State_Scythe.Skill2)
                     other.GetComponent<QueenMushroom>().OnDamage(Damge2);

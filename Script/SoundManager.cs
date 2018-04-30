@@ -14,7 +14,7 @@ public class SoundManager : MonoBehaviour
 
     public float _Volume;
 
-	void Awake ()
+    void Awake()
     {
         SoundManager.I = this;
         _Volume = 1;
@@ -47,7 +47,7 @@ public class SoundManager : MonoBehaviour
         }
         else
             _Volume = 0;
-       
+
         bgmVolume.setValue(_Volume);
     }
 

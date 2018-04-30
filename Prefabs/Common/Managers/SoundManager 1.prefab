@@ -52,13 +52,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyEvent1:
-  - event:/SFX/PC/Tanker/Walk/Walk_Leave
+  - event:/SFX/PC/Tanker/Walk/Walk_grass
   - event:/SFX/PC/Tanker/Walk/Walk_Rock
-  - event:/SFX/PC/Dealer/Walk/Walk_Leave
+  - event:/SFX/PC/Dealer/Walk/Walk_grass
   - event:/SFX/PC/Dealer/Walk/Walk_Rock
   - event:/SFX/PC/Tanker/Attack/Tanker_Attack
   - event:/SFX/PC/Tanker/Attack/Tanker_ShieldCounter
   - event:/SFX/PC/Tanker/Attack/Tanker_ShieldGuard
   - event:/SFX/PC/Dealer/Attack/Dealer_Attack
   - event:/SFX/PC/Dealer/Attack/WideCut
-  _Volume: 1
+  _Volume: 0

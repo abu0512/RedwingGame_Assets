@@ -363,7 +363,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.21983695
+      - time: 0.10764183
         functionName: CounterShild
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 73ecc6cdbbac1964da63e9346fc87d6a,
@@ -371,7 +371,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: 0.5841545
+      - time: 0.7548862
         functionName: CounterShild
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 73ecc6cdbbac1964da63e9346fc87d6a,

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class PlayerParams : CharacterUI 
+public class PlayerParams : CharacterUI
 {
     public static PlayerParams _instance = null;
 
@@ -13,12 +13,14 @@ public class PlayerParams : CharacterUI
     public string names { get; set; }
     public Image HPBar;
     public Image SPBar;
+    public Image[] GaugeBar;
     public GameObject[] PlayerType;
     public GameObject[] PlayerWType;
 
-
-    public GameObject[] PlayerPawerGauge;
     public int nGauge;
+    private float ScycurHP;
+    private float ScymaxHP;
+    private float PowerGauge;
 
     public override void InitParams()
     {
@@ -27,11 +29,10 @@ public class PlayerParams : CharacterUI
         names = "Player";
         maxHP = CPlayerManager._instance.m_PlayerMaxHp;
         curHP = CPlayerManager._instance.m_PlayerHp;
+        ScymaxHP = CPlayerManager._instance.m_ScyPlayerMaxHp;
         maxSP = CPlayerManager._instance.m_PlayerMaxStm;
         curSP = maxSP;
-
-        for (int i = 0; i < PlayerPawerGauge.Length; i++)
-            PlayerPawerGauge[i].SetActive(false);
+        PowerGauge = CPlayerManager._instance._nPowerGauge;
     }
 
     private void Awake()
@@ -46,9 +47,98 @@ public class PlayerParams : CharacterUI
         curHP = Mathf.Clamp(curHP, 0, maxHP);
     }
 
+    public void SetScyHP()
+    {
+        ScycurHP = CPlayerManager._instance.m_ScyPlayerHp;
+        ScycurHP = Mathf.Clamp(ScycurHP, 0, ScymaxHP);
+    }
+
     public void HPlocalScale()
     {
-        HPBar.fillAmount = curHP / maxHP;
+        if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
+        {
+            HPBar.fillAmount = curHP / maxHP;
+        }
+
+        else
+        {
+            HPBar.fillAmount = ScycurHP / ScymaxHP;
+        }
+    }
+
+    public void GaugelocalScale()
+    {
+        PowerGauge = CPlayerManager._instance._nPowerGauge;
+        PowerGauge = Mathf.Clamp(PowerGauge, 0, 300);
+
+        if (PowerGauge <= 50)
+        {
+            GaugeBar[0].fillAmount = PowerGauge / 50;
+            for(int j = 1; j < GaugeBar.Length; j++)
+            {
+                GaugeBar[j].fillAmount = 0;
+            }
+        }
+        else if (50 < PowerGauge && PowerGauge <= 100)
+        {
+            float i = PowerGauge - 50;
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = i / 50;
+            for (int j = 2; j < GaugeBar.Length; j++)
+            {
+                GaugeBar[j].fillAmount = 0;
+            }
+        }
+        else if (100 < PowerGauge && PowerGauge <= 150)
+        {
+            float i = PowerGauge - 100;
+
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = 1 / 1;
+            GaugeBar[2].fillAmount = i / 50;
+            for (int j = 3; j < GaugeBar.Length; j++)
+            {
+                GaugeBar[j].fillAmount = 0;
+            }
+        }
+        else if (150 < PowerGauge && PowerGauge <= 200)
+        {
+            float i = PowerGauge - 150;
+
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = 1 / 1;
+            GaugeBar[2].fillAmount = 1 / 1;
+            GaugeBar[3].fillAmount = i / 50;
+            for (int j = 4; j < GaugeBar.Length; j++)
+            {
+                GaugeBar[j].fillAmount = 0;
+            }
+        }
+        else if (200 < PowerGauge && PowerGauge <= 250)
+        {
+            float i = PowerGauge - 200;
+
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = 1 / 1;
+            GaugeBar[2].fillAmount = 1 / 1;
+            GaugeBar[3].fillAmount = 1 / 1;
+            GaugeBar[4].fillAmount = i / 50;
+            for (int j = 5; j < GaugeBar.Length; j++)
+            {
+                GaugeBar[j].fillAmount = 0;
+            }
+        }
+        else if (250 < PowerGauge && PowerGauge <= 300)
+        {
+            float i = PowerGauge - 250;
+
+            GaugeBar[0].fillAmount = 1 / 1;
+            GaugeBar[1].fillAmount = 1 / 1;
+            GaugeBar[2].fillAmount = 1 / 1;
+            GaugeBar[3].fillAmount = 1 / 1;
+            GaugeBar[4].fillAmount = 1 / 1;
+            GaugeBar[5].fillAmount = i / 50;
+        }
     }
 
     public void SetSp()
@@ -64,7 +154,7 @@ public class PlayerParams : CharacterUI
 
     public void SetPlayerType()
     {
-        if(CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
+        if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
         {
             PlayerType[1].SetActive(false);
             PlayerWType[1].SetActive(false);
@@ -81,33 +171,16 @@ public class PlayerParams : CharacterUI
         }
     }
 
-    public void Gauge()
-    {
-        int i = CPlayerManager._instance._nPowerGauge;
-
-        if (i >= 50) GaugeActive(0, true);
-        if (i >= 100) GaugeActive(1, true);
-        if (i >= 150) GaugeActive(2, true);
-        if (i >= 200) GaugeActive(3, true);
-        if (i >= 250) GaugeActive(4, true);
-        if (i >= 300) GaugeActive(5, true);
-
-    }
-    void GaugeActive(int type, bool isType)
-    {
-        PlayerPawerGauge[type].SetActive(isType);
-        nGauge = type + 1;
-    }
     public void GaugeOff()
     {
-        for (int i = 0; i < PlayerPawerGauge.Length; i++)
-            PlayerPawerGauge[i].SetActive(false);
+        CPlayerManager._instance._nPowerGauge = 0;
     }
 
     void Update()
     {
         // Player 캐릭터의 체력과 스테미너의 값을 받아온다.
         SetHp();
+        SetScyHP();
         SetSp();
 
         // player 캐릭터 HP bar 실시간 UI 상태 변화
@@ -119,6 +192,7 @@ public class PlayerParams : CharacterUI
         // Player 캐릭터 타입 + 무기 타입 실시간 상태 변화
         SetPlayerType();
 
-        Gauge();
+        // Player 캐릭터 파워 게이지 Bar 실시간 UI 상태 변화
+        GaugelocalScale();
     }
 }

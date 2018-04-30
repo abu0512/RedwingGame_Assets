@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: w_p_RL 2
-  m_Shader: {fileID: 4800000, guid: 01ee363acb2182e4daa7d2925750a042, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2788449c8b2785c4f8047d3705d25ba6, type: 3}
   m_ShaderKeywords: _CUSTOMVERTEXST_ON _RIMINVERSE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -47,16 +47,16 @@ Material:
         m_Scale: {x: -0.33, y: 3}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1.49}
+        m_Texture: {fileID: 2800000, guid: 23090ed065222784084bff32277506ff, type: 3}
+        m_Scale: {x: 1, y: 2.71}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex3:
         m_Texture: {fileID: 2800000, guid: 5962848ea24cd774ca247c6a34bbbdfe, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 1, y: 0.48}
+        m_Offset: {x: 0, y: 0.29}
+    - _MainTex3:
+        m_Texture: {fileID: 2800000, guid: 23090ed065222784084bff32277506ff, type: 3}
+        m_Scale: {x: 5, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -101,16 +101,16 @@ Material:
     - _Zwrite: 0
     - _rot1: 0
     - _rot2: 0
-    - _tex1U: 0
-    - _tex1V: 4
-    - _tex2U: 0
-    - _tex2V: 1.1
+    - _tex1U: 1.4
+    - _tex1V: 6
+    - _tex2U: 0.88
+    - _tex2V: 0
     - _tex2pow: 0
     - _tex3U: 0
-    - _tex3V: 0
-    - _tex3pow: 0
+    - _tex3V: 0.82
+    - _tex3pow: 0.053
     m_Colors:
     - _AlphaColor: {r: 2.2629437, g: 0.8784927, b: 2.655, a: 1}
-    - _Color: {r: 1.2742853, g: 1.0165261, b: 3.21506, a: 0.577}
+    - _Color: {r: 1.1202564, g: 0.885648, b: 1.267875, a: 0.757}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TintColor: {r: 0.5166583, g: 0.13051468, b: 0.52205884, a: 0.509}

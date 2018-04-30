@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 22abf7acec07a0a4188cddd2dce9a7d6
-timeCreated: 1525013679
+guid: 24e017a452b6c1e4bb896411ff121c14
+timeCreated: 1525113157
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -267,7 +267,8 @@ ModelImporter:
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\n\t'Bip001 L Calf' has translation animation
       that will be discarded.\n\t'Bip001 L Foot' has translation animation that will
-      be discarded.\n\t'Bip001 R Calf' has translation animation that will be discarded.\n"
+      be discarded.\n\t'Bip001 R Calf' has translation animation that will be discarded.\n\t'Bip001
+      R Foot' has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
@@ -282,7 +283,7 @@ ModelImporter:
       name: Run
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 18
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -301,7 +302,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.39285716
+        functionName: MoveSoundPlay
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8826531
+        functionName: MoveSoundPlay
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

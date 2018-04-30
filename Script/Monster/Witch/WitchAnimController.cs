@@ -8,6 +8,8 @@ public class WitchAnimController : MonoBehaviour
 
     [SerializeField]
     private GameObject _trailRenderer;
+    [SerializeField]
+    private GameObject _closeAttackEffect;
 
     private void Awake()
     {
@@ -21,7 +23,8 @@ public class WitchAnimController : MonoBehaviour
 
     private void OnTrail()
     {
-        _trailRenderer.SetActive(true);
+        if (_witch.AttackIdx == 0)
+            _trailRenderer.SetActive(true);
     }
 
     private void EndTrail()
@@ -32,6 +35,8 @@ public class WitchAnimController : MonoBehaviour
     private void OnAttack()
     {
         _witch.Collider.Collider.enabled = true;
+        if (_witch.AttackIdx == 1)
+            _closeAttackEffect.SetActive(true);
         //if (_witch.DistanceCheck(_witch.Stat.AttackDistance))
         //{
         //    _witch.Target.PlayerHp(0.2f, 2, 10.0f);
@@ -51,6 +56,8 @@ public class WitchAnimController : MonoBehaviour
     private void EndAttack()
     {
         _witch.EndAttack();
+        _trailRenderer.SetActive(false);
+        _closeAttackEffect.SetActive(false);
     }
 
     private void TeleportPoint()
@@ -91,6 +98,22 @@ public class WitchAnimController : MonoBehaviour
         else if (_witch.State == WitchState.AttackRelease)
         {
             ((WitchStateAttackRelease)_witch.StateSystem.CurrentState).EndReleaseAnim();
+        }
+    }
+
+    private void EndCasting()
+    {
+        if (_witch.State == WitchState.MonsterSpawn)
+        {
+            ((WitchStateMonsterSpawn)_witch.StateSystem.CurrentState).EndSpawn();
+        }
+    }
+
+    private void OnCasting()
+    {
+        if (_witch.State == WitchState.MonsterSpawn)
+        {
+            ((WitchStateMonsterSpawn)_witch.StateSystem.CurrentState).MonsterSpawn();
         }
     }
 }

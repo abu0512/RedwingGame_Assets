@@ -285,30 +285,15 @@ public class GuardMushroom : MonsterBase
 
     }
 
-    public void itDelayAnim()
-    {
-        if (ifEndBerserker)
-        {
-            if (QueenisAllDead)
-            {
-                SetState(GuardMushroomState.BChase);
-                return;
-            }
-
-            else if (SBombing)
-            {
-                SetState(GuardMushroomState.Sbombing);
-                return;
-            }
-        }
-    }
-
     public void QueenisADead()
     {
-        if (QueenisAllDead || SBombing)
+        if (!_ifendberserker)
         {
-            SetState(GuardMushroomState.Berserker);
-            return;
+            if (QueenisAllDead || SBombing)
+            {
+                SetState(GuardMushroomState.Berserker);
+                return;
+            }
         }
     }
 
@@ -352,12 +337,12 @@ public class GuardMushroom : MonsterBase
         Stat.AttackDistance = 3.5f;
         Stat.MoveSpeed = 2f;
         _attackDamage = 10f;
-        _attackDelay = 2.5f;
+        _attackDelay = 3.5f;
         _attackTimer = 0;
         _SbombTimer = 0;
-        _berserkermovespeed = 5f;
+        _berserkermovespeed = 4f;
         _berserkerattackDamage = 20f;
-        _berserkerattackDelay = 1f;
+        _berserkerattackDelay = 2f;
         _angle = 180f;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _animParamID = Animator.StringToHash("CurrentState");

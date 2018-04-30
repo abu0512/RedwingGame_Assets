@@ -17,18 +17,23 @@ public class GuardMushroomisHit : GuardMushroomStateBase
 
     void Update()
     {
-        GuardMushroom.itDelayAnim();
         GuardMushroom.NowisHit();
         GuardMushroom.GoToPullPush();
         GuardMushroom.QueenisADead();
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 0.25f)
+        if (Dltime > 0.15f)
         {
             if (GuardMushroom.QueenisAllDead)
             {
                 GuardMushroom.SetState(GuardMushroomState.BChase);
+                return;
+            }
+
+            else if(GuardMushroom.SBombing)
+            {
+                GuardMushroom.SetState(GuardMushroomState.Sbombing);
                 return;
             }
 

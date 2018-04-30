@@ -63,6 +63,11 @@ public class WitchSkillTeleportObject : MonoBehaviour
 
         if (_type == 0)
             _destination = ((_witch.transform.forward * -1) * 10.0f) + _witch.transform.position;
+        else if (_type == 2)
+        {
+            _destination = Vector3.zero;
+            _destination.y = _witch.transform.position.y;
+        }
     }
 
     private void TeleportUpdate()
