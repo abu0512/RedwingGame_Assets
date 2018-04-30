@@ -254,34 +254,40 @@ public class CPlayerManager : MonoBehaviour
 
         if (type == 1)
         {
-            if(!isPlayerHorn)
-            {
-                if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
-                {
-                    m_fPlayerHp -= sizeHp;
-                    if (_CPlayerAni_Contorl._isSweat)
-                    {
-                        CPlayerAttackEffect._instance.Effect9();
-                        isSweatTimeScal = true;
-                        _CPlayerAni_Contorl.isSweatCount = true;
-                        isPlayerHorn = true;
-                    }
-                }
+            if (!isPlayerHorn)
+                m_fPlayerHp -= sizeHp;
 
-                else
+            if (_CPlayerAni_Contorl._isSweat)
+            {
+                _CPlayerAni_Contorl.isSweatCount = true;
+                PlayerHornOn();
                 {
-                    m_fscyPlayerHp -= sizeHp;
-                    if (_CPlayerAni_Contorl._isSweat)
+                    if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
                     {
-                        CPlayerAttackEffect._instance.Effect9();
-                        isSweatTimeScal = true;
-                        _CPlayerAni_Contorl.isSweatCount = true;
-                        isPlayerHorn = true;
+                        m_fPlayerHp -= sizeHp;
+                        if (_CPlayerAni_Contorl._isSweat)
+                        {
+                            CPlayerAttackEffect._instance.Effect9();
+                            isSweatTimeScal = true;
+                            _CPlayerAni_Contorl.isSweatCount = true;
+                            isPlayerHorn = true;
+                        }
+                    }
+
+                    else
+                    {
+                        m_fscyPlayerHp -= sizeHp;
+                        if (_CPlayerAni_Contorl._isSweat)
+                        {
+                            CPlayerAttackEffect._instance.Effect9();
+                            isSweatTimeScal = true;
+                            _CPlayerAni_Contorl.isSweatCount = true;
+                            isPlayerHorn = true;
+                        }
                     }
                 }
             }
         }
-            
 
         else if (type == 2)
         {
@@ -376,13 +382,14 @@ public class CPlayerManager : MonoBehaviour
 
     public void PlayerHornOn()
     {
+        if (!_CPlayerAni_Contorl._isSweat)
+            return;
+
         if (_CPlayerAni_Contorl._isSweat)
         {
             isPlayerHorn = true;
             StartCoroutine("StartHorn");
         }
-        else
-            return;
     }
 
     IEnumerator StartHorn()

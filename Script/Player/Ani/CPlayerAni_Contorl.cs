@@ -60,6 +60,7 @@ public class CPlayerAni_Contorl : CPlayerBase
     private bool _isSweatCount { get { return isSweatCount; } set { value = isSweatCount; } }
 
     private bool isSweatCountTime;
+    private bool isSweatChackSet;
 
     void Start ()
     {
@@ -94,6 +95,7 @@ public class CPlayerAni_Contorl : CPlayerBase
                 }
             }
         }
+
     }
    
     void ShieldAniGetKey()
@@ -251,13 +253,11 @@ public class CPlayerAni_Contorl : CPlayerBase
                 break;
             case PlayerAni_State_Shild.SweatL:
                 {
-                    SweatStart();
                     Animation_Change(9);
                 }
                 break;
             case PlayerAni_State_Shild.SweatR:
                 {
-                    SweatStart();
                     Animation_Change(10);
                 }
                 break;
@@ -385,7 +385,7 @@ public class CPlayerAni_Contorl : CPlayerBase
         }
     }
     
-    void SweatStart()
+    public void SweatStart()
     {
         _PlayerManager._isPlayerHorn = false;
         _PlayerManager._PlayerShild._isShildCounter = true;
@@ -399,8 +399,13 @@ public class CPlayerAni_Contorl : CPlayerBase
 
         if (_PlayerManager._isPlayerHorn)
         {
-            StartCoroutine("TimeSweatCountTime");
-            isSweatCountTime = true;
+            if(!isSweatChackSet)
+            {
+                CPlayerAttackEffect._instance.Effect9();
+                StartCoroutine("TimeSweatCountTime");
+                isSweatCountTime = true;
+                isSweatChackSet = true;
+            }
         }
     }
     void SweatCount()
@@ -418,6 +423,7 @@ public class CPlayerAni_Contorl : CPlayerBase
         yield return new WaitForSeconds(InspectorManager._InspectorManager.fPlayerSweatCountTime);
         isSweatCountTime = false;
         _PlayerManager._isPlayerHorn = false;
+        isSweatChackSet = false;
     }
 
     public void AniStiff()
@@ -427,9 +433,7 @@ public class CPlayerAni_Contorl : CPlayerBase
     IEnumerator Stiff()
     {
         _PlayerAniFile.speed = 0;
-        //TimeScalManager._instance.TimeScal(0.4f);
         yield return new WaitForSeconds(InspectorManager._InspectorManager.fPlayerAttackStiff);
-        //TimeScalManager._instance.TimeScal(1f);
         _PlayerAniFile.speed = 1;
     }
 

@@ -124,8 +124,6 @@ public class PlayerParams : CharacterUI
 
     void Update()
     {
-        Debug.Log("지금은 실드! HP는: " + curHP);
-        Debug.Log("지금은 딜러! HP는: " + ScycurHP);
         // Player 캐릭터의 체력과 스테미너의 값을 받아온다.
         SetHp();
         SetScyHP();
