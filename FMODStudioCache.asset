@@ -511,3 +511,9 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 375
+  EditorBanks: []
+  EditorEvents: []
+  MasterBankRef: {fileID: 0}
+  StringsBankRef: {fileID: 0}
+  stringsBankWriteTime: 0
+  cacheVersion: 2
