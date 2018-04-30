@@ -7,8 +7,13 @@ public class QueenMushroomEffect : MonoBehaviour
     public GameObject[] ShildHitEffects;
     public GameObject[] ScytheHitEffects;
     public GameObject PCSwapEffect;
+<<<<<<< HEAD
     public GameObject EffectPosition;
 
+=======
+
+    public GameObject EffectPosition;
+>>>>>>> ece69f9549a57d66bbbbc1fef9d9148616c59580
     public float[] ShildHitTime;
     public float[] ScytheHitTime;
     public float SwapTime;
@@ -59,7 +64,7 @@ public class QueenMushroomEffect : MonoBehaviour
 
             for (int i = 0; i < 3; i++)
             {
-                ShildHitEffects[i].transform.position = _home;
+                ShildHitEffects[i].transform.position = EffectPosition.transform.position;
             }
 
             if (CPlayerManager._instance.m_nAttackCombo == 1)
@@ -85,7 +90,7 @@ public class QueenMushroomEffect : MonoBehaviour
             {
                 ShildHitTime[i] += Time.deltaTime;
 
-                if (ShildHitTime[i] > 1f)
+                if (ShildHitTime[i] > 0.5f)
                 {
                     ShildHitEffects[i].SetActive(false);
                     ShildHitTime[i] = 0;
@@ -96,7 +101,7 @@ public class QueenMushroomEffect : MonoBehaviour
             {
                 ScytheHitTime[i] += Time.deltaTime;
 
-                if (ScytheHitTime[i] > 1f)
+                if (ScytheHitTime[i] > 0.5f)
                 {
                     ScytheHitEffects[i].SetActive(false);
                     ScytheHitTime[i] = 0;

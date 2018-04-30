@@ -20,6 +20,9 @@ public class PlayerParams : CharacterUI
     public GameObject[] PlayerPawerGauge;
     public int nGauge;
 
+    private float ScycurHP;
+    private float ScymaxHP;
+
     public override void InitParams()
     {
         PlayerParams._instance = this;
@@ -27,6 +30,7 @@ public class PlayerParams : CharacterUI
         names = "Player";
         maxHP = CPlayerManager._instance.m_PlayerMaxHp;
         curHP = CPlayerManager._instance.m_PlayerHp;
+        ScymaxHP = CPlayerManager._instance.m_ScyPlayerMaxHp;
         maxSP = CPlayerManager._instance.m_PlayerMaxStm;
         curSP = maxSP;
 
@@ -46,9 +50,23 @@ public class PlayerParams : CharacterUI
         curHP = Mathf.Clamp(curHP, 0, maxHP);
     }
 
+    public void SetScyHP()
+    {
+        ScycurHP = CPlayerManager._instance.m_ScyPlayerHp;
+        ScycurHP = Mathf.Clamp(ScycurHP, 0, ScymaxHP);
+    }
+
     public void HPlocalScale()
     {
-        HPBar.fillAmount = curHP / maxHP;
+        if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
+        {
+            HPBar.fillAmount = curHP / maxHP;
+        }
+
+        else
+        {
+            HPBar.fillAmount = ScycurHP / ScymaxHP;
+        }
     }
 
     public void SetSp()
@@ -106,8 +124,14 @@ public class PlayerParams : CharacterUI
 
     void Update()
     {
+<<<<<<< HEAD
+=======
+        Debug.Log("지금은 실드! HP는: " + curHP);
+        Debug.Log("지금은 딜러! HP는: " + ScycurHP);
+>>>>>>> ece69f9549a57d66bbbbc1fef9d9148616c59580
         // Player 캐릭터의 체력과 스테미너의 값을 받아온다.
         SetHp();
+        SetScyHP();
         SetSp();
 
         // player 캐릭터 HP bar 실시간 UI 상태 변화

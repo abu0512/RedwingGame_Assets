@@ -21,10 +21,13 @@ public class WitchStateSkill : WitchFSMStateBase
                 return;
             }
 
-            if (Witch.DistanceCheck(Witch.Stat.AttackDistance))
+            else
             {
-                Witch.SetState(WitchState.Attack);
-                return;
+                if (Witch.DistanceCheck(Witch.Stat.AttackDistance))
+                {
+                    Witch.SetState(WitchState.Attack);
+                    return;
+                }
             }
 
             Witch.SetState(WitchState.Chase);
