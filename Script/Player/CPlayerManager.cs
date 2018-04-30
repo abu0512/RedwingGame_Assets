@@ -254,43 +254,40 @@ public class CPlayerManager : MonoBehaviour
 
         if (type == 1)
         {
-            if(!isPlayerHorn)
-<<<<<<< HEAD
+            if (!isPlayerHorn)
                 m_fPlayerHp -= sizeHp;
 
-            if(_CPlayerAni_Contorl._isSweat)
-            {                    
+            if (_CPlayerAni_Contorl._isSweat)
+            {
                 _CPlayerAni_Contorl.isSweatCount = true;
                 PlayerHornOn();
-=======
-            {
-                if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
                 {
-                    m_fPlayerHp -= sizeHp;
-                    if (_CPlayerAni_Contorl._isSweat)
+                    if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
                     {
-                        CPlayerAttackEffect._instance.Effect9();
-                        isSweatTimeScal = true;
-                        _CPlayerAni_Contorl.isSweatCount = true;
-                        isPlayerHorn = true;
+                        m_fPlayerHp -= sizeHp;
+                        if (_CPlayerAni_Contorl._isSweat)
+                        {
+                            CPlayerAttackEffect._instance.Effect9();
+                            isSweatTimeScal = true;
+                            _CPlayerAni_Contorl.isSweatCount = true;
+                            isPlayerHorn = true;
+                        }
                     }
-                }
 
-                else
-                {
-                    m_fscyPlayerHp -= sizeHp;
-                    if (_CPlayerAni_Contorl._isSweat)
+                    else
                     {
-                        CPlayerAttackEffect._instance.Effect9();
-                        isSweatTimeScal = true;
-                        _CPlayerAni_Contorl.isSweatCount = true;
-                        isPlayerHorn = true;
+                        m_fscyPlayerHp -= sizeHp;
+                        if (_CPlayerAni_Contorl._isSweat)
+                        {
+                            CPlayerAttackEffect._instance.Effect9();
+                            isSweatTimeScal = true;
+                            _CPlayerAni_Contorl.isSweatCount = true;
+                            isPlayerHorn = true;
+                        }
                     }
                 }
->>>>>>> ece69f9549a57d66bbbbc1fef9d9148616c59580
             }
         }
-            
 
         else if (type == 2)
         {
