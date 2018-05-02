@@ -210,7 +210,7 @@ public class ShildMushroom : MonsterBase
     protected override void Awake()
     {
         base.Awake();
-        Stat.MaxHp = 800;
+        Stat.MaxHp = 400;
         Stat.Hp = Stat.MaxHp;
         Stat.ChaseDistance = 20f;
         Stat.AttackDistance = 3f;
@@ -219,8 +219,8 @@ public class ShildMushroom : MonsterBase
         _attackDelay = 3f;
         _attackTimer = 0;
         _angle = 180f;
-        _groggy = 0;
         _maxgroggy = 105f;
+        _groggy = _maxgroggy;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _animParamID = Animator.StringToHash("CurrentState");
         isDead = false;

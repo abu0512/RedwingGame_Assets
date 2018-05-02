@@ -22,12 +22,12 @@ public class CPlayerCounterAttack : MonoBehaviour
 
             else if (other.tag == "ShildMushroom")
             {
-                other.GetComponent<ShildMushroom>().AddGroggyValue(60f);
+                other.GetComponent<ShildMushroom>().AddGroggyValue(105f);
                 other.GetComponent<ShildMushroom>().OnDamage(InspectorManager._InspectorManager.fCountAttackDamge);
             }
             else
             {
-                other.GetComponent<WitchBoss>().OnDamage(InspectorManager._InspectorManager.fCountAttackDamge);
+                other.GetComponent<WitchBoss>().OnDamage(InspectorManager._InspectorManager.fCountAttackDamge, InspectorManager._InspectorManager.fCountGroggy);
             }
         }
     }
