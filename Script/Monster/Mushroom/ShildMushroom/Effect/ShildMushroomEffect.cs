@@ -7,6 +7,7 @@ public class ShildMushroomEffect : MonoBehaviour {
     public GameObject GroggyEffect;
     public GameObject[] ShildHitEffects;
     public GameObject[] ScytheHitEffects;
+    public GameObject EffectPosition;
 
 
     public float[] ShildHitTime;
@@ -53,7 +54,7 @@ public class ShildMushroomEffect : MonoBehaviour {
 
             for (int i = 0; i < 3; i++)
             {
-                ShildHitEffects[i].transform.position = _home;
+                ShildHitEffects[i].transform.position = EffectPosition.transform.position;
             }
 
             if (CPlayerManager._instance.m_nAttackCombo == 1)
