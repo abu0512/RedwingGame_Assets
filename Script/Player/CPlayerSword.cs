@@ -8,6 +8,7 @@ public class CPlayerSword : CPlayerBase
 
     public BoxCollider _ScytheCollder;
     public BoxCollider _SowrdCollder;
+    public BoxCollider _shieldCollider;
     public BoxCollider _CounteCollder;
     public BoxCollider _StartScytheSkillCollder;
     public BoxCollider _ShildRunCollder;
@@ -28,17 +29,17 @@ public class CPlayerSword : CPlayerBase
     void Update()
     {
         // 콜리더 켜지면 일정 시간뒤에 꺼짐
-        if(m_bCollder)
-        {
-            m_fCollderTimer += Time.deltaTime;
+        //if(m_bCollder)
+        //{
+        //    m_fCollderTimer += Time.deltaTime;
 
-            if(m_fCollderTimer >= 0.3f)
-                return;
+        //    if(m_fCollderTimer >= 0.3f)
+        //        return;
 
-            m_fCollderTimer = 0;
-            m_bCollder = false;
-            CollderFalse();
-        }
+        //    m_fCollderTimer = 0;
+        //    m_bCollder = false;
+        //    CollderFalse();
+        //}
     }
     // 충돌 부분에 알맞게 함수 호출
 
@@ -54,6 +55,13 @@ public class CPlayerSword : CPlayerBase
         _SowrdCollder.enabled = true;
         m_bCollder = true;
     }
+
+    public void ShieldTrue()
+    {
+        _shieldCollider.enabled = true;
+        m_bCollder = true;
+    }
+
     // 검방모드 카운터 공격
     public void CounterTrue()
     {
@@ -81,5 +89,12 @@ public class CPlayerSword : CPlayerBase
         _CounteCollder.enabled = false;
         _StartScytheSkillCollder.enabled = false;
         _ShildRunCollder.enabled = false;
+    }
+
+    private void AttackEnd()
+    {
+        _SowrdCollder.enabled = false;
+        _ScytheCollder.enabled = false;
+        _shieldCollider.enabled = false;
     }
 }
