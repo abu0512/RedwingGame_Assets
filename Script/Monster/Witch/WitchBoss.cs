@@ -170,7 +170,7 @@ public class WitchBoss : MonsterBase
         if (_footHoldTime >= WitchValueManager.I.FootholdContinueTime &&
             _spawnTime >= WitchValueManager.I.MonsterSpawnTime)
         {
-            _spawner.OnSpawn();
+            //_spawner.OnSpawn();
             _footHoldTime = 0.0f;
             _spawnTime = 0.0f;
             return;

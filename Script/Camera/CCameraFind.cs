@@ -28,7 +28,7 @@ public class CCameraFind : MonoBehaviour
     public bool isDash;
     private float fTime;
 
-    public bool isLockOn;
+    public bool isLockOn; // 락온
 
     void Start()
     {
@@ -126,7 +126,7 @@ public class CCameraFind : MonoBehaviour
         }
     }
 
-    void TargetLockOn(Transform target)
+    public void TargetLockOn(Transform target)
     {
         if (!isLockOn)
             return;

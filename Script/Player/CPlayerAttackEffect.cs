@@ -18,7 +18,6 @@ public class CPlayerAttackEffect : MonoBehaviour
     }
     private void Update()
     {
-
         if (m_manager.m_nAttackCombo == 0 && !m_manager.m_bAttack)
         {
             EffectOff();
@@ -53,7 +52,7 @@ public class CPlayerAttackEffect : MonoBehaviour
     {
         _AttackEffect[0].SetActive(false);
     }
-
+    
     public void Effect1()
     {
         if (m_manager._PlayerSwap._PlayerMode == PlayerMode.Shield)
@@ -106,13 +105,5 @@ public class CPlayerAttackEffect : MonoBehaviour
         {
             _AttackEffect[6].SetActive(false);
         }
-    }
-
-    public void EffectOnOff(bool one, bool two, bool three, bool four)
-    {
-        //_AttackEffect[0].SetActive(one);
-        //_AttackEffect[1].SetActive(two);
-        //_AttackEffect[2].SetActive(three);
-        //_AttackEffect[3].SetActive(four);
     }
 }

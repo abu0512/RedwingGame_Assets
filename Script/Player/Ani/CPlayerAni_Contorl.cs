@@ -18,6 +18,7 @@ public enum PlayerAni_State_Shild
     ShildRun,
     SweatCount,
     Interaction,
+    Attack4,
     None,
 }
 public enum PlayerAni_State_Scythe
@@ -34,7 +35,6 @@ public enum PlayerAni_State_Scythe
 public class CPlayerAni_Contorl : CPlayerBase
 {
     private CPlayerAniEvent _CPlayerAniEvent;
-    private CPlayerDash _CPlayerDash;
     private CPlayerSwap _CPlayerSwap;
     // 애니 초기화
     public PlayerAni_State_Shild _PlayerAni_State_Shild = PlayerAni_State_Shild.IdleRun;
@@ -65,7 +65,6 @@ public class CPlayerAni_Contorl : CPlayerBase
     void Start ()
     {
         _CPlayerSwap = GetComponent<CPlayerSwap>();
-        _CPlayerDash = GetComponent<CPlayerDash>();
         _CPlayerAniEvent = GetComponent<CPlayerAniEvent>();
         _CPlayerAttackEffect = GetComponent<CPlayerAttackEffect>();
 
@@ -95,9 +94,7 @@ public class CPlayerAni_Contorl : CPlayerBase
                 }
             }
         }
-
     }
-   
     void ShieldAniGetKey()
     {
         if (Input.GetMouseButtonDown(1))
@@ -137,6 +134,11 @@ public class CPlayerAni_Contorl : CPlayerBase
                 {
                     //3타로넘김
                     _PlayerAni_State_Shild = PlayerAni_State_Shild.Attack3;
+                }// 3타일때
+                else if (_PlayerManager.m_nAttackCombo == 3)
+                {
+                    //4타로넘김
+                    _PlayerAni_State_Shild = PlayerAni_State_Shild.Attack4;
                 }
             }
         }
@@ -193,11 +195,6 @@ public class CPlayerAni_Contorl : CPlayerBase
             _PlayerAni_State_Shild = PlayerAni_State_Shild.ShildRun;
             _PlayerManager.m_PlayerStm -= InspectorManager._InspectorManager.fShildRunStm;
         }
-        //if(Input.GetKeyDown(KeyCode.F))
-        //{
-        //    InteractionOn();
-        //}
-            
     }
     void ShieldAni()
     {
@@ -276,10 +273,13 @@ public class CPlayerAni_Contorl : CPlayerBase
                     Animation_Change(13);
                 }
                 break;
+            case PlayerAni_State_Shild.Attack4:
+                {
+                    Animation_Change(14);
+                }
+                break;
         }
-
     }
-
     void ScytheAniGetKey()
     {
         if (_PlayerAni_State_Scythe == PlayerAni_State_Scythe.Skill1)
@@ -367,13 +367,11 @@ public class CPlayerAni_Contorl : CPlayerBase
         _PlayerAniFile = GetComponent<Animator>();
         _PlayerAniFile.SetInteger("motion", animation_number);
     }
-
     public void DefenseIdle()
     {
         m_bDefenseIdle = true;
         _PlayerAni_State_Shild = PlayerAni_State_Shild.Defense_ModeIdle;
     }
-
     void MoveMent()
     {
         _PlayerManager.m_nAttackCombo = 0;
@@ -384,14 +382,12 @@ public class CPlayerAni_Contorl : CPlayerBase
             _PlayerAniFile.SetFloat("MoveSpeed", horizontal * horizontal + vertical * vertical, 0.1f, Time.deltaTime);
         }
     }
-    
     public void SweatStart()
     {
         _PlayerManager._isPlayerHorn = false;
         _PlayerManager._PlayerShild._isShildCounter = true;
         isSweat = true;
     }
-
     void SweatCountStart()
     {
         if (!isSweatCount)
@@ -425,7 +421,6 @@ public class CPlayerAni_Contorl : CPlayerBase
         _PlayerManager._isPlayerHorn = false;
         isSweatChackSet = false;
     }
-
     public void AniStiff()
     {
         StartCoroutine("Stiff");
@@ -436,7 +431,6 @@ public class CPlayerAni_Contorl : CPlayerBase
         yield return new WaitForSeconds(InspectorManager._InspectorManager.fPlayerAttackStiff);
         _PlayerAniFile.speed = 1;
     }
-
     public void isSweatEvent()
     {
         isSweat = false;
@@ -445,7 +439,6 @@ public class CPlayerAni_Contorl : CPlayerBase
     {
         isSweatCount = false;
     }
-
     public void InteractionOn()
     {
         _PlayerAni_State_Shild = PlayerAni_State_Shild.Interaction;

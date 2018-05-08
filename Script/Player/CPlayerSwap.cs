@@ -67,6 +67,7 @@ public class CPlayerSwap : CPlayerBase
         SwapAttacker();
         TelPoEffect();
         BlinkPlayer();
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && _PlayerMode == PlayerMode.Scythe && _PlayerManager.m_PlayerStm > 30f)
         {
             CSwapSystem._instance.ObjSwap(false, false);
@@ -80,7 +81,6 @@ public class CPlayerSwap : CPlayerBase
     void SwapKey()
     {
         // Q,E버튼을 누르면 직업이 바뀜
-       
         if(isCoolTimeSwap)
         {
             if (_PlayerMode == PlayerMode.Shield)
@@ -241,11 +241,13 @@ public class CPlayerSwap : CPlayerBase
         EffectModle(false, true);
         StartCoroutine("ScytheHpDown");
         _PlayerMode = PlayerMode.Scythe;
+
         if (type == 1)
         {
             _PlayerManager.isPull = true;
             m_bSwapAttack = true;
         }
+
         Common();
     }
     void ShildReset()
