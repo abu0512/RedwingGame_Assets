@@ -24,7 +24,6 @@ public class WitchWeaponCollider : MonoBehaviour
                 _witch.Target.PlayerHp(0.2f, 2, 10.0f);
                 if (_witch.Target._PlayerShild._isShildCounter)
                 {
-                    _witch.Target._PlayerShild.isCounterTimer = true;
                     _witch.SetState(WitchState.GuardAttack);
                     return;
                 }

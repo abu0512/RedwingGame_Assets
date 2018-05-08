@@ -74,7 +74,7 @@ public class CPlayerManager : MonoBehaviour
 
     // 플레이어 검방 공격력
     [SerializeField]
-    private int[] m_nPlayerShildHitDmg = new int[3];
+    private int[] m_nPlayerShildHitDmg = new int[5];
     public int[] m_PlayerShildHitDmg { get { return m_nPlayerShildHitDmg; } set { m_nPlayerShildHitDmg = value; } }
     // 플레이어 낫모드 공격력
     [SerializeField]
@@ -116,11 +116,6 @@ public class CPlayerManager : MonoBehaviour
     private bool isPlayerHorn; // 플레이어 무적
     public bool _isPlayerHorn {  get { return isPlayerHorn; } set { isPlayerHorn = value; } }
 
-    private bool isSweatTimeScal; // 흘리기중 맞았을 시 슬로운 연출
-    private float fSweatSlowTime;
-
-    private CPlayerDash _CPlayerDash = null;
-
     void Awake()
     {
         CPlayerManager._instance = this;
@@ -135,12 +130,10 @@ public class CPlayerManager : MonoBehaviour
         _CPlayerSwap = GetComponent<CPlayerSwap>();
         _CPlayerShild = GetComponent<CPlayerShild>();
         _CPlayerAniEvent = GetComponent<CPlayerAniEvent>();
-        _CPlayerDash = GetComponent<CPlayerDash>();
         _CPlayerCountAttack = GetComponent<CPlayerCountAttack>();
         // 플레이어 스탯 설정
         m_fMoveSpeed = 6;
         m_fGravity = 20;
-        m_fGravity = 10;
         m_fPlayerMaxHp = 500;
         m_fPlayerHp = m_fPlayerMaxHp;
         m_fscyPlayerMaxHp = m_fPlayerMaxHp / 2;
@@ -162,6 +155,9 @@ public class CPlayerManager : MonoBehaviour
         for (int i = 0; i < m_nPlayerShildHitDmg.Length; i++)
         {
             m_nPlayerShildHitDmg[i] = InspectorManager._InspectorManager.nDamgeShild[i];
+        }
+        for (int i = 0; i < m_nPlayerScytheHitDmg.Length; i++)
+        {
             m_nPlayerScytheHitDmg[i] = InspectorManager._InspectorManager.nDamgeScythe[i];
         }
 
@@ -169,7 +165,6 @@ public class CPlayerManager : MonoBehaviour
         EDITOR_MOVESPEED = InspectorManager._InspectorManager.fMoveSpeed;
         EDITOR_MOVEANGLE = InspectorManager._InspectorManager.fMoveAngle;
 
-        // 임시 hp
         m_fPlayerStm = Mathf.Clamp(m_fPlayerStm, 0, 100.0f);
 
         if (m_fPlayerHp <= 0)
@@ -234,74 +229,47 @@ public class CPlayerManager : MonoBehaviour
             }
         }
     }
-    // 플레이어 이동속도 설정
-    public float PlayerMoveSpeed(float speed)
-    {
-        m_fMoveSpeed = speed;
-        return m_fMoveSpeed;
-    }
-    // 플레이어 스테미나 처리
-    public float PlayerStm(float sizeStm)
-    {
-        m_fPlayerStm -= sizeStm;
-        m_fPlayerStm = Mathf.Clamp(m_fPlayerStm, 0, 100.0f);
-        return m_fPlayerStm;
-    }
+ 
     // 플레이어 데미지 처리 
     public float PlayerHp(float shake = 0.0f, int type = 1, float sizeHp = 0)
     {
         CCameraShake._instance.shake = shake;
 
+        // type = 1  플레이어 / type = 2 방패
         if (type == 1)
         {
-            if (!isPlayerHorn)
+            if (!isPlayerHorn) // 플레이어가 무적상태가 아닐때
             {
+                // 플레이어가 검방패 모드일때
                 if (_PlayerSwap._PlayerMode == PlayerMode.Shield)
                 {
+                    // hp내림
                     m_fPlayerHp -= sizeHp;
                 }
-                else
+                else // 낫 모드일때
                 {
+                    // hp 내림
                     m_fscyPlayerHp -= sizeHp;
                 }
             }
       
-
+            // 플레이어가 흘리기 중일경우
             if (_CPlayerAni_Contorl._isSweat)
             {
+                // 플레이어가 흘리기도중 반격을 할수있음
                 _CPlayerAni_Contorl.isSweatCount = true;
+                // 플레이어 무적 시작
                 PlayerHornOn();
-                {
-                    if (_PlayerSwap._PlayerMode == PlayerMode.Shield)
-                    {
-                        m_fPlayerHp -= sizeHp;
-                        if (_CPlayerAni_Contorl._isSweat)
-                        {
-                            CPlayerAttackEffect._instance.Effect9();
-                            isSweatTimeScal = true;
-                            _CPlayerAni_Contorl.isSweatCount = true;
-                            isPlayerHorn = true;
-                        }
-                    }
-
-                    else
-                    {
-                        m_fscyPlayerHp -= sizeHp;
-                        if (_CPlayerAni_Contorl._isSweat)
-                        {
-                            CPlayerAttackEffect._instance.Effect9();
-                            isSweatTimeScal = true;
-                            _CPlayerAni_Contorl.isSweatCount = true;
-                            isPlayerHorn = true;
-                        }
-                    }
-                }
+                // 이펙트 호출
+                CPlayerAttackEffect._instance.Effect9();
             }
         }
-
+        // 방패일때 데미지안들어가~
         else if (type == 2)
         {
+            // 방패모드 맞았을때 hit 출력
             _CPlayerShild.m_bShildCollider = true;
+            // 체력대신 스테미너 깎음
             m_fPlayerStm -= sizeHp * InspectorManager._InspectorManager.fShildDamge;
         }
 
@@ -320,25 +288,7 @@ public class CPlayerManager : MonoBehaviour
     {
         CCameraRayObj._instance.MaxCamera(hitDitance);
     }
-    
-    // 플레이어 스탯(데미지) 관리
-    public void PlayerStat(int dmg1, int dmg2, int dmg3, float speed, int type)
-    {
-        if(type == 1)
-        {
-            m_nPlayerShildHitDmg[0] = dmg1;
-            m_nPlayerShildHitDmg[1] = dmg2;
-            m_nPlayerShildHitDmg[2] = dmg2;
-        }
-        if(type == 2)
-        {
-            m_nPlayerScytheHitDmg[0] = dmg1;
-            m_nPlayerScytheHitDmg[1] = dmg2;
-            m_nPlayerScytheHitDmg[2] = dmg2;
-        }
-        m_fMoveSpeed = speed;
-        // 이펙트 넣어주기
-    }
+
     public void PlayerRotationSave()
     {
         if (m_bAttack)
@@ -366,7 +316,6 @@ public class CPlayerManager : MonoBehaviour
         }
     }
     // 쉴드 상태에서 n초간 카운터 어택 유지
-
     public void PlayerSound(int type)
     {
         if (CSoundManager._instance == null)
@@ -378,26 +327,30 @@ public class CPlayerManager : MonoBehaviour
     {
         CSoundManager._instance._AS_Audio.Stop();
     }
-
     public void StartShildCounter()
     {
         isCountAttack = true;
         StartCoroutine(CountAttackReturn());
     }
+    // 카운트어택을 사용할 수있는 시간
     IEnumerator CountAttackReturn()
     {
         yield return new WaitForSeconds(InspectorManager._InspectorManager.fCountAttackReturnTime);
         isCountAttack = false;
     }
 
+    // 플레이어 무적상태호출
     public void PlayerHornOn()
     {
         if (!_CPlayerAni_Contorl._isSweat)
             return;
 
+        // 흘리기도중
         if (_CPlayerAni_Contorl._isSweat)
         {
+            // 무적 시작
             isPlayerHorn = true;
+            // 일정시간뒤에 무적해제
             StartCoroutine("StartHorn");
         }
     }
@@ -405,24 +358,7 @@ public class CPlayerManager : MonoBehaviour
     IEnumerator StartHorn()
     {
         yield return new WaitForSeconds(InspectorManager._InspectorManager.fPlayerHornTime);
-        isPlayerHorn = false;
-        
-    }
-
-    public void SweatSlowTime()
-    {
-        if (!isSweatTimeScal)
-            return;
-        
-        fSweatSlowTime += Time.deltaTime;
-        TimeScalManager._instance.TimeScal(fSweatSlowTime += 0.2f);
-        if(fSweatSlowTime >= 0.1f)
-        {
-            TimeScalManager._instance.TimeScal(1f);
-            isSweatTimeScal = false;
-            fSweatSlowTime = 0.0f;
-        }
-
+        isPlayerHorn = false; // 무적해제
     }
 
 }

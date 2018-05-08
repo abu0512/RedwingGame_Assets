@@ -55,10 +55,10 @@ MonoBehaviour:
   fStmAutoTime: 0.1
   fStmDash: 35
   fRotation: 800
-  fMoveSpeed: 5
+  fMoveSpeed: 6
   fMoveAngle: 1
-  nDamgeShild: 320000003c00000046000000
-  nDamgeScythe: 46000000500000005a000000
+  nDamgeShild: 0100000001000000010000000100000001000000
+  nDamgeScythe: 010000000100000001000000
   nGroggyShild:
   - 3
   - 5
@@ -83,7 +83,7 @@ MonoBehaviour:
   fSweatStm: 0
   fShildRunDamge: 0
   fShildRunStm: 0
-  fPlayerHornTime: 0
+  fPlayerHornTime: 1
   nPlayerHitAddPower: 5
   fPlayerSweatCountTime: 1
   fLockOnSpeed: 5
