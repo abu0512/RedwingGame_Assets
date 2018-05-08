@@ -124,18 +124,18 @@ MonoBehaviour:
         temperature: 0
         tint: 0
         hueShift: 0
-        saturation: 1.138
-        contrast: 1.131
+        saturation: 1.148
+        contrast: 1.101
       channelMixer:
         red: {x: 1.076, y: 0.044, z: -0.07}
         green: {x: 0, y: 0.95, z: 0}
         blue: {x: -0.21, y: 0.07, z: 1.06}
-        currentEditingChannel: 0
+        currentEditingChannel: 2
       colorWheels:
         mode: 0
         log:
-          slope: {r: 0.9571878, g: 0.9340893, b: 1, a: -0.23855835}
-          power: {r: 0.86508584, g: 0.90923744, b: 1, a: -0.032608695}
+          slope: {r: 0.97323763, g: 0.9822453, b: 1, a: -0.23855835}
+          power: {r: 0.8902362, g: 0.86018187, b: 1, a: -0.032608695}
           offset: {r: 0.9439835, g: 0.978127, b: 1, a: 0.10526316}
         linear:
           lift: {r: 1, g: 1, b: 1, a: 0}
@@ -243,25 +243,7 @@ MonoBehaviour:
         hueVSsat:
           curve:
             serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 2
-              time: 0
-              value: 0.7556561
-              inSlope: 0.58069456
-              outSlope: 0.58069456
-              tangentMode: 0
-            - serializedVersion: 2
-              time: 0.19642857
-              value: 0.5253165
-              inSlope: -2.290166
-              outSlope: -2.290166
-              tangentMode: 0
-            - serializedVersion: 2
-              time: 0.4702381
-              value: 0.28481013
-              inSlope: 0.3917391
-              outSlope: 0.3917391
-              tangentMode: 0
+            m_Curve: []
             m_PreInfinity: 2
             m_PostInfinity: 2
             m_RotationOrder: 0
@@ -288,7 +270,7 @@ MonoBehaviour:
           m_Loop: 0
           m_ZeroValue: 0.5
           m_Range: 1
-        e_CurrentEditingCurve: 2
+        e_CurrentEditingCurve: 3
         e_CurveY: 1
         e_CurveR: 0
         e_CurveG: 0
