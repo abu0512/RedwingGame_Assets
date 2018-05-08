@@ -65,7 +65,7 @@ public class GuardMushroomEffect : MonoBehaviour
         {
             //_home.y -= 1.3f;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 ShildHitEffects[i].transform.position = EffectPosition.transform.position;
             }
@@ -81,6 +81,14 @@ public class GuardMushroomEffect : MonoBehaviour
             else if (CPlayerManager._instance.m_nAttackCombo == 3)
             {
                 ShildHitEffects[2].SetActive(true);
+            }
+            else if (CPlayerManager._instance.m_nAttackCombo == 4)
+            {
+                ShildHitEffects[3].SetActive(true);
+            }
+            else if (CPlayerManager._instance.m_nAttackCombo == 5)
+            {
+                ShildHitEffects[4].SetActive(true);
             }
         }
     }

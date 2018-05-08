@@ -52,7 +52,7 @@ public class ShildMushroomEffect : MonoBehaviour {
             _home.y -= 0.5f;
             _home.z += 1.2f;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 ShildHitEffects[i].transform.position = EffectPosition.transform.position;
             }
@@ -68,6 +68,14 @@ public class ShildMushroomEffect : MonoBehaviour {
             else if (CPlayerManager._instance.m_nAttackCombo == 3)
             {
                 ShildHitEffects[2].SetActive(true);
+            }
+            else if (CPlayerManager._instance.m_nAttackCombo == 4)
+            {
+                ShildHitEffects[3].SetActive(true);
+            }
+            else if (CPlayerManager._instance.m_nAttackCombo == 5)
+            {
+                ShildHitEffects[4].SetActive(true);
             }
         }
     }

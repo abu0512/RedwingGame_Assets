@@ -366,7 +366,7 @@ public class GuardMushroom : MonsterBase
     {
         base.Awake();
         _homePosition = (new Vector3(GoHomePositionX, GoHomePositionY, GoHomePositionZ));
-        Stat.MaxHp = 300f;
+        Stat.MaxHp = 500f;
         Stat.Hp = Stat.MaxHp;
         Stat.ChaseDistance = 20f;
         Stat.AttackDistance = 3.5f;
