@@ -53,9 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrowSpawnTime: 0.2
   ArrowFireTime: 0.4
-  ArrowSpeed: 30000
+  ArrowSpeed: 2000
   ArrowDamage: 20
-  OrbSpeed: 3000
+  OrbSpeed: 800
   OrbDamage: 20
   OrbLifeTime: 5
   OrbDealyTime: 0.5
@@ -63,7 +63,7 @@ MonoBehaviour:
   FootholdNextTime: 1
   FootholdDamage: 35
   FootholdDuration: 1
-  FootholdContinueTime: 10
+  FootholdContinueTime: 15
   CloseAttack0Damage: 2
   CloseAttack1Damage: 2
   TeleportDamage: 40
@@ -71,3 +71,4 @@ MonoBehaviour:
   GroggyDeleteTime: 10
   GroggyMaxValue: 20
   HitAnimStopDuration: 0.1
+  MonsterSpawnTime: 30

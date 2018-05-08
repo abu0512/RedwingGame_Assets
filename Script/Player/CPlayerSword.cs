@@ -96,5 +96,6 @@ public class CPlayerSword : CPlayerBase
         _SowrdCollder.enabled = false;
         _ScytheCollder.enabled = false;
         _shieldCollider.enabled = false;
+        _CounteCollder.enabled = false;
     }
 }

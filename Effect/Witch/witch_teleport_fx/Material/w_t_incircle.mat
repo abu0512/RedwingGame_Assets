@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: w_t_incircle
-  m_Shader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 49f33aec03c89bc45be463cecaa46487, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -42,6 +42,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: 8c17009f67443944bb4cbee8de3d3fd7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0.6666667}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Metal:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -66,7 +74,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -82,11 +90,21 @@ Material:
     - _Smooth: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _UVSec: 0
     - _ZWrite: 1
+    - _Zwrite: 0
+    - _rot1: 0
+    - _rot2: 0
+    - _tex1U: 0
+    - _tex1V: 0
+    - _tex2U: 0
+    - _tex2V: 0
+    - _tex3U: 0
+    - _tex3V: 0
+    - _tex3pow: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.27643543, g: 0.060393386, b: 0.31100208, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.6641988, g: 0.43382353, b: 1, a: 1}
-    - _TintColor: {r: 0.33366767, g: 0.11543037, b: 0.44852942, a: 1}
+    - _TintColor: {r: 0.1317951, g: 0, b: 0.16911763, a: 1}
