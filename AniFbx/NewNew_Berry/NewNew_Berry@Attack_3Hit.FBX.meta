@@ -330,6 +330,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.09071094
+        functionName: OnAttackEffect
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.21940927
         functionName: ShieldTrue
         data: 
@@ -362,14 +370,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.6340206
         functionName: RotationTrue
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.2468085
-        functionName: OnAttackEffect
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
           type: 3}

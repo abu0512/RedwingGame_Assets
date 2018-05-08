@@ -14,6 +14,7 @@ public class CPlayerAttackEffect : MonoBehaviour
 
     private void OnAttackEffect()
     {
+        //print(m_manager.m_nAttackCombo);    
         _attackEffect[m_manager.m_nAttackCombo].SetActive(true);
     }
 
