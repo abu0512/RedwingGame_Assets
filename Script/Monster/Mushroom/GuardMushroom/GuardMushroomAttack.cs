@@ -18,7 +18,7 @@ public class GuardMushroomAttack : GuardMushroomStateBase
        
     public void AttackCheck()
     {
-        if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance + 1.5f 
+        if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance + 4.5f 
             && GuardMushroom.PlayerisFront)
         {
             if (CPlayerManager._instance._PlayerAni_Contorl._PlayerAni_State_Shild == PlayerAni_State_Shild.Defense_ModeIdle)
@@ -35,10 +35,11 @@ public class GuardMushroomAttack : GuardMushroomStateBase
 
     void Update()
     {
+        GuardMushroom.TurnToDestination();
         GuardMushroom.GoToPullPush();
         GuardMushroom.NowisHit();
         GuardMushroom.PlayerisDead();
-        GuardMushroom.QueenisADead();
+        GuardMushroom.GetBerserkerMode();
 
         Dltime += Time.deltaTime;
 

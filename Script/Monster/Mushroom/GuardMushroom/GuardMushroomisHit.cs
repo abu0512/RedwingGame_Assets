@@ -17,9 +17,10 @@ public class GuardMushroomisHit : GuardMushroomStateBase
 
     void Update()
     {
+        GuardMushroom.TurnToHitDestination();
         GuardMushroom.NowisHit();
         GuardMushroom.GoToPullPush();
-        GuardMushroom.QueenisADead();
+        GuardMushroom.GetBerserkerMode();
 
         Dltime += Time.deltaTime;
 

@@ -63,7 +63,7 @@ public class GuardMushroomEffect : MonoBehaviour
 
         if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Shield)
         {
-            _home.y -= 1.3f;
+            //_home.y -= 1.3f;
 
             for (int i = 0; i < 3; i++)
             {

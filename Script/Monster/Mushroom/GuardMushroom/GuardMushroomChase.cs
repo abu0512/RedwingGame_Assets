@@ -7,6 +7,7 @@ public class GuardMushroomChase : GuardMushroomStateBase
     public override void BeginState()
     {
         base.BeginState();
+        GuardMushroom.GotoBerserker = true;
     }
 
     public override void EndState()
@@ -20,7 +21,7 @@ public class GuardMushroomChase : GuardMushroomStateBase
         GuardMushroom.ModeChange();
         GuardMushroom.NowisHit();
         GuardMushroom.PlayerisDead();
-        GuardMushroom.QueenisADead();
+        GuardMushroom.GetBerserkerMode();
 
         GuardMushroom.GoToDestination(GuardMushroom.Player.position, GuardMushroom.MStat.MoveSpeed, GuardMushroom.rotAnglePerSecond);
 

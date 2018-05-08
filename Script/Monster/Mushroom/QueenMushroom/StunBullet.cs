@@ -32,7 +32,7 @@ public class StunBullet : MonoBehaviour
     {
         _queenMushroom = queen;
         from.y += 0.6f;
-        from.x += 0.4f;
+        from.x += Random.Range(-1.2f, 1.2f);
         target.y = from.y;
         transform.position = from;
         _direction = (target - from).normalized;

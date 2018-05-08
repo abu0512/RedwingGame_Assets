@@ -56,6 +56,11 @@ public class ShildMushroom : MonsterBase
     private float _maxgroggy;
     public float MaxGroggy { set { _maxgroggy = value; } get { return _maxgroggy; } }
 
+    // 공격 상태 인 상황에서의 회전 속도
+    [SerializeField]
+    private float _attackrotangle;
+    public float AttackRotAngle { set { _attackrotangle = value; } get { return _attackrotangle; } }
+
     // 플레이어 캐릭터가 전방에 있는지 후방에 있는지(처리 = 내적)
     private bool _playerisfront;
     public bool PlayerisFront { set { _playerisfront = value; } get { return _playerisfront; } }
@@ -101,7 +106,7 @@ public class ShildMushroom : MonsterBase
         Quaternion lookRotation = Quaternion.LookRotation(Player.position - transform.position);
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
-            Time.deltaTime * rotAnglePerSecond);
+            Time.deltaTime * _attackrotangle);
     }
 
     public void MoveToDestination()
@@ -220,6 +225,7 @@ public class ShildMushroom : MonsterBase
         _attackTimer = 0;
         _angle = 180f;
         _groggy = 0;
+        _attackrotangle = 100f;
         _maxgroggy = 105f;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _animParamID = Animator.StringToHash("CurrentState");

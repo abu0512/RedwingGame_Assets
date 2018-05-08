@@ -144,6 +144,7 @@ public class CPlayerManager : MonoBehaviour
         m_fPlayerMaxHp = 500;
         m_fPlayerHp = m_fPlayerMaxHp;
         m_fscyPlayerMaxHp = m_fPlayerMaxHp / 2;
+        m_fscyPlayerHp = m_fscyPlayerMaxHp;
         m_fPlayerMaxStm = 100;
         m_fPlayerStm = m_fPlayerMaxStm;
         m_fPlayerGauge = 100;
@@ -305,7 +306,7 @@ public class CPlayerManager : MonoBehaviour
             m_fPlayerStm -= sizeHp * InspectorManager._InspectorManager.fShildDamge;
         }
 
-        if (m_fPlayerHp <= 0)
+        if (m_fPlayerHp <= 0 || m_fscyPlayerHp <= 0)
             isDead = true;
 
         return m_fPlayerHp;

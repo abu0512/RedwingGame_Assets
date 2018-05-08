@@ -90,15 +90,15 @@ public class Stage1 : MonoBehaviour
         }
     }*/
 
-    void BulletPoolSet()
-    {
-        //if(QueenCount <= 0)
-        //    BulletPool.SetActive(false);
-        //else
-        //{
-        //    BulletPool.SetActive(true);
-        //}
-    }
+    //void BulletPoolSet()
+    //{
+    //    if(QueenCount <= 0)
+    //        BulletPool.SetActive(false);
+    //    else
+    //    {
+    //        BulletPool.SetActive(true);
+    //    }
+    //}
 
     void HealTimeCheck()
     {
@@ -147,7 +147,7 @@ public class Stage1 : MonoBehaviour
 
     }
 
-    void GuardModeChange()
+   /* void GuardModeChange()
     {
         if (QueenCount > 0)
             return;
@@ -175,7 +175,7 @@ public class Stage1 : MonoBehaviour
         }
 
         _changeMode = true;
-    }
+    }*/
 
     //void OnTriggerEnter(Collider other)
     //{
@@ -187,10 +187,10 @@ public class Stage1 : MonoBehaviour
 
     void Update()
     {
-        BulletPoolSet();
+        //BulletPoolSet();
         HealTimeCheck();
         HealTimeStart();
-        GuardModeChange();
+        //GuardModeChange();
     }
 
     public void InitMonsters()

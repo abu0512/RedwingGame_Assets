@@ -16,7 +16,7 @@ public class ShildMushroomAttack : ShildMushroomStateBase
 
     public void ShildAttackCheck()
     {
-        if (ShildMushroom.GetDistanceFromPlayer() < ShildMushroom.Stat.AttackDistance + 1.5f
+        if (ShildMushroom.GetDistanceFromPlayer() < ShildMushroom.Stat.AttackDistance + 4.5f
             && ShildMushroom.PlayerisFront)
         { 
             if (CPlayerManager._instance._PlayerAni_Contorl._PlayerAni_State_Shild == PlayerAni_State_Shild.Defense_ModeIdle)
@@ -33,6 +33,7 @@ public class ShildMushroomAttack : ShildMushroomStateBase
 
     void Update()
     {
+        ShildMushroom.TurnToDestination();
         ShildMushroom.GroggyCheck();
         ShildMushroom.PlayerisDead();
         Dltime += Time.deltaTime;

@@ -6,10 +6,12 @@ public class GuardMushroomBerserker : GuardMushroomStateBase
 {
     GuardMushroomEffect _guardeffect;
     Vector3 SavePosition;
+    private int RandomeMode;
 
     public override void BeginState()
     {
         base.BeginState();
+        RandomeMode = Random.Range(0, 2);
         _guardeffect = GetComponent<GuardMushroomEffect>();      
         SavePosition = transform.position;
         Dltime = 0;
@@ -28,13 +30,14 @@ public class GuardMushroomBerserker : GuardMushroomStateBase
 
     void Update()
     {
+        Debug.Log(RandomeMode);
         Dltime += Time.deltaTime;
         GuardMushroom.GoToDestination(SavePosition, 0, 0);
 
         if (Dltime > 1.85f)
         {
             GuardMushroom.ifEndBerserker = true;
-            if (GuardMushroom.QueenisAllDead)
+            if (RandomeMode == 0)
             {
                 GuardMushroom.SetState(GuardMushroomState.BChase);
                 return;

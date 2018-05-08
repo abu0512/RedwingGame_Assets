@@ -28,8 +28,9 @@ public class PlayerParams : CharacterUI
 
         names = "Player";
         maxHP = CPlayerManager._instance.m_PlayerMaxHp;
-        curHP = CPlayerManager._instance.m_PlayerHp;
+        curHP = maxHP;
         ScymaxHP = CPlayerManager._instance.m_ScyPlayerMaxHp;
+        ScycurHP = ScymaxHP;
         maxSP = CPlayerManager._instance.m_PlayerMaxStm;
         curSP = maxSP;
         PowerGauge = CPlayerManager._instance._nPowerGauge;

@@ -132,6 +132,14 @@ public class QueenMushroom : MonsterBase
             Time.deltaTime * rotAnglePerSecond);
     }
 
+    public void TurnToHitDestination()
+    {
+        Quaternion lookRotation = Quaternion.LookRotation(Player.position - transform.position);
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
+            Time.deltaTime * 1000f);
+    }
+
     public void MoveToDestination()
     {
         _controller.Move(transform.forward * _stat.MoveSpeed * Time.deltaTime);

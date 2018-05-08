@@ -6,16 +6,82 @@ using UnityEngine;
 public class QueenMushroomAttack : QueenMushroomStateBase
 {
     private float RandomNum;
+    private float _imsitime;
+    private int _bulletcount;
+    private bool _stun;
+    private bool _notstun;
+    private bool _exitattack;
 
     public override void BeginState()
     {
         Dltime = 0f;
+        _bulletcount = 0;
+        _imsitime = 0;
         RandomNum = Random.Range(0, 9f);
     }
 
     public override void EndState()
     {
         base.EndState();
+        _bulletcount = 0;
+        _stun = false;
+        _notstun = false;
+        _exitattack = false;
+    }
+
+    /*
+    private IEnumerator Bulletset()
+    {
+        for(int i = 0; i < 1; i++)
+        {
+            Stage1.I.BulletPool.SetBullet(_QueenMushroom, transform.position, QueenMushroom.Player.position);
+        }
+        yield return new WaitForSeconds(0.2f);
+        _bulletcount++;
+    }
+
+    private IEnumerator StunBulletset()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Stage1.I.BulletPool.SetStunBullet(_QueenMushroom, transform.position, QueenMushroom.Player.position);
+        _bulletcount++;
+    }*/
+
+    public void StopCor()
+    {
+        if (_bulletcount > 4)
+        {
+            //StopCoroutine(StunBulletset());
+            //StopCoroutine(Bulletset());
+            _exitattack = true;
+        }
+    }
+
+    public void SetAttack()
+    {
+        StopCor();
+        _imsitime += Time.deltaTime;
+        if (_stun && _bulletcount < 5)
+        {
+            //StartCoroutine(StunBulletset());
+            if (_imsitime > 0.15f)
+            {
+                Stage1.I.BulletPool.SetStunBullet(_QueenMushroom, transform.position, QueenMushroom.Player.position);
+                _bulletcount++;
+                _imsitime = 0;
+            }
+        }
+
+        else if(_notstun && _bulletcount < 5)
+        {
+            //StartCoroutine(Bulletset());
+            if (_imsitime > 0.15f)
+            {
+                Stage1.I.BulletPool.SetBullet(_QueenMushroom, transform.position, QueenMushroom.Player.position);
+                _bulletcount++;
+                _imsitime = 0;
+            }
+        }
     }
 
     public void StartAttack()
@@ -23,13 +89,13 @@ public class QueenMushroomAttack : QueenMushroomStateBase
         QueenMushroom.AttackStack++;
         if (QueenMushroom.AttackStack > 2f && RandomNum > 2f)
         {
-            Stage1.I.BulletPool.SetStunBullet(_QueenMushroom, transform.position, QueenMushroom.Player.position);
+            _stun = true;
             QueenMushroom.AttackStack = 0;
         }
 
         else
         {
-            Stage1.I.BulletPool.SetBullet(_QueenMushroom, transform.position, QueenMushroom.Player.position);
+            _notstun = true;
         }
 
         QueenMushroom.AttackTimer = 0f;
@@ -38,26 +104,23 @@ public class QueenMushroomAttack : QueenMushroomStateBase
 
     void Update()
     {
-        Dltime += Time.deltaTime;
-
+        SetAttack();
         QueenMushroom.GoToPullPush();
         QueenMushroom.PlayerisDead();
         QueenMushroom.TurnToDestination();
         QueenMushroom.TimeToHeal();
 
-        if (Dltime > 1.5f)
+        if (_exitattack)
         {
             if (QueenMushroom.GetDistanceFromPlayer() > QueenMushroom.MStat.AttackDistance)
             {
                 QueenMushroom.SetState(QueenMushroomState.Chase);
-                Dltime = 0;
                 return;
             }
 
             else
             {
                 QueenMushroom.SetState(QueenMushroomState.Return);
-                Dltime = 0;
                 return;
             }
         }

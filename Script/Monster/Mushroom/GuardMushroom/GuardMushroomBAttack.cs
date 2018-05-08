@@ -17,7 +17,8 @@ public class GuardMushroomBAttack : GuardMushroomStateBase
 
     public void BAttackCheck()
     {
-        if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance + 2.0f)
+        if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance + 4.5f 
+            && GuardMushroom.PlayerisFront)
         {
             GuardMushroom.AttackTimer = 0f;
 
@@ -35,13 +36,14 @@ public class GuardMushroomBAttack : GuardMushroomStateBase
 
     void Update()
     {
+        GuardMushroom.TurnToDestination();
         GuardMushroom.GoToPullPush();
         GuardMushroom.NowisHit();
         GuardMushroom.PlayerisDead();
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 0.78f)
+        if (Dltime > 0.4f)
         {
                 GuardMushroom.SetState(GuardMushroomState.BChase);
                 Dltime = 0;

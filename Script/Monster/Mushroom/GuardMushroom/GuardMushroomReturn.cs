@@ -20,7 +20,7 @@ public class GuardMushroomReturn : GuardMushroomStateBase
         GuardMushroom.GoToPullPush();
         GuardMushroom.NowisHit();
         GuardMushroom.PlayerisDead();
-        GuardMushroom.QueenisADead();
+        GuardMushroom.GetBerserkerMode();
 
         if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance && GuardMushroom.AttackTimer > GuardMushroom.AttackDelay)
         {

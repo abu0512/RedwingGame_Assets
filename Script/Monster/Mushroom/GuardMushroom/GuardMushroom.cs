@@ -69,6 +69,25 @@ public class GuardMushroom : MonsterBase
     private float _berserkermovespeed;
     public float BerserkerMoveSpeed { set { _berserkermovespeed = value; } get { return _berserkermovespeed; } }
 
+    // 공격 상태 인 상황에서의 회전 속도
+    [SerializeField]
+    private float _attackrotangle;
+    public float AttackRotAngle { set { _attackrotangle = value; } get { return _attackrotangle; } }
+
+    // 버서커 모드 전환 대기 시간
+    private float _berserkertime;
+    public float BerserkerTime { set { _berserkertime = value; } get { return _berserkertime; } }
+
+    // 버서커 모드 전환 대기 입력 시간
+    [SerializeField]
+    private float _berserkerctime;
+    public float BerserkerCTime { set { _berserkerctime = value; } get { return _berserkerctime; } }
+
+    // 버서커 모드 전환 대기 시간
+    [SerializeField]
+    private bool _gotoberserker;
+    public bool GotoBerserker { set { _gotoberserker = value; } get { return _gotoberserker; } }
+
     // 버서커 모드가 끝났는지
     private bool _ifendberserker;
     public bool ifEndBerserker { set { _ifendberserker = value; } get { return _ifendberserker; } }
@@ -85,7 +104,7 @@ public class GuardMushroom : MonsterBase
     private bool _CharacterisDead;
     public bool CharacterisDead { set { _CharacterisDead = value; } get { return _CharacterisDead; } }
 
-    public float rotAnglePerSecond = 30f;// 몬스터 초당 회전 속도
+    public float rotAnglePerSecond;// 몬스터 초당 회전 속도
     public bool isDead; // 죽었는지 체크
     public bool QueenisAllDead; // 공주 버섯이 전부 죽었는지 체크해서 버서커 모드로 보내기 위한 bool
     public bool SBombing; // 공주 버섯이 전부 죽었는지 체크해서 자폭 모드로 보내기 위한 bool
@@ -214,7 +233,15 @@ public class GuardMushroom : MonsterBase
         Quaternion lookRotation = Quaternion.LookRotation(Player.position - transform.position);
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
-            Time.deltaTime * rotAnglePerSecond);
+            Time.deltaTime * _attackrotangle);
+    }
+
+    public void TurnToHitDestination()
+    {
+        Quaternion lookRotation = Quaternion.LookRotation(Player.position - transform.position);
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
+            Time.deltaTime * 1000f);
     }
 
     public void MoveToDestination()
@@ -285,15 +312,23 @@ public class GuardMushroom : MonsterBase
 
     }
 
-    public void QueenisADead()
+    public void GetBerserkerMode()
     {
         if (!_ifendberserker)
         {
-            if (QueenisAllDead || SBombing)
+            if (_berserkertime > _berserkerctime)
             {
                 SetState(GuardMushroomState.Berserker);
                 return;
             }
+        }
+    }
+
+    public void BerserkerTimeStart()
+    {
+        if(_gotoberserker)
+        {
+            _berserkertime += Time.deltaTime;
         }
     }
 
@@ -331,7 +366,7 @@ public class GuardMushroom : MonsterBase
     {
         base.Awake();
         _homePosition = (new Vector3(GoHomePositionX, GoHomePositionY, GoHomePositionZ));
-        Stat.MaxHp = 300;
+        Stat.MaxHp = 300f;
         Stat.Hp = Stat.MaxHp;
         Stat.ChaseDistance = 20f;
         Stat.AttackDistance = 3.5f;
@@ -344,6 +379,8 @@ public class GuardMushroom : MonsterBase
         _berserkerattackDamage = 20f;
         _berserkerattackDelay = 2f;
         _angle = 180f;
+        _attackrotangle = 100f;
+        _berserkertime = 0;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _animParamID = Animator.StringToHash("CurrentState");
         isDead = false;
@@ -381,6 +418,7 @@ public class GuardMushroom : MonsterBase
     {
         Yggap(transform.position);
         FrontBackCheck();
+        BerserkerTimeStart();
         AttackTimer += Time.deltaTime;
 
         if (currentState == GuardMushroomState.Sbombing)
