@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     protected QueenMushroom _queenMushroom;
     protected Vector3 _direction;
+    private Vector3 _target;
+
     [SerializeField]
     protected float _speed;
 
@@ -21,7 +23,7 @@ public class Bullet : MonoBehaviour
         DeleteTime += Time.deltaTime;
         transform.Translate(_direction * _speed * Time.deltaTime);
 
-        if (DeleteTime >= 4f)
+        if (DeleteTime >= 5f)
         {
             gameObject.SetActive(false);
             DeleteTime = 0;
@@ -32,6 +34,7 @@ public class Bullet : MonoBehaviour
     {
         _queenMushroom = queen;
         from.y += 0.6f;
+        from.z += 0.3f;
         from.x += Random.Range(-1.2f, 1.2f);
         target.y = from.y;
         transform.position = from;

@@ -35,10 +35,11 @@ public class MushroomAnimatorEvent : MonoBehaviour
     void QueenHitCheck()
     {
         QueenMushroomAttack _QueenMAttaked = _QueenMushroom.GetCurrentState() as QueenMushroomAttack;
-        if (_QueenMAttaked != null)
-        {
-            Debug.Log("Not null");
-        }
+    }
+
+    void QueenSHitCheck()
+    {
+        QueenMushroomAttack2 _QueenMSAttaked = _QueenMushroom.GetCurrentState() as QueenMushroomAttack2;
     }
 
     void QueenHealCheck()

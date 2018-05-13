@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class QueenMushroomReturn : QueenMushroomStateBase
 {
+    public float _attackpattern;
+
     public override void BeginState()
     {
+        base.BeginState();
+        _attackpattern = Random.Range(0, 10f);
     }
 
     public override void EndState()
@@ -21,9 +25,15 @@ public class QueenMushroomReturn : QueenMushroomStateBase
 
         if (QueenMushroom.GetDistanceFromPlayer() < QueenMushroom.MStat.AttackDistance)
         {
-            if (QueenMushroom.AttackTimer > QueenMushroom.AttackDelay)
+            if (QueenMushroom.AttackTimer > QueenMushroom.AttackDelay && _attackpattern > 4f)
             {
                 QueenMushroom.SetState(QueenMushroomState.Attack);
+                return;
+            }
+
+            else if (QueenMushroom.AttackTimer > QueenMushroom.AttackDelay && _attackpattern < 4f)
+            {
+                QueenMushroom.SetState(QueenMushroomState.Attack2);
                 return;
             }
         }

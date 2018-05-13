@@ -9,6 +9,7 @@ public enum QueenMushroomState
     Idle = 0,
     Chase,
     Attack,
+    Attack2,
     Return,
     Healing,
     PP
@@ -58,8 +59,8 @@ public class QueenMushroom : MonsterBase
     public float AttackTimer { set { _attackTimer = value; } get { return _attackTimer; } }
 
     // 공격 횟수
-    float _attackStack;
-    public float AttackStack { set { _attackStack = value; } get { return _attackStack; } }
+    int _attackStack;
+    public int AttackStack { set { _attackStack = value; } get { return _attackStack; } }
 
     // 힐 딜레이 시간
     float _hearTimer;
@@ -291,12 +292,12 @@ public class QueenMushroom : MonsterBase
         base.Awake();
         _homePosition = (new Vector3(GoHomePositionX, GoHomePositionY, GoHomePositionZ));
         _stat.ChaseDistance = 20f;
-        _stat.AttackDistance = 10f;
+        _stat.AttackDistance = 15f;
         _stat.MoveSpeed = 3.5f;
         _stat.MaxHp = 500f;
         _stat.Hp = _stat.MaxHp;
         _attackDamage = 10f;
-        _attackDelay = 2.5f;
+        _attackDelay = 3f;
         _attackTimer = 0;
         _attackStack = 0;
         _hearTimer = 0;
@@ -339,6 +340,7 @@ public class QueenMushroom : MonsterBase
 
     protected override void Update()
     {
+        print(_attackStack);
         _attackTimer += Time.deltaTime;
         _hearTimer += Time.deltaTime;
 
