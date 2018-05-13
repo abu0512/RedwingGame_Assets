@@ -72,11 +72,13 @@ public class CPlayerMove : CPlayerBase
             !Input.GetKey(KeyCode.W) &&
             !Input.GetKey(KeyCode.S) &&
             _PlayerManager.m_bMove)
+            {
 
-            if (_PlayerManager._PlayerSwap._PlayerMode == PlayerMode.Shield)
-                _PlayerManager._PlayerAni_Contorl._PlayerAni_State_Shild = PlayerAni_State_Shild.IdleRun;
-            else
-                _PlayerManager._PlayerAni_Contorl._PlayerAni_State_Scythe = PlayerAni_State_Scythe.IdleRun;
+                if (_PlayerManager._PlayerSwap._PlayerMode == PlayerMode.Shield)
+                    _PlayerManager._PlayerAni_Contorl._PlayerAni_State_Shild = PlayerAni_State_Shild.IdleRun;
+                else
+                    _PlayerManager._PlayerAni_Contorl._PlayerAni_State_Scythe = PlayerAni_State_Scythe.IdleRun;
+            }
         }
     }
 

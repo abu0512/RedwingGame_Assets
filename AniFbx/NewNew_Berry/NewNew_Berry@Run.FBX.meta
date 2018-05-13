@@ -303,7 +303,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.39285716
+      - time: 0.46222132
         functionName: MoveSoundPlay
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
@@ -311,7 +311,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8826531
+      - time: 0.9693583
         functionName: MoveSoundPlay
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,

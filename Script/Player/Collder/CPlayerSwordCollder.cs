@@ -19,6 +19,7 @@ public class CPlayerSwordCollder : MonoBehaviour
                     other.GetComponent<MonsterBase>().isHit = true;
                     other.GetComponent<GuardMushroomEffect>().GuardMHitEffect();
                     other.GetComponent<GuardMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo]);
+                    SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
                 }
 
                 else if (other.tag == "Queen")
@@ -26,6 +27,7 @@ public class CPlayerSwordCollder : MonoBehaviour
                     other.GetComponent<MonsterBase>().isHit = true;
                     other.GetComponent<QueenMushroomEffect>().QueenMHitEffect();
                     other.GetComponent<QueenMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo]);
+                    SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
                 }
 
                 else if (other.tag == "ShildMushroom")
@@ -51,6 +53,7 @@ public class CPlayerSwordCollder : MonoBehaviour
                     other.GetComponent<GuardMushroomEffect>().GuardMHitEffect();
                     other.GetComponent<GuardMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeScythe[nCombo]);
                     CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
+                    SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
                 }
 
                 else if (other.tag == "Queen")
@@ -59,6 +62,7 @@ public class CPlayerSwordCollder : MonoBehaviour
                     other.GetComponent<QueenMushroomEffect>().QueenMHitEffect();
                     other.GetComponent<QueenMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeScythe[nCombo]);
                     CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
+                    SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
                 }
 
                 else if (other.tag == "ShildMushroom")
