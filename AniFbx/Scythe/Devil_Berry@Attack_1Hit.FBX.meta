@@ -329,6 +329,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.20231213
+        functionName: SoundType
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
+          type: 3}
+        floatParameter: 0
+        intParameter: 7
+        messageOptions: 0
       - time: 0.22048998
         functionName: ScytheTrue
         data: 
@@ -345,11 +353,10 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.20231213
-        functionName: SoundType
+      - time: 0.33570033
+        functionName: AttackEnd
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
-          type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 7
         messageOptions: 0

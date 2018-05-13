@@ -10,6 +10,13 @@ public class CPlayerAttackEffect : MonoBehaviour
 
     public GameObject[] _AttackEffect;
     public GameObject[] _ScytheAttackEffect;
+    public GameObject[] _attackEffect;
+
+    private void OnAttackEffect()
+    {
+        //print(m_manager.m_nAttackCombo);    
+        _attackEffect[m_manager.m_nAttackCombo].SetActive(true);
+    }
 
     private void Start()
     {
@@ -41,6 +48,8 @@ public class CPlayerAttackEffect : MonoBehaviour
         {
             for (int i = 3; i < _AttackEffect.Length - 1; i++)
                 _AttackEffect[i].SetActive(false);
+            for (int i = 0; i < _attackEffect.Length; i++)
+                _attackEffect[i].SetActive(false);
         }
         else
         {

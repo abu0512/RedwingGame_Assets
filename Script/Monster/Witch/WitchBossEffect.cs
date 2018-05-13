@@ -14,8 +14,8 @@ public class WitchBossEffect : MonoBehaviour
 
     void Start ()
     {
-        _shieldEffectTime = new float[3];
-        _scytheEffectTime = new float[3];
+        _shieldEffectTime = new float[_shieldEffect.Length];
+        _scytheEffectTime = new float[_scytheEffect.Length];
 
         foreach (GameObject obj in _shieldEffect)
         {

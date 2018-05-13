@@ -16,7 +16,7 @@ public class InspectorManager : MonoBehaviour
 
     public int[] nDamgeShild = new int[5];
     public int[] nDamgeScythe = new int[3];
-    public float[] nGroggyShild = new float[3];
+    public float[] nGroggyShild = new float[5];
     public float[] nGroggyScythe = new float[3];
 
     public float fShildDamge;

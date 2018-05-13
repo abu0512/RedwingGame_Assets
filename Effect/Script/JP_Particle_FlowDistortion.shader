@@ -157,7 +157,7 @@ Shader "jpshader/Particle/JP_FlowDistortion" {
 
 				half4 e = tex2D (_MainTex2, RotateScrollUV2 + float2(customdata2.y,customdata2.z));
 				e = e *2-1;
-				e *= _tex2pow + customdata2.x;
+				e *=_tex2pow + customdata2.x;
 
 
 
