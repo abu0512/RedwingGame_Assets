@@ -60,7 +60,6 @@ public class PlayerParams : CharacterUI
         {
             HPBar.fillAmount = curHP / maxHP;
         }
-
         else
         {
             HPBar.fillAmount = ScycurHP / ScymaxHP;
@@ -94,8 +93,10 @@ public class PlayerParams : CharacterUI
         {
             float i = PowerGauge - 100;
 
-            GaugeBar[0].fillAmount = 1 / 1;
-            GaugeBar[1].fillAmount = 1 / 1;
+            for (int j = 0; j < 2; j++)
+            {
+                GaugeBar[j].fillAmount = 1 / 1;
+            }
             GaugeBar[2].fillAmount = i / 50;
             for (int j = 3; j < GaugeBar.Length; j++)
             {
@@ -106,9 +107,10 @@ public class PlayerParams : CharacterUI
         {
             float i = PowerGauge - 150;
 
-            GaugeBar[0].fillAmount = 1 / 1;
-            GaugeBar[1].fillAmount = 1 / 1;
-            GaugeBar[2].fillAmount = 1 / 1;
+            for (int j = 0; j < 3; j++)
+            {
+                GaugeBar[j].fillAmount = 1 / 1;
+            }
             GaugeBar[3].fillAmount = i / 50;
             for (int j = 4; j < GaugeBar.Length; j++)
             {
@@ -119,10 +121,10 @@ public class PlayerParams : CharacterUI
         {
             float i = PowerGauge - 200;
 
-            GaugeBar[0].fillAmount = 1 / 1;
-            GaugeBar[1].fillAmount = 1 / 1;
-            GaugeBar[2].fillAmount = 1 / 1;
-            GaugeBar[3].fillAmount = 1 / 1;
+            for (int j = 0; j < 4; j++)
+            {
+                GaugeBar[j].fillAmount = 1 / 1;
+            }
             GaugeBar[4].fillAmount = i / 50;
             for (int j = 5; j < GaugeBar.Length; j++)
             {
@@ -133,11 +135,10 @@ public class PlayerParams : CharacterUI
         {
             float i = PowerGauge - 250;
 
-            GaugeBar[0].fillAmount = 1 / 1;
-            GaugeBar[1].fillAmount = 1 / 1;
-            GaugeBar[2].fillAmount = 1 / 1;
-            GaugeBar[3].fillAmount = 1 / 1;
-            GaugeBar[4].fillAmount = 1 / 1;
+            for(int j = 0; j < 5; j++)
+            {
+                GaugeBar[j].fillAmount = 1 / 1;
+            }
             GaugeBar[5].fillAmount = i / 50;
         }
     }

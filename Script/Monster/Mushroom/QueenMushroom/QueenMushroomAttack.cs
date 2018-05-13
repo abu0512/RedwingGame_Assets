@@ -14,10 +14,11 @@ public class QueenMushroomAttack : QueenMushroomStateBase
 
     public override void BeginState()
     {
-        Dltime = 0f;
+        Dltime = 0;
         _bulletcount = 0;
         _imsitime = 0;
         RandomNum = Random.Range(0, 9f);
+        QueenMushroom.AttackStack++;
     }
 
     public override void EndState()
@@ -27,6 +28,7 @@ public class QueenMushroomAttack : QueenMushroomStateBase
         _stun = false;
         _notstun = false;
         _exitattack = false;
+        QueenMushroom.AttackTimer = 0f;
     }
 
     /*
@@ -86,8 +88,7 @@ public class QueenMushroomAttack : QueenMushroomStateBase
 
     public void StartAttack()
     {
-        QueenMushroom.AttackStack++;
-        if (QueenMushroom.AttackStack > 2f && RandomNum > 2f)
+        if (QueenMushroom.AttackStack > 2 && RandomNum > 2f)
         {
             _stun = true;
             QueenMushroom.AttackStack = 0;
@@ -97,9 +98,6 @@ public class QueenMushroomAttack : QueenMushroomStateBase
         {
             _notstun = true;
         }
-
-        QueenMushroom.AttackTimer = 0f;
-        Dltime = 0f;
     }
 
     void Update()

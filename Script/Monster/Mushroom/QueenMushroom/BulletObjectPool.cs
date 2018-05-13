@@ -6,6 +6,8 @@ public class BulletObjectPool : MonoBehaviour
 {
     private List<Bullet> _bullets = new List<Bullet>();
     private List<StunBullet> _stunBullets = new List<StunBullet>();
+    private List<SBullet> _sbullets = new List<SBullet>();
+    private List<SStunBullet> _sstunBullets = new List<SStunBullet>();
 
     void Awake()
     {
@@ -20,6 +22,19 @@ public class BulletObjectPool : MonoBehaviour
             s.gameObject.SetActive(false);
 
             _stunBullets.Add(s);
+        }
+
+        foreach (SBullet sb in GetComponentsInChildren<SBullet>())
+        {
+            sb.gameObject.SetActive(false);
+            _sbullets.Add(sb);
+        }
+
+        foreach (SStunBullet ss in GetComponentsInChildren<SStunBullet>())
+        {
+            ss.gameObject.SetActive(false);
+
+            _sstunBullets.Add(ss);
         }
     }
 
@@ -37,6 +52,22 @@ public class BulletObjectPool : MonoBehaviour
         stunbullet.InitStunBullet(queen, from, target);
 
         return stunbullet;
+    }
+
+    public SBullet SetSBullet(QueenMushroom queen, Vector3 from, float rotate)
+    {
+        SBullet sbullet = GetSBullet();
+        sbullet.InitSBullet(queen, from, rotate);
+
+        return sbullet;
+    }
+
+    public SStunBullet SetSStunBullet(QueenMushroom queen, Vector3 from, float rotate)
+    {
+        SStunBullet sstunbullet = GetSStunBullet();
+        sstunbullet.InitSStunBullet(queen, from, rotate);
+
+        return sstunbullet;
     }
 
     private Bullet GetBullet()
@@ -79,6 +110,46 @@ public class BulletObjectPool : MonoBehaviour
         return stunbullet;
     }
 
+    private SBullet GetSBullet()
+    {
+        SBullet sbullet = null;
+
+        foreach (SBullet sb in _sbullets)
+        {
+            if (sb.gameObject.activeInHierarchy)
+                continue;
+
+            sbullet = sb;
+        }
+
+        if (sbullet == null)
+            sbullet = CreateSBullet();
+
+        sbullet.gameObject.SetActive(true);
+
+        return sbullet;
+    }
+
+    private SStunBullet GetSStunBullet()
+    {
+        SStunBullet sstunbullet = null;
+
+        foreach (SStunBullet ss in _sstunBullets)
+        {
+            if (ss.gameObject.activeInHierarchy)
+                continue;
+
+            sstunbullet = ss;
+        }
+
+        if (sstunbullet == null)
+            sstunbullet = CreateSStunBullet();
+
+        sstunbullet.gameObject.SetActive(true);
+
+        return sstunbullet;
+    }
+
     private StunBullet CreateStunBullet()
     {
         StunBullet stunbullet = null;
@@ -101,5 +172,29 @@ public class BulletObjectPool : MonoBehaviour
         _bullets.Add(bullet);
 
         return bullet;
+    }
+
+    private SStunBullet CreateSStunBullet()
+    {
+        SStunBullet sstunbullet = null;
+        GameObject sstunbulletObject = (GameObject)Resources.Load("Prefabs/Bullets/SStunBullet");
+        sstunbullet = Instantiate(sstunbulletObject).GetComponent<SStunBullet>();
+        sstunbullet.transform.SetParent(transform);
+        sstunbullet.gameObject.SetActive(false);
+        _sstunBullets.Add(sstunbullet);
+
+        return sstunbullet;
+    }
+
+    private SBullet CreateSBullet()
+    {
+        SBullet sbullet = null;
+        GameObject sbulletObject = (GameObject)Resources.Load("Prefabs/Bullets/SBullet");
+        sbullet = Instantiate(sbulletObject).GetComponent<SBullet>();
+        sbullet.transform.SetParent(transform);
+        sbullet.gameObject.SetActive(false);
+        _sbullets.Add(sbullet);
+
+        return sbullet;
     }
 }
