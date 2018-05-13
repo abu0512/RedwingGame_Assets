@@ -30,11 +30,11 @@ MonoBehaviour:
   - {fileID: 114616369039355464}
   - {fileID: 114726890636155968}
   - {fileID: 114691514040894608}
-  - {fileID: 114722384085569390}
   - {fileID: 114352070165953746}
+  - {fileID: 114314767942354904}
   MasterBankRef: {fileID: 114742814428529700}
   StringsBankRef: {fileID: 114677187662571656}
-  stringsBankWriteTime: 636607460260000000
+  stringsBankWriteTime: 636618260723956013
   cacheVersion: 2
 --- !u!114 &114028265406090602
 MonoBehaviour:
@@ -114,7 +114,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114740189923116854}
+  - {fileID: 114974892101798488}
   MinDistance: 1
   MaxDistance: 20
   Length: 400
@@ -140,6 +140,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 375
+--- !u!114 &114314767942354904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Monster/Hited/Mon_HitSound
+  guid: 40a9d908f698274fbcbe7fc8bb2c644d
+  Banks:
+  - {fileID: 114742814428529700}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 626
 --- !u!114 &114352070165953746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +184,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 489
+--- !u!114 &114389252177753048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114412593299141592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +218,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114836960403428816}
+  - {fileID: 114894833255635418}
   MinDistance: 1
   MaxDistance: 20
   Length: 48
@@ -226,7 +263,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114767861604294118}
+  - {fileID: 114785371684366616}
   MinDistance: 1
   MaxDistance: 20
   Length: 400
@@ -242,11 +279,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: redwing_fmodsound\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636607460260000000
+  lastModified: 636618260723956013
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1660
+    Value: 1654
   Exists: 1
 --- !u!114 &114688022554766280
 MonoBehaviour:
@@ -285,7 +322,7 @@ MonoBehaviour:
   guid: ec1309968883374f8ec8847e0acd05cd
   Banks:
   - {fileID: 114742814428529700}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
@@ -305,8 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/Monster/Hited/Monster_HitedTest
   guid: f7dd9054a3fa15499a49e3264cb23e02
-  Banks:
-  - {fileID: 114742814428529700}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -364,11 +400,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Ahn\Documents\UnityProject\RedwingProto_Git\redwing_fmodsound\Build\Desktop\Master
     Bank.bank
-  lastModified: 636607460260000000
+  lastModified: 636618260723956013
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 544352
+    Value: 365056
   Exists: 1
 --- !u!114 &114746427998331672
 MonoBehaviour:
@@ -426,7 +462,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114028265406090602}
+  - {fileID: 114389252177753048}
   MinDistance: 1
   MaxDistance: 20
   Length: 48
@@ -452,6 +488,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 974
+--- !u!114 &114785371684366616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114801338614555414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +540,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114894833255635418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114973944198490086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,3 +577,18 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1005
+--- !u!114 &114974892101798488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0

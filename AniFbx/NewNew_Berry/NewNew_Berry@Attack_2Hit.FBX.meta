@@ -326,16 +326,16 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.22797216
-        functionName: AttackComboAdd
+      - time: 0.30379745
+        functionName: AttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
           type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.30379745
-        functionName: AttackEnd
+      - time: 0.40623304
+        functionName: AttackComboAdd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
           type: 3}
