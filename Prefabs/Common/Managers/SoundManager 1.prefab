@@ -51,14 +51,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2647fb5b6f3d34f42ba5c12b7e90294e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyEvent1:
-  - event:/SFX/PC/Tanker/Walk/Walk_grass
+  Sounds:
+  - 
   - event:/SFX/PC/Tanker/Walk/Walk_Rock
-  - event:/SFX/PC/Dealer/Walk/Walk_grass
-  - event:/SFX/PC/Dealer/Walk/Walk_Rock
+  - event:/SFX/PC/Tanker/Walk/Walk_grass
   - event:/SFX/PC/Tanker/Attack/Tanker_Attack
-  - event:/SFX/PC/Tanker/Attack/Tanker_ShieldCounter
-  - event:/SFX/PC/Tanker/Attack/Tanker_ShieldGuard
   - event:/SFX/PC/Dealer/Attack/Dealer_Attack
-  - event:/SFX/PC/Dealer/Attack/WideCut
+  - event:/SFX/PC/Tanker/Attack/Tanker_ShieldCounter
+  - 
+  - 
+  - event:/SFX/Monster/Hited/Mon_HitSound
   _Volume: 0

@@ -362,4 +362,12 @@ public class CPlayerManager : MonoBehaviour
         isPlayerHorn = false; // 무적해제
     }
 
+    private void PlayStandardAttackSound()
+    {
+        if (_PlayerSwap._PlayerMode == PlayerMode.Shield)
+            SoundManager.I.PlaySound(transform, PlaySoundId.Attack_Original);
+        if (_PlayerSwap._PlayerMode == PlayerMode.Scythe)
+            SoundManager.I.PlaySound(transform, PlaySoundId.Attack_Scythe);
+    }
+
 }
