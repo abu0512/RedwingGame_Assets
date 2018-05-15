@@ -24,7 +24,7 @@ public class GuardMushroomisHit : GuardMushroomStateBase
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 0.15f)
+        if (Dltime > 0.1f)
         {
             if (GuardMushroom.QueenisAllDead)
             {

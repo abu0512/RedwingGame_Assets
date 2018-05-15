@@ -9,7 +9,6 @@ public class ShildMushroomEffect : MonoBehaviour {
     public GameObject[] ScytheHitEffects;
     public GameObject EffectPosition;
 
-
     public float[] ShildHitTime;
     public float[] ScytheHitTime;
 

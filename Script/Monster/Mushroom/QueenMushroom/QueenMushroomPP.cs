@@ -19,13 +19,13 @@ public class QueenMushroomPP : QueenMushroomStateBase
         QueenMushroom.ModeChange();
         Dltime += Time.deltaTime;
 
-        if (Dltime > 0.8f)
+        if (Dltime > 1.4f)
         {
             CPlayerManager._instance.isPush = false;
             CPlayerManager._instance.isPull = false;
             QueenMushroom.PPEnding = true;
 
-            QueenMushroom.SetState(QueenMushroomState.Chase);
+            QueenMushroom.SetState(QueenMushroomState.Return);
             return;
         }
     }

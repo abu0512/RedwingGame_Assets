@@ -19,6 +19,7 @@ public class QueenMushroomChase : QueenMushroomStateBase
 
     void Update()
     {
+        QueenMushroom.NowisHit();
         QueenMushroom.GoToPullPush();
         QueenMushroom.PlayerisDead();
         QueenMushroom.TimeToHeal();
