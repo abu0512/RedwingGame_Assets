@@ -146,6 +146,7 @@ public class WitchBoss : MonsterBase
         StartCoroutine(Co_ChangeMat());
         AddGroggyValue(value);
         OnAnimDelay();
+        PlayHitSound();
     }
 
     public void AddGroggyValue(float value)
@@ -288,5 +289,10 @@ public class WitchBoss : MonsterBase
         _anim.speed = 1.0f;
         _animDelayTime = 0.0f;
         _animDelay = false;
+    }
+
+    private void PlayHitSound()
+    {
+        SoundManager.I.PlaySound(transform, PlaySoundId.Hit_StandardMonster);
     }
 }

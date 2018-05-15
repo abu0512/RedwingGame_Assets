@@ -53,24 +53,12 @@ public class WitchSkillFootholdFire : MonoBehaviour
 
         _fires[0].SetActive(false);
         _fires[1].SetActive(true);
-
-        if (_footholdDuration < WitchValueManager.I.FootholdDuration + 0.1f)
-            return;
-
-        _collider.enabled = true;
-
-        if (_footholdDuration < WitchValueManager.I.FootholdDuration + 2.1f)
-            return;
-
-        _collider.enabled = false;
-
-        if (_footholdDuration < WitchValueManager.I.FootholdDuration + 3.15f)
-            return;
-
-        gameObject.SetActive(false);
+        SoundManager.I.PlaySound(transform, PlaySoundId.Boss_FootHold);
 
         _footholdDuration = 0.0f;
         _state = 2;
+
+        StartCoroutine(Co_Collider());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -79,5 +67,19 @@ public class WitchSkillFootholdFire : MonoBehaviour
         {
             CPlayerManager._instance.PlayerHp(0.2f, 1, WitchValueManager.I.FootholdDamage);
         }
+    }
+
+    private IEnumerator Co_Collider()
+    {
+        _collider.enabled = true;
+        yield return new WaitForSeconds(2.0f);
+        _collider.enabled = false;
+        StartCoroutine(Co_Active());
+    }
+
+    private IEnumerator Co_Active()
+    {
+        yield return new WaitForSeconds(1.15f);
+        gameObject.SetActive(false);
     }
 }

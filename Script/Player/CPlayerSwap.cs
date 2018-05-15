@@ -290,7 +290,7 @@ public class CPlayerSwap : CPlayerBase
             }
             else
             {
-                _PlayerManager.PlayerHp(0, 1, hp * nScytheExponential);
+                _PlayerManager.PlayerHp(0, 3, hp * nScytheExponential);
             }
         }
     }
