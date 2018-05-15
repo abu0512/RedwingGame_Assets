@@ -317,32 +317,16 @@ ModelImporter:
         floatParameter: 0
         intParameter: 8
         messageOptions: 0
-      - time: 0.48775056
-        functionName: ScytheSkill1
+      - time: 0.44303796
+        functionName: ScytheTrue
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: bf83baca5ecd4eb40b2bd5e134a452d5,
           type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.52783966
-        functionName: ScytheSkill1
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: bf83baca5ecd4eb40b2bd5e134a452d5,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.56570154
-        functionName: ScytheSkill1
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: bf83baca5ecd4eb40b2bd5e134a452d5,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.6191537
-        functionName: ScytheSkill1
+      - time: 0.6751055
+        functionName: AttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: bf83baca5ecd4eb40b2bd5e134a452d5,
           type: 3}
