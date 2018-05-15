@@ -14,10 +14,12 @@ public class CCameraRayObj : MonoBehaviour
     // 거리
     public float distance;
 
+    private int _layerMask;
+
     private void Awake()
     {
-        
 
+        _layerMask = 1 << LayerMask.NameToLayer("BG");
         CCameraRayObj._instance = this;
         dollyDir = transform.localPosition.normalized;
         distance = transform.localPosition.magnitude;
@@ -29,10 +31,10 @@ public class CCameraRayObj : MonoBehaviour
         RaycastHit hit;
 
         // 레이캐스트를 통해서 모든 오브젝트를 체크하여 카메라를 앞으로 줌함
-        if (Physics.Linecast(transform.parent.position, destiredCameraPos, out hit))
+        if (Physics.Linecast(transform.parent.position, destiredCameraPos, out hit, _layerMask))
         {
-            if (hit.collider.tag == "Player" || hit.collider.tag == "Boss" || hit.collider.tag == "Sword")
-                return;
+            //if (hit.collider.tag == "Player" || hit.collider.tag == "Boss" || hit.collider.tag == "Sword")
+            //    return;
             distance = Mathf.Clamp((hit.distance * 0.9f), minDistance, maxDistance);
         }
         else

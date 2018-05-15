@@ -20,23 +20,27 @@ public class CPlayerMoveSound : CPlayerBase
     }
     public void SoundType(int type)
     {
-        SoundManager.I.SoundPlay(GetComponent<Transform>(), type);
+        SoundManager.I.PlaySound(transform, (PlaySoundId)type);
     }
     public void MoveSoundPlay()
     {
+        if (Mathf.Abs(CPlayerManager._instance._PlayerMove.fHorizontal) > 0.05f &&
+            Mathf.Abs(CPlayerManager._instance._PlayerMove.fVertical) > 0.05f)
+            return;
+
         if (_PlayerMoveCheack == PlayerMoveCheack.Rock)
         {
             if (_PlayerManager._PlayerSwap._PlayerMode == PlayerMode.Shield)
-                SoundManager.I.SoundPlay(GetComponent<Transform>(),  1);
+                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_Stone);
             else
-                SoundManager.I.SoundPlay(GetComponent<Transform>(),  3);
+                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_Stone);
         }
         else if (_PlayerMoveCheack == PlayerMoveCheack.Grass)
         {
             if (_PlayerManager._PlayerSwap._PlayerMode == PlayerMode.Shield)
-                SoundManager.I.SoundPlay(GetComponent<Transform>(),  0);
+                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_Grass);
             else
-                SoundManager.I.SoundPlay(GetComponent<Transform>(),  2);
+                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_Grass);
         }
     }
 
@@ -47,13 +51,13 @@ public class CPlayerMoveSound : CPlayerBase
         {
             _PlayerMoveCheack = PlayerMoveCheack.Rock;
         }
-        if (other.gameObject.tag == "Grass")
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Rock")
         {
             _PlayerMoveCheack = PlayerMoveCheack.Grass;
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        _PlayerMoveCheack = PlayerMoveCheack.Grass;
     }
 }

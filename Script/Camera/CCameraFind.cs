@@ -66,8 +66,7 @@ public class CCameraFind : MonoBehaviour
         rotX += finalInputZ * inputSensitivity * Time.deltaTime;
 
         // 카메라 각도 360' 회전하는걸 막아주며 지정됀 값범위 내에서만 확인가능
-        rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
-
+        rotX = Mathf.Clamp(rotX, -30, clampAngle);
         // 카메라 로테이션 돌려주기
         Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
         transform.rotation = Quaternion.Slerp(transform.rotation, localRotation, Time.deltaTime * 15);

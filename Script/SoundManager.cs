@@ -2,12 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlaySoundId
+{
+    Bgm1 = 0,
+    Walk_Stone,
+    Walk_Grass,
+    Attack_Original,
+    Attack_Scythe,
+    Attack_Counter,
+    Defense_Shield,
+    Skill_Scythe1,
+    Hit_StandardMonster,
+}
+
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager I = null;
+    private static SoundManager _instance;
+    public static SoundManager I { get { return _instance; } }
 
     [FMODUnity.EventRef]
-    public string[] MyEvent1;
+    public string[] Sounds;
 
     FMOD.Studio.EventInstance bgmSound;
     FMOD.Studio.ParameterInstance bgmVolume;
@@ -16,48 +30,32 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-        SoundManager.I = this;
-        _Volume = 1;
+        _instance = this;
+        _Volume = 0;
     }
-    void Help()
-    {
-        /* 
-                    타겟위치,  중력,  사운드번호
-        SoundPlay(Transform Target, Rigidbody rig, int SoundType)
-        SoundType = 0 -> 검방베리 풀걷기
-        SoundType = 1 -> 검방베리 돌걷기
-        SoundType = 2 -> 흑화베리 풀걷기
-        SoundType = 3 -> 흑화베리 돌걷기
-        SoundType = 4 -> 검방베리 타격
-        SoundType = 5 -> 검방베리 방패막기
-        SoundType = 6 -> 검방베리 반격
-        SoundType = 7 -> 흑화베리 타격
-        SoundType = 8 -> 흑화베리 광역
-        */
-    }
+
     public void Update()
     {
-
-        if (!Input.GetKey(KeyCode.A) &&
-        !Input.GetKey(KeyCode.D) &&
-        !Input.GetKey(KeyCode.W) &&
-        !Input.GetKey(KeyCode.S))
-        {
-            _Volume = 1;
-        }
-        else
-            _Volume = 0;
-
         bgmVolume.setValue(_Volume);
     }
 
 
-    public void SoundPlay(Transform Target, int SoundType)
+    public void SoundPlay(Transform Target)
     {
-        bgmSound = FMODUnity.RuntimeManager.CreateInstance(MyEvent1[SoundType]);
+        bgmSound = FMODUnity.RuntimeManager.CreateInstance(Sounds[(int)PlaySoundId.Bgm1]);
         bgmSound.getParameter("Parameter 1", out bgmVolume);
         //FMODUnity.RuntimeManager.PlayOneShot(MyEvent1[SoundType], Target.position);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(bgmSound, Target, GetComponent<Rigidbody>());
         bgmSound.start();
+    }
+
+    public void PlaySound(Transform target, PlaySoundId id)
+    {
+        PlaySound(target.position, id);
+    }
+
+    public void PlaySound(Vector3 target, PlaySoundId id)
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(Sounds[(int)id], target);
     }
 }
