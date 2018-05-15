@@ -24,6 +24,10 @@ public class CPlayerMoveSound : CPlayerBase
     }
     public void MoveSoundPlay()
     {
+        if (Mathf.Abs(CPlayerManager._instance._PlayerMove.fHorizontal) > 0.05f &&
+            Mathf.Abs(CPlayerManager._instance._PlayerMove.fVertical) > 0.05f)
+            return;
+
         if (_PlayerMoveCheack == PlayerMoveCheack.Rock)
         {
             if (_PlayerManager._PlayerSwap._PlayerMode == PlayerMode.Shield)
