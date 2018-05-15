@@ -150,14 +150,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.5365854
-        functionName: StartAttack
+        functionName: StartEAttack
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.54268295
-        functionName: StartSAttack
+        functionName: StartESAttack
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
