@@ -28,6 +28,7 @@ public class QueenMushroomAttack : QueenMushroomStateBase
         _stun = false;
         _notstun = false;
         _exitattack = false;
+        QueenMushroom.AniSynchro = false;
         QueenMushroom.AttackTimer = 0f;
     }
 
@@ -63,7 +64,7 @@ public class QueenMushroomAttack : QueenMushroomStateBase
     {
         StopCor();
         _imsitime += Time.deltaTime;
-        if (_stun && _bulletcount < 5)
+        if (QueenMushroom.AniSynchro && _stun && _bulletcount < 5)
         {
             //StartCoroutine(StunBulletset());
             if (_imsitime > 0.15f)
@@ -74,7 +75,7 @@ public class QueenMushroomAttack : QueenMushroomStateBase
             }
         }
 
-        else if(_notstun && _bulletcount < 5)
+        else if(QueenMushroom.AniSynchro && _notstun && _bulletcount < 5)
         {
             //StartCoroutine(Bulletset());
             if (_imsitime > 0.15f)
@@ -92,23 +93,28 @@ public class QueenMushroomAttack : QueenMushroomStateBase
         {
             _stun = true;
             QueenMushroom.AttackStack = 0;
+            QueenMushroom.AniSynchro = true;
         }
 
         else
         {
             _notstun = true;
+            QueenMushroom.AniSynchro = true;
         }
     }
 
     void Update()
     {
         SetAttack();
+        QueenMushroom.NowisHit();
         QueenMushroom.GoToPullPush();
         QueenMushroom.PlayerisDead();
         QueenMushroom.TurnToDestination();
         QueenMushroom.TimeToHeal();
 
-        if (_exitattack)
+        Dltime += Time.deltaTime;
+
+        if (_exitattack && Dltime > 1f)
         {
             if (QueenMushroom.GetDistanceFromPlayer() > QueenMushroom.MStat.AttackDistance)
             {

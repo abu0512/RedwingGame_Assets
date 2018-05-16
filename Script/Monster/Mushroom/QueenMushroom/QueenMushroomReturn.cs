@@ -19,6 +19,8 @@ public class QueenMushroomReturn : QueenMushroomStateBase
 
     void Update()
     {
+        QueenMushroom.NowisHit();
+        QueenMushroom.TurnToDestination();
         QueenMushroom.GoToPullPush();
         QueenMushroom.PlayerisDead();
         QueenMushroom.TimeToHeal();

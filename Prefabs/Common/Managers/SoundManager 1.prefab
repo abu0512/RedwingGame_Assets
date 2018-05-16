@@ -55,10 +55,16 @@ MonoBehaviour:
   - 
   - event:/SFX/PC/Tanker/Walk/Walk_Rock
   - event:/SFX/PC/Tanker/Walk/Walk_grass
-  - event:/SFX/PC/Tanker/Attack/Tanker_Attack
+  - event:/SFX/PC/Tanker/Attack/Tanker_normalAttack
   - event:/SFX/PC/Dealer/Attack/Dealer_Attack
   - event:/SFX/PC/Tanker/Attack/Tanker_ShieldCounter
-  - 
-  - 
+  - event:/SFX/PC/Tanker/Attack/Tanker_ShieldGuard
+  - event:/SFX/PC/Dealer/Attack/Dealer_skill_WideCut
   - event:/SFX/Monster/Hited/Mon_HitSound
+  - event:/SFX/PC/Tanker/Attack/Tanker_finishAttack
+  - "event:/SFX/Monster/Boss - witch/\uADFC\uC811\uBC29\uCD9C/magicboom"
+  - "event:/SFX/Monster/Boss - witch/\uBC1C\uD310/FirePillarSkill01"
+  - "event:/SFX/Monster/Boss - witch/\uD22C\uC0AC\uCCB4/ArrowSkill01"
+  - "event:/SFX/Monster/Boss - witch/\uD22C\uC0AC\uCCB4/ArrowSkill02"
+  - event:/SFX/PC/Hited/PC/hited_PC_Meleeattack
   _Volume: 0

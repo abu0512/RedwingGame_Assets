@@ -141,7 +141,7 @@ public class WitchSkillArrowObject : MonoBehaviour
         {
             obj.OnArrow(WitchValueManager.I.ArrowSpeed);
         }
-
+        SoundManager.I.PlaySound(transform, PlaySoundId.Boss_Arrow);
         _arrowIdx--;
         _fireTime = 0.0f;
     }

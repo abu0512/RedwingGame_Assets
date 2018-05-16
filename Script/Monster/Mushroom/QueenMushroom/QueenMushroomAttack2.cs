@@ -27,6 +27,7 @@ public class QueenMushroomAttack2 : QueenMushroomStateBase
         _stun = false;
         _notstun = false;
         _exitattack = false;
+        QueenMushroom.AniSynchro = false;
         QueenMushroom.AttackTimer = 0f;
     }
 
@@ -40,7 +41,7 @@ public class QueenMushroomAttack2 : QueenMushroomStateBase
 
     public void SetAttack()
     {
-        if (_stun && _bulletcount < 5)
+        if (QueenMushroom.AniSynchro && _stun && _bulletcount < 5)
         {
             for(int i = 0; i < 5; i++)
             {
@@ -51,7 +52,7 @@ public class QueenMushroomAttack2 : QueenMushroomStateBase
             StopCor();
         }
 
-        else if (_notstun && _bulletcount < 5)
+        else if (QueenMushroom.AniSynchro && _notstun && _bulletcount < 5)
         {
             for(int i = 0; i < 5; i++)
             {
@@ -69,17 +70,20 @@ public class QueenMushroomAttack2 : QueenMushroomStateBase
         {
             _stun = true;
             QueenMushroom.AttackStack = 0;
+            QueenMushroom.AniSynchro = true;
         }
 
         else
         {
             _notstun = true;
+            QueenMushroom.AniSynchro = true;
         }
     }
 
     void Update()
     {
         SetAttack();
+        QueenMushroom.NowisHit();
         QueenMushroom.GoToPullPush();
         QueenMushroom.PlayerisDead();
         QueenMushroom.TurnToDestination();
@@ -87,7 +91,7 @@ public class QueenMushroomAttack2 : QueenMushroomStateBase
 
         Dltime += Time.deltaTime;
 
-        if (_exitattack && Dltime > 1.5f)
+        if (_exitattack && Dltime > 1f)
         {
             if (QueenMushroom.GetDistanceFromPlayer() > QueenMushroom.MStat.AttackDistance)
             {

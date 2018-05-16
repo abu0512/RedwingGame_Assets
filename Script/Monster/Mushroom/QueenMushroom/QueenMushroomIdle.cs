@@ -19,6 +19,7 @@ public class QueenMushroomIdle : QueenMushroomStateBase
 
     void Update()
     {
+        QueenMushroom.NowisHit();
         QueenMushroom.GoToPullPush();
 
         if (QueenMushroom.GetDistanceFromPlayer() < QueenMushroom.Stat.ChaseDistance && CPlayerManager._instance.isDead == false)

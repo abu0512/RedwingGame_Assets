@@ -358,14 +358,6 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.2601156
-        functionName: SoundType
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
-          type: 3}
-        floatParameter: 0
-        intParameter: 7
-        messageOptions: 0
       - time: 0.4209354
         functionName: RotationTrue
         data: 
@@ -381,14 +373,6 @@ ModelImporter:
           type: 3}
         floatParameter: 0
         intParameter: 0
-        messageOptions: 0
-      - time: 0.4890284
-        functionName: SoundType
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
-          type: 3}
-        floatParameter: 0
-        intParameter: 7
         messageOptions: 0
       - time: 0.51318306
         functionName: PlayStandardAttackSound

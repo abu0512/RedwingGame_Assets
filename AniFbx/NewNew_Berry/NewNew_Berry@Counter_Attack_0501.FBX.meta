@@ -302,22 +302,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.20663264
-        functionName: Effect4
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 36881a4ec6d333047b9ad2f73905cb75,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.21683674
-        functionName: SoundType
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
-          type: 3}
-        floatParameter: 0
-        intParameter: 5
-        messageOptions: 0
       - time: 0.1989796
         functionName: CounterTrue
         data: 
@@ -326,7 +310,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.23214287
+      - time: 0.20663264
+        functionName: Effect4
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 36881a4ec6d333047b9ad2f73905cb75,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.23702091
         functionName: isSweatCountEvent
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: f81b3afc72f5f9e49a713511320530f0,
@@ -336,6 +328,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.3206751
         functionName: AttackEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.24894513
+        functionName: PlayCounterAttackSound
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

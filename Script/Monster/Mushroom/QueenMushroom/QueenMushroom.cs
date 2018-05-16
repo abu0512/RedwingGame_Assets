@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
 public enum QueenMushroomState
 {
     Idle = 0,
@@ -12,7 +11,8 @@ public enum QueenMushroomState
     Attack2,
     Return,
     Healing,
-    PP
+    PP,
+    isHit
 }
 
 [RequireComponent(typeof(MonsterStat))]
@@ -69,6 +69,15 @@ public class QueenMushroom : MonsterBase
     // 버섯이 전방베기로 끌렸을 때, 일정 위치에서 멈추게 하기 위한 bool
     private bool _ppending;
     public bool PPEnding { set { _ppending = value; } get { return _ppending; } }
+
+    // 공격 애니메이션 싱크로 체크
+    private bool _anisynchro;
+    public bool AniSynchro { set { _anisynchro = value; } get { return _anisynchro; } }
+
+    // 캐릭터 사망
+    private bool _CharacterisDead;
+    public bool CharacterisDead { set { _CharacterisDead = value; } get { return _CharacterisDead; } }
+
 
     public float rotAnglePerSecond = 360.0f;// 몬스터 초당 회전 속도
     public float HealDelay; // 힐 쿨타임
@@ -236,9 +245,23 @@ public class QueenMushroom : MonsterBase
 
     public override void OnDamage(float damage)
     {
+        if (_CharacterisDead)
+            return;
+
         base.OnDamage(damage);
-        _stat.Hp = Mathf.Clamp(_stat.Hp, 0, _stat.MaxHp);
+        Stat.Hp = Mathf.Clamp(Stat.Hp, 0, Stat.MaxHp);
         StartCoroutine(ChangeMat());
+    }
+
+    public void NowisHit()
+    {
+        if (_isHit)
+        {
+            SetState(QueenMushroomState.isHit);
+            _isHit = false;
+            return;
+        }
+
     }
 
     private IEnumerator ChangeMat()
@@ -297,7 +320,7 @@ public class QueenMushroom : MonsterBase
         _stat.MaxHp = 500f;
         _stat.Hp = _stat.MaxHp;
         _attackDamage = 10f;
-        _attackDelay = 3f;
+        _attackDelay = 4f;
         _attackTimer = 0;
         _attackStack = 0;
         _hearTimer = 0;
@@ -340,7 +363,6 @@ public class QueenMushroom : MonsterBase
 
     protected override void Update()
     {
-        print(_attackStack);
         _attackTimer += Time.deltaTime;
         _hearTimer += Time.deltaTime;
 

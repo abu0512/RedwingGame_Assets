@@ -18,6 +18,7 @@ public class WitchStateGroggyRelease : WitchFSMStateBase
 
     public override void EndState()
     {
+        _release.transform.position = new Vector3(10000.0f, 0.0f, 0.0f);
     }
 
     public void OnRelease()
@@ -26,6 +27,7 @@ public class WitchStateGroggyRelease : WitchFSMStateBase
         pos.y = 0.0f;
         _release.transform.position = pos;
         _release.SetActive(true);
+        SoundManager.I.PlaySound(transform, PlaySoundId.Boss_Release);
     }
 
     public void EndReleaseAnim()

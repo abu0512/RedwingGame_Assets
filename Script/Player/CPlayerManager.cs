@@ -239,6 +239,7 @@ public class CPlayerManager : MonoBehaviour
         // type = 1  플레이어 / type = 2 방패
         if (type == 1)
         {
+            SoundManager.I.PlaySound(transform, PlaySoundId.Hit_Pc);
             if (!isPlayerHorn) // 플레이어가 무적상태가 아닐때
             {
                 // 플레이어가 검방패 모드일때
@@ -253,7 +254,7 @@ public class CPlayerManager : MonoBehaviour
                     m_fscyPlayerHp -= sizeHp;
                 }
             }
-      
+
             // 플레이어가 흘리기 중일경우
             if (_CPlayerAni_Contorl._isSweat)
             {
@@ -268,11 +269,14 @@ public class CPlayerManager : MonoBehaviour
         // 방패일때 데미지안들어가~
         else if (type == 2)
         {
+            SoundManager.I.PlaySound(transform, PlaySoundId.Defense_Shield);
             // 방패모드 맞았을때 hit 출력
             _CPlayerShild.m_bShildCollider = true;
             // 체력대신 스테미너 깎음
             m_fPlayerStm -= sizeHp * InspectorManager._InspectorManager.fShildDamge;
         }
+        else
+            m_fscyPlayerHp -= sizeHp;
 
         if (m_fPlayerHp <= 0 || m_fscyPlayerHp <= 0)
             isDead = true;
@@ -370,4 +374,18 @@ public class CPlayerManager : MonoBehaviour
             SoundManager.I.PlaySound(transform, PlaySoundId.Attack_Scythe);
     }
 
+    private void PlayFinishAttackSound()
+    {
+        SoundManager.I.PlaySound(transform, PlaySoundId.Attack_Finish);
+    }
+
+    private void PlayCounterAttackSound()
+    {
+        SoundManager.I.PlaySound(transform, PlaySoundId.Attack_Counter);
+    }
+
+    private void PlayWideCutSound()
+    {
+        SoundManager.I.PlaySound(transform, PlaySoundId.Skill_ScytheWideCut);
+    }
 }

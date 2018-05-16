@@ -227,7 +227,6 @@ public class ShildMushroom : MonsterBase
         _groggy = 0;
         _attackrotangle = 100f;
         _maxgroggy = 105f;
-        _groggy = _maxgroggy;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _animParamID = Animator.StringToHash("CurrentState");
         isDead = false;

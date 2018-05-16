@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class QueenMushroomDead : QueenMushroomStateBase
 {
+    private float DeadTime;
+
     public override void BeginState()
     {
-        base.BeginState();
+        DeadTime = 0;
     }
 
     public override void EndState()
@@ -18,8 +20,16 @@ public class QueenMushroomDead : QueenMushroomStateBase
     {
         if (QueenMushroom.isDead)
         {
-            QueenMushroom.OnDead();
-            return;
+            QueenMushroom.rotAnglePerSecond = 0;
+            QueenMushroom.Stat.MoveSpeed = 0;
+            DeadTime += Time.deltaTime;
+            QueenMushroom.CharacterisDead = true;
+
+            if (DeadTime >= 1.6f)
+            {
+                QueenMushroom.OnDead();
+                return;
+            }
         }
     }
 }

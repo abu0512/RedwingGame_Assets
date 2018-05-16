@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33149860183214202}
   - component: {fileID: 135860677713890738}
   - component: {fileID: 23399079574287152}
-  - component: {fileID: 114764912659337454}
+  - component: {fileID: 114599845813147838}
   m_Layer: 0
   m_Name: SBullet
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1444000286774228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -65.14885, y: 1.0134735, z: -20.594576}
-  m_LocalScale: {x: 0.5170419, y: 0.5170419, z: 0.5170419}
+  m_LocalScale: {x: 0.51704, y: 0.51704, z: 0.51704}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444000286774228}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114764912659337454
+--- !u!114 &114599845813147838
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
