@@ -5,6 +5,7 @@ using UnityEngine;
 public class CCameraRayObj : MonoBehaviour
 {
    public static CCameraRayObj _instance = null;
+    public float MaxDistanceValue = 4.0f;
     // 카메라 Joom out 범위 설정
     public float minDistance = 1.0f;
     public float maxDistance = 4.0f;
@@ -18,7 +19,7 @@ public class CCameraRayObj : MonoBehaviour
 
     private void Awake()
     {
-
+        maxDistance = MaxDistanceValue;
         _layerMask = 1 << LayerMask.NameToLayer("BG");
         CCameraRayObj._instance = this;
         dollyDir = transform.localPosition.normalized;

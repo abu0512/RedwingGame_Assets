@@ -29,7 +29,7 @@ public class CCameraFind : MonoBehaviour
     public Quaternion _CameraRight = Quaternion.identity;
 
     public float m_fLerpSpeed;
-
+    public float LerpSpeedValue = 500.0f;
     public bool isDash;
     private float fTime;
 
@@ -44,8 +44,8 @@ public class CCameraFind : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         m_bCamera = true;
-        m_fLerpSpeed = 100;
-
+        m_fLerpSpeed = LerpSpeedValue;
+        _zoomValue = CCameraRayObj._instance.MaxDistanceValue;
     }
     void Update()
     {
@@ -96,11 +96,6 @@ public class CCameraFind : MonoBehaviour
         //        isLockOn = true;
         //}
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            SetZoom(0.3f);
-        }
-
     }
     void CameraUpdater()
     {
@@ -118,7 +113,7 @@ public class CCameraFind : MonoBehaviour
     {
         if (!isDash)
         {
-            m_fLerpSpeed = 100.0f;
+            m_fLerpSpeed = LerpSpeedValue;
             return;
         }
 
@@ -161,6 +156,9 @@ public class CCameraFind : MonoBehaviour
 
     public void SetZoom(float value)
     {
+        if (value == 0.0f)
+            return;
+
         _zoomTime = 1.0f;
         _zoomValue -= value;
         _isZoom = true;
@@ -182,7 +180,7 @@ public class CCameraFind : MonoBehaviour
 
         _isZoom = false;
         _zoomTime = 0.0f;
-        _zoomValue = 4.0f;
+        _zoomValue = CCameraRayObj._instance.MaxDistanceValue;
         CCameraRayObj._instance.MaxCamera(_zoomValue);
     }
 }

@@ -70,7 +70,7 @@ public class CTestMob : MonoBehaviour
             if (Vector3.Distance(CGameManager._instance._PlayerPos.position, transform.position) < m_fDistance)
             {
                 _MobState = MobState.Idle;
-                CPlayerManager._instance.PlayerHitCamera(5.0f);
+                CPlayerManager._instance.PlayerHitCamera2(5.0f);
             }
         }
     }
