@@ -12,7 +12,7 @@ public class CPlayerCombe : CPlayerBase
             {
                 if(_PlayerManager._CPlayerCountAttack.isCount == false)
                 {
-                    _PlayerManager.PlayerHitCamera2(3.5f);
+                    //_PlayerManager.PlayerHitCamera2(3.5f);
                 }
             }
            //else if (_PlayerManager.m_nAttackCombo == 1)

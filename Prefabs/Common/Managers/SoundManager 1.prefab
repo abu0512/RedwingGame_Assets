@@ -67,4 +67,6 @@ MonoBehaviour:
   - "event:/SFX/Monster/Boss - witch/\uD22C\uC0AC\uCCB4/ArrowSkill01"
   - "event:/SFX/Monster/Boss - witch/\uD22C\uC0AC\uCCB4/ArrowSkill02"
   - event:/SFX/PC/Hited/PC/hited_PC_Meleeattack
+  - event:/SFX/PC/Dealer/Walk/Walk_Rock
+  - event:/SFX/PC/Dealer/Walk/Walk_grass
   _Volume: 0
