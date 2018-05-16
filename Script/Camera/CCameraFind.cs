@@ -96,10 +96,10 @@ public class CCameraFind : MonoBehaviour
         //        isLockOn = true;
         //}
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            SetZoom(0.3f);
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    SetZoom(0.3f);
+        //}
 
     }
     void CameraUpdater()
