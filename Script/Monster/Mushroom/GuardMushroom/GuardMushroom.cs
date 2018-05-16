@@ -369,7 +369,7 @@ public class GuardMushroom : MonsterBase
         Stat.MaxHp = 500f;
         Stat.Hp = Stat.MaxHp;
         Stat.ChaseDistance = 20f;
-        Stat.AttackDistance = 3.5f;
+        Stat.AttackDistance = 2.5f;
         Stat.MoveSpeed = 2f;
         _attackDamage = 10f;
         _attackDelay = 3.5f;
