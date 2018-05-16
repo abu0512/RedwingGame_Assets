@@ -55,7 +55,7 @@ public class CSwapSystem : MonoBehaviour
     IEnumerator CameraJoom()
     {
         yield return new WaitForSeconds(1f);
-        CPlayerManager._instance.PlayerHitCamera2(3.5f);
+        CPlayerManager._instance.PlayerHitCamera2(CCameraRayObj._instance.MaxDistanceValue);
         isCamera = false;
     }
 

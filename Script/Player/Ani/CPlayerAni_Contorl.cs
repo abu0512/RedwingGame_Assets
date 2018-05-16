@@ -119,6 +119,7 @@ public class CPlayerAni_Contorl : CPlayerBase
             if (_PlayerManager.m_nAttackCombo == 0)
             {
                 // 1타로넘김
+                CCameraFind._instance.SetZoom(InspectorManager._InspectorManager.TankerAttackZoom[_PlayerManager.m_nAttackCombo]);
                 _PlayerAni_State_Shild = PlayerAni_State_Shild.Attack1;
             }
             // 공격중일경우
@@ -128,16 +129,19 @@ public class CPlayerAni_Contorl : CPlayerBase
                 if (_PlayerManager.m_nAttackCombo == 1)
                 {
                     //2타로넘김
+                    CCameraFind._instance.SetZoom(InspectorManager._InspectorManager.TankerAttackZoom[_PlayerManager.m_nAttackCombo]);
                     _PlayerAni_State_Shild = PlayerAni_State_Shild.Attack2;
                 }// 2타일때
                 else if (_PlayerManager.m_nAttackCombo == 2)
                 {
                     //3타로넘김
+                    CCameraFind._instance.SetZoom(InspectorManager._InspectorManager.TankerAttackZoom[_PlayerManager.m_nAttackCombo]);
                     _PlayerAni_State_Shild = PlayerAni_State_Shild.Attack3;
                 }// 3타일때
                 else if (_PlayerManager.m_nAttackCombo == 3)
                 {
                     //4타로넘김
+                    CCameraFind._instance.SetZoom(InspectorManager._InspectorManager.TankerAttackZoom[_PlayerManager.m_nAttackCombo]);
                     _PlayerAni_State_Shild = PlayerAni_State_Shild.Attack4;
                 }
             }
@@ -298,6 +302,7 @@ public class CPlayerAni_Contorl : CPlayerBase
                 if (_PlayerManager.m_nAttackCombo == 0)
                 {
                     // 1타로넘김
+                    CCameraFind._instance.SetZoom(InspectorManager._InspectorManager.DealerAttackZoom[_PlayerManager.m_nAttackCombo]);
                     _PlayerAni_State_Scythe = PlayerAni_State_Scythe.Attack1;
                 }
                 // 공격중일경우
@@ -307,11 +312,13 @@ public class CPlayerAni_Contorl : CPlayerBase
                     if (_PlayerManager.m_nAttackCombo == 1)
                     {
                         //2타로넘김                    
+                        CCameraFind._instance.SetZoom(InspectorManager._InspectorManager.DealerAttackZoom[_PlayerManager.m_nAttackCombo]);
                         _PlayerAni_State_Scythe = PlayerAni_State_Scythe.Attack2;
                     }// 2타일때
                     else if (_PlayerManager.m_nAttackCombo == 2)
                     {
                         //3타로넘김
+                        CCameraFind._instance.SetZoom(InspectorManager._InspectorManager.DealerAttackZoom[_PlayerManager.m_nAttackCombo]);
                         _PlayerAni_State_Scythe = PlayerAni_State_Scythe.Attack3;
                     }
                 }

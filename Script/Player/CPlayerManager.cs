@@ -286,7 +286,7 @@ public class CPlayerManager : MonoBehaviour
     // 카메라 연출 줌,인 연출 함수
     public void PlayerHitCamera(float hitDitance, float shake = 0)
     {
-        CCameraRayObj._instance.MaxCamera(hitDitance);
+        //CCameraRayObj._instance.MaxCamera(hitDitance);
         CCameraShake._instance.shake = shake;
     }
     public void PlayerHitCamera2(float hitDitance)

@@ -153,7 +153,7 @@ public class CPlayerSwap : CPlayerBase
             _PlayerManager._PlayerAni_Contorl._PlayerAni_State_Scythe = PlayerAni_State_Scythe.Skill1;
             if (m_fSwapAttackTime >= 0.1f)
             {
-                CPlayerManager._instance.PlayerHitCamera(2.0f);
+                CPlayerManager._instance.PlayerHitCamera2(2.0f);
             }
             if (m_fSwapAttackTime >= 0.4f)
             {
@@ -254,7 +254,7 @@ public class CPlayerSwap : CPlayerBase
     {
         _EffectTelpo[0].SetActive(false);
         _EffectTelpo[1].SetActive(false);
-        _PlayerManager.PlayerHitCamera(3.5f, 0.8f);
+        _PlayerManager.PlayerHitCamera(CCameraRayObj._instance.MaxDistanceValue, 0.8f);
         CSwapSystem._instance.ShildObjs();
         StopCoroutine("ScytheHpDown");
         nScytheNum = 0;

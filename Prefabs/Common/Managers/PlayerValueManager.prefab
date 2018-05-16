@@ -57,12 +57,14 @@ MonoBehaviour:
   fRotation: 800
   fMoveSpeed: 6
   fMoveAngle: 1
-  nDamgeShild: 0100000001000000010000000100000001000000
-  nDamgeScythe: 010000000100000001000000
+  nDamgeShild: 0b0000000b0000000b0000000b0000000b000000
+  nDamgeScythe: 0b0000000b0000000b000000
   nGroggyShild:
   - 3
   - 5
   - 7
+  - 3
+  - 3
   nGroggyScythe:
   - 5
   - 7
@@ -87,3 +89,12 @@ MonoBehaviour:
   nPlayerHitAddPower: 5
   fPlayerSweatCountTime: 1
   fLockOnSpeed: 5
+  TankerAttackZoom:
+  - 0
+  - 0
+  - 0.4
+  - 0.4
+  DealerAttackZoom:
+  - 0
+  - 0.4
+  - 0.4

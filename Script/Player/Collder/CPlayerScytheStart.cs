@@ -9,7 +9,7 @@ public class CPlayerScytheStart : MonoBehaviour
         //CPlayerManager._instance._PlayerAni_Contorl.InteractionOn
         if (other.tag == "Boss" || other.tag == "Guard" || other.tag == "Queen")
         {
-            CPlayerManager._instance.PlayerHitCamera(3.0f, 0.2f);
+            CPlayerManager._instance.PlayerHitCamera(CCameraRayObj._instance.MaxDistanceValue, 0.2f);
             float SkillDamge1 = InspectorManager._InspectorManager.fScytheStartSkillDamge;
             float SkillDamge2 = InspectorManager._InspectorManager.fScytheSkill2Damge;
             int PowerGauge = PlayerParams._instance.nGauge;
