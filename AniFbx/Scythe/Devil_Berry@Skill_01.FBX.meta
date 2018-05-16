@@ -309,14 +309,6 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.4149516
-        functionName: SoundType
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0b29f28b910f5bc49b71932b116cbcba,
-          type: 3}
-        floatParameter: 0
-        intParameter: 8
-        messageOptions: 0
       - time: 0.44303796
         functionName: ScytheTrue
         data: 
@@ -330,6 +322,13 @@ ModelImporter:
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: bf83baca5ecd4eb40b2bd5e134a452d5,
           type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.35443038
+        functionName: PlayWideCutSound
+        data: 
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

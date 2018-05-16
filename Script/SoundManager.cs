@@ -11,8 +11,14 @@ public enum PlaySoundId
     Attack_Scythe,
     Attack_Counter,
     Defense_Shield,
-    Skill_Scythe1,
+    Skill_ScytheWideCut,
     Hit_StandardMonster,
+    Attack_Finish,
+    Boss_Release,
+    Boss_FootHold,
+    Boss_Arrow,
+    Boss_Orb,
+    Hit_Pc,
 }
 
 public class SoundManager : MonoBehaviour
