@@ -51,7 +51,7 @@ public class CCameraFind : MonoBehaviour
     {
         TargetLockOn(_obj);
         MouseRot();
-        //BlinkCamera();
+        BlinkCamera();
         _direction = (CameraFollowObj.transform.position - transform.position).normalized;
         CameraUpdater();
         ZoomUpdate();
@@ -96,10 +96,10 @@ public class CCameraFind : MonoBehaviour
         //        isLockOn = true;
         //}
 
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    SetZoom(0.3f);
-        //}
+        if (Input.GetMouseButtonDown(0))
+        {
+            SetZoom(0.3f);
+        }
 
     }
     void CameraUpdater()
@@ -114,26 +114,26 @@ public class CCameraFind : MonoBehaviour
         m_fLerpSpeed = 0.0f;
         isDash = true;
     }
-    //void BlinkCamera()
-    //{
-    //    if (!isDash)
-    //    {
-    //        m_fLerpSpeed = 100.0f;
-    //        return;
-    //    }
+    void BlinkCamera()
+    {
+        if (!isDash)
+        {
+            m_fLerpSpeed = 100.0f;
+            return;
+        }
 
-    //    CCameraRayObj._instance.MaxCamera(3.0f);
-    //    fTime += Time.deltaTime;
-    //    m_fLerpSpeed += Time.deltaTime * 20.0f;
-    //    if (fTime > 0.6f)
-    //    {
-    //        CCameraRayObj._instance.MaxCamera(3.5f);
-    //    }
-    //    if (fTime > 0.8f)
-    //    {
-    //        isDash = false;
-    //    }
-    //}
+        //CCameraRayObj._instance.MaxCamera(3.0f);
+        fTime += Time.deltaTime;
+        m_fLerpSpeed += Time.deltaTime * 20.0f;
+        //if (fTime > 0.6f)
+        //{
+        //    CCameraRayObj._instance.MaxCamera(3.5f);
+        //}
+        if (fTime > 0.8f)
+        {
+            isDash = false;
+        }
+    }
 
     public void TargetLockOn(Transform target)
     {
@@ -182,7 +182,7 @@ public class CCameraFind : MonoBehaviour
 
         _isZoom = false;
         _zoomTime = 0.0f;
-        _zoomValue = 0.0f;
-        CCameraRayObj._instance.MaxCamera(4.0f);
+        _zoomValue = 4.0f;
+        CCameraRayObj._instance.MaxCamera(_zoomValue);
     }
 }
