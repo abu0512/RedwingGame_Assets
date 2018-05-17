@@ -30,13 +30,13 @@ public class MonsterWave : MonoBehaviour
             {
                 obj.gameObject.SetActive(false);
             }
-            foreach (MonsterBase mon in FindObjectsOfType<MonsterBase>())
-            {
-                if (mon.GetType() == typeof(WitchBoss))
-                    continue;
+            //foreach (MonsterBase mon in FindObjectsOfType<MonsterBase>())
+            //{
+            //    if (mon.GetType() == typeof(WitchBoss))
+            //        continue;
 
-                mon.gameObject.SetActive(false);
-            }
+            //    mon.gameObject.SetActive(false);
+            //}
         }
     }
 
@@ -51,19 +51,30 @@ public class MonsterWave : MonoBehaviour
         return !ABUGameManager.I.MonsterPool.IsEmpty();
     }
 
-    public void InitWave()
+    public bool WaveRunCheck()
     {
-        foreach (Transform trf in _objects)
+        foreach (Transform obj in _objects)
         {
-            QueenMushroom queen = trf.GetComponent<QueenMushroom>();
-
-            if (queen != null)
-            {
-                Stage1.I.ChangeMode = false;
-                return;
-            }
+            if (obj.gameObject.activeInHierarchy)
+                return true;
         }
 
-        Stage1.I.ChangeMode = true;
+        return false;
+    }
+
+    public void InitWave()
+    {
+        //foreach (Transform trf in _objects)
+        //{
+        //    QueenMushroom queen = trf.GetComponent<QueenMushroom>();
+
+        //    if (queen != null)
+        //    {
+        //        Stage1.I.ChangeMode = false;
+        //        return;
+        //    }
+        //}
+
+        //Stage1.I.ChangeMode = true;
     }
 }
