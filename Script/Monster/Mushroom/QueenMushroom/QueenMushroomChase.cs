@@ -26,7 +26,7 @@ public class QueenMushroomChase : QueenMushroomStateBase
 
         QueenMushroom.GoToDestination(QueenMushroom.Player.position, QueenMushroom.MStat.MoveSpeed, QueenMushroom.rotAnglePerSecond);
 
-        if (QueenMushroom.GetDistanceFromPlayer() < QueenMushroom.MStat.AttackDistance)
+        if (QueenMushroom.GetDistanceFromPlayer() < QueenMushroom.MStat.AttackDistance && QueenMushroom.AttackTimer > QueenMushroom.AttackDelay)
         {
             if (QueenMushroom.AttackTimer > QueenMushroom.AttackDelay && _attackpattern > 4f)
             {

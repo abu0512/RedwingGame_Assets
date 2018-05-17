@@ -21,10 +21,11 @@ public class EliteShamanChase : EliteShamanStateBase
     {
         EliteShaman.PlayerisDead();
         EliteShaman.TimeToHeal();
+        EliteShaman.GroggyCheck();
 
         EliteShaman.GoToDestination(EliteShaman.Player.position, EliteShaman.MStat.MoveSpeed, EliteShaman.rotAnglePerSecond);
 
-        if (EliteShaman.GetDistanceFromPlayer() < EliteShaman.MStat.AttackDistance)
+        if (EliteShaman.GetDistanceFromPlayer() < EliteShaman.MStat.AttackDistance && EliteShaman.AttackTimer > EliteShaman.AttackDelay)
         {
             if (EliteShaman.AttackTimer > EliteShaman.AttackDelay && _attackpattern > 4f)
             {

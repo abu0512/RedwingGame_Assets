@@ -47,11 +47,11 @@ public class CPlayerScytheStart : MonoBehaviour
                 else
                     other.GetComponent<WitchBoss>().OnDamage(Damge1);
             }
+
             CPlayerManager._instance._PlayerAni_Contorl.AniStiff();
             PlayerParams._instance.nGauge = 0;
             PlayerParams._instance.GaugeOff();
             CPlayerManager._instance._nPowerGauge = 0;
-
         }
     }
 }
