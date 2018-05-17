@@ -388,4 +388,9 @@ public class CPlayerManager : MonoBehaviour
     {
         SoundManager.I.PlaySound(transform, PlaySoundId.Skill_ScytheWideCut);
     }
+
+    private void DashStm()
+    {
+        m_PlayerStm -= InspectorManager._InspectorManager.fStmDash;
+    }
 }

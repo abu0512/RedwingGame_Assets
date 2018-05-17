@@ -175,7 +175,6 @@ public class CPlayerAni_Contorl : CPlayerBase
         else if (Input.GetKeyDown(KeyCode.LeftShift) && _PlayerManager.m_PlayerStm >= InspectorManager._InspectorManager.fStmDash)
         {
             _PlayerAni_State_Shild = PlayerAni_State_Shild.Dash;
-            _PlayerManager.m_PlayerStm -= InspectorManager._InspectorManager.fStmDash;
         }
         else
         {
