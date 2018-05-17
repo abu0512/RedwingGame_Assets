@@ -12,6 +12,8 @@ public class CCameraRayObj : MonoBehaviour
     // 속도
     public float smooth = 10.0f;
     Vector3 dollyDir;
+
+    public Transform Player;
     // 거리
     public float distance;
 
