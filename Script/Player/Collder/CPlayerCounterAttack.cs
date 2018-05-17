@@ -8,7 +8,7 @@ public class CPlayerCounterAttack : MonoBehaviour
     {
         if (other.tag == "Boss" || other.tag == "Guard" || other.tag == "Queen" || other.tag == "ShildMushroom" || other.tag == "EliteShaman")
         {
-            CPlayerManager._instance.PlayerHitCamera(3.0f, 0.2f);
+            CPlayerManager._instance.PlayerHitCamera(CCameraRayObj._instance.MaxDistanceValue, 0.2f);
             if (other.tag == "Guard")
             {
                 other.GetComponent<MonsterBase>().isHit = true;

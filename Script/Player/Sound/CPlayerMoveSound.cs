@@ -32,16 +32,16 @@ public class CPlayerMoveSound : CPlayerBase
         if (_PlayerMoveCheack == PlayerMoveCheack.Rock)
         {
             if (_PlayerManager._PlayerSwap._PlayerMode == PlayerMode.Shield)
-                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_Stone);
+                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_TankerStone);
             else
-                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_Stone);
+                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_DealerStone);
         }
         else if (_PlayerMoveCheack == PlayerMoveCheack.Grass)
         {
             if (_PlayerManager._PlayerSwap._PlayerMode == PlayerMode.Shield)
-                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_Grass);
+                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_TankerGrass);
             else
-                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_Grass);
+                SoundManager.I.PlaySound(transform, PlaySoundId.Walk_DealerGrass);
         }
     }
 

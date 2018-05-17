@@ -5,8 +5,8 @@ using UnityEngine;
 public enum PlaySoundId
 {
     Bgm1 = 0,
-    Walk_Stone,
-    Walk_Grass,
+    Walk_TankerStone,
+    Walk_TankerGrass,
     Attack_Original,
     Attack_Scythe,
     Attack_Counter,
@@ -19,6 +19,8 @@ public enum PlaySoundId
     Boss_Arrow,
     Boss_Orb,
     Hit_Pc,
+    Walk_DealerStone,
+    Walk_DealerGrass,
 }
 
 public class SoundManager : MonoBehaviour

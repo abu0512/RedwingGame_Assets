@@ -18,13 +18,18 @@ public class CCameraFind : MonoBehaviour
     private float rotY = 0.0f; // 카메라의 Y축값
     private float rotX = 0.0f; // 카메라의 X축값
 
+    private float _zoomTime;
+    private bool _isZoom;
+    private float _zoomValue = 4.0f;
+    private Vector3 _direction;
+
     // 캐릭터가 카메라를 바라보는지 
     public bool m_bCamera;
     // 카메라의 로테이션 y값을 저장하기 위해 사용
     public Quaternion _CameraRight = Quaternion.identity;
 
     public float m_fLerpSpeed;
-
+    public float LerpSpeedValue = 500.0f;
     public bool isDash;
     private float fTime;
 
@@ -39,14 +44,17 @@ public class CCameraFind : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         m_bCamera = true;
-        m_fLerpSpeed = 100;
-
+        m_fLerpSpeed = LerpSpeedValue;
+        _zoomValue = CCameraRayObj._instance.MaxDistanceValue;
     }
     void Update()
     {
         TargetLockOn(_obj);
         MouseRot();
         BlinkCamera();
+        _direction = (CameraFollowObj.transform.position - transform.position).normalized;
+        CameraUpdater();
+        ZoomUpdate();
     }
     void MouseRot()
     {
@@ -77,19 +85,16 @@ public class CCameraFind : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.CapsLock))
-        {
-            if (isLockOn)
-            {
-                isLockOn = false;
-                //m_fLerpSpeed = 100;
-            }
-            else
-                isLockOn = true;
-        }
-
-        CameraUpdater();
-
+        //if (Input.GetKeyDown(KeyCode.CapsLock))
+        //{
+        //    if (isLockOn)
+        //    {
+        //        isLockOn = false;
+        //        //m_fLerpSpeed = 100;
+        //    }
+        //    else
+        //        isLockOn = true;
+        //}
 
     }
     void CameraUpdater()
@@ -108,17 +113,17 @@ public class CCameraFind : MonoBehaviour
     {
         if (!isDash)
         {
-            m_fLerpSpeed = 100.0f;
+            m_fLerpSpeed = LerpSpeedValue;
             return;
         }
 
-        CCameraRayObj._instance.MaxCamera(3.0f);
+        //CCameraRayObj._instance.MaxCamera(3.0f);
         fTime += Time.deltaTime;
         m_fLerpSpeed += Time.deltaTime * 20.0f;
-        if (fTime > 0.6f)
-        {
-            CCameraRayObj._instance.MaxCamera(3.5f);
-        }
+        //if (fTime > 0.6f)
+        //{
+        //    CCameraRayObj._instance.MaxCamera(3.5f);
+        //}
         if (fTime > 0.8f)
         {
             isDash = false;
@@ -147,5 +152,35 @@ public class CCameraFind : MonoBehaviour
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(curPos), Time.deltaTime * InspectorManager._InspectorManager.fLockOnSpeed);
         }
+    }
+
+    public void SetZoom(float value)
+    {
+        if (value == 0.0f)
+            return;
+
+        _zoomTime = 1.0f;
+        _zoomValue -= value;
+        _isZoom = true;
+        CCameraRayObj._instance.MaxCamera(_zoomValue);
+    }
+
+    private void ZoomUpdate()
+    {
+        //transform.position = Vector3.Lerp(transform.position, CameraFollowObj.transform.position + (_direction * _zoomValue), Time.deltaTime * 3.0f);
+        //transform.position = CameraFollowObj.transform.position;
+
+        if (!_isZoom)
+            return;
+
+        _zoomTime -= Time.deltaTime;
+
+        if (_zoomTime > 0.0f)
+            return;
+
+        _isZoom = false;
+        _zoomTime = 0.0f;
+        _zoomValue = CCameraRayObj._instance.MaxDistanceValue;
+        CCameraRayObj._instance.MaxCamera(_zoomValue);
     }
 }

@@ -47,7 +47,8 @@ public class InspectorManager : MonoBehaviour
     public float fPlayerSweatCountTime; // 흘리기후 몇초동안 반격할수있는 시간을 유지하는지
     public float fLockOnSpeed;
 
-
+    public float[] TankerAttackZoom;
+    public float[] DealerAttackZoom;
 
 
     void Awake ()
