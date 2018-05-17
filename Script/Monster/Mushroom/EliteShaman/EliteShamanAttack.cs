@@ -83,6 +83,7 @@ public class EliteShamanAttack : EliteShamanStateBase
     void Update()
     {
         SetAttack();
+        EliteShaman.GroggyCheck();
         EliteShaman.PlayerisDead();
         EliteShaman.TurnToDestination();
         EliteShaman.TimeToHeal();

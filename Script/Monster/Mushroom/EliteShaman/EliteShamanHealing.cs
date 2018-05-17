@@ -30,6 +30,8 @@ public class EliteShamanHealing : EliteShamanStateBase
 
     void Update()
     {
+        EliteShaman.GroggyCheck();
+        EliteShaman.PlayerisDead();
         Dltime += Time.deltaTime;
         EliteShaman.GoToDestination(transform.position, 0, 0);
 

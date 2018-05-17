@@ -261,7 +261,6 @@ public class QueenMushroom : MonsterBase
             _isHit = false;
             return;
         }
-
     }
 
     private IEnumerator ChangeMat()
@@ -273,7 +272,7 @@ public class QueenMushroom : MonsterBase
 
     public override void OnDead()
     {
-        if (isDead == true)
+        if (isDead)
         {
             gameObject.SetActive(false);
         }

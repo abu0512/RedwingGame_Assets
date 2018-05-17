@@ -29,7 +29,7 @@ public class EliteShamanEffect : MonoBehaviour {
         GroggyEffect.SetActive(true);
     }
 
-    public void QueenMHitEffect()
+    public void EliteShamanHitEffect()
     {
         if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Scythe)
         {

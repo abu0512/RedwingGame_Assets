@@ -25,7 +25,7 @@ public class QueenMushroomDead : QueenMushroomStateBase
             DeadTime += Time.deltaTime;
             QueenMushroom.CharacterisDead = true;
 
-            if (DeadTime >= 1.6f)
+            if (DeadTime >= 1.2f)
             {
                 QueenMushroom.OnDead();
                 return;

@@ -9,6 +9,7 @@ public class GuardMushroomDead : GuardMushroomStateBase
     public override void BeginState()
     {
         DeadTime = 0;
+        GuardMushroom.CharacterisDead = true;
     }
 
     public override void EndState()
@@ -21,11 +22,10 @@ public class GuardMushroomDead : GuardMushroomStateBase
         if (GuardMushroom.isDead)
         {
             GuardMushroom.rotAnglePerSecond = 0;
-            GuardMushroom.MStat.MoveSpeed = 0;
+            GuardMushroom.Stat.MoveSpeed = 0;
             DeadTime += Time.deltaTime;
             GuardMushroom.CharacterisDead = true;
-
-            if (DeadTime >= 1.6f)
+            if (DeadTime >= 1.2f)
             {
                 GuardMushroom.OnDead();
                 return;

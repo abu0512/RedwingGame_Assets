@@ -74,6 +74,11 @@ public class GuardMushroom : MonsterBase
     private float _attackrotangle;
     public float AttackRotAngle { set { _attackrotangle = value; } get { return _attackrotangle; } }
 
+    // 피격 상황에서의 회전 속도
+    [SerializeField]
+    private float _hitrotangle;
+    public float HitRotAngle { set { _hitrotangle = value; } get { return _hitrotangle; } }
+
     // 버서커 모드 전환 대기 시간
     private float _berserkertime;
     public float BerserkerTime { set { _berserkertime = value; } get { return _berserkertime; } }
@@ -241,7 +246,15 @@ public class GuardMushroom : MonsterBase
         Quaternion lookRotation = Quaternion.LookRotation(Player.position - transform.position);
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
-            Time.deltaTime * 1000f);
+            Time.deltaTime * _hitrotangle);
+    }
+
+    public void TurnToDeadDestination()
+    {
+        Quaternion lookRotation = Quaternion.LookRotation(Player.position - transform.position);
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
+            0);
     }
 
     public void MoveToDestination()
@@ -298,7 +311,10 @@ public class GuardMushroom : MonsterBase
 
     public override void OnDead()
     {
-        gameObject.SetActive(false);
+        if (isDead)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void NowisHit()
@@ -309,7 +325,6 @@ public class GuardMushroom : MonsterBase
             _isHit = false;
             return;
         }
-
     }
 
     public void GetBerserkerMode()
@@ -379,7 +394,9 @@ public class GuardMushroom : MonsterBase
         _berserkerattackDamage = 20f;
         _berserkerattackDelay = 2f;
         _angle = 180f;
-        _attackrotangle = 100f;
+        _attackrotangle = 200f;
+        _hitrotangle = 1000f;
+        rotAnglePerSecond = 360f; 
         _berserkertime = 0;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _animParamID = Animator.StringToHash("CurrentState");
