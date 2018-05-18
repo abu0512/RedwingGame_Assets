@@ -34,6 +34,10 @@ public class EliteShaman : MonsterBase
     private Vector3 _home;
     public Vector3 Home { get { return _home; } }
 
+    // 투사체 방향에 사용할 변수
+    private Transform _from;
+    public Transform From { get { return _from; } }
+
     // 공격력
     float _attackDamage;
     public float AttackDamage { set { _attackDamage = value; } get { return _attackDamage; } }
@@ -264,6 +268,7 @@ public class EliteShaman : MonsterBase
         _hearTimer = 0;
         HealDelay = 10f;
         _angle = 180f;
+        _from = transform.Find("From");
         _groggy = 0;
         _maxgroggy = 105f;
         _player = GameObject.FindGameObjectWithTag("Player").transform;

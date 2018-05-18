@@ -12,6 +12,39 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
+<<<<<<< HEAD
+  - {fileID: 114598740254413210}
+  - {fileID: 114079624732557494}
+  EditorEvents:
+  - {fileID: 114152491987460184}
+  - {fileID: 114245327468156598}
+  - {fileID: 114525655806735564}
+  - {fileID: 114726732678303900}
+  - {fileID: 114093625458336726}
+  - {fileID: 114291121192432554}
+  - {fileID: 114255536008821156}
+  - {fileID: 114662523776730504}
+  - {fileID: 114604039837244946}
+  - {fileID: 114912824465532434}
+  - {fileID: 114903745511958128}
+  - {fileID: 114426302742942118}
+  - {fileID: 114025239870596188}
+  - {fileID: 114903421066359488}
+  - {fileID: 114964404877599144}
+  - {fileID: 114614146002988582}
+  - {fileID: 114172691359324238}
+  - {fileID: 114149993176180954}
+  - {fileID: 114409975762342210}
+  - {fileID: 114625813459600826}
+  - {fileID: 114334844662348122}
+  - {fileID: 114391982862543516}
+  - {fileID: 114637164179194054}
+  MasterBankRef: {fileID: 114079624732557494}
+  StringsBankRef: {fileID: 114598740254413210}
+  stringsBankWriteTime: 636620855260225812
+  cacheVersion: 2
+--- !u!114 &114025239870596188
+=======
   - {fileID: 114129062078315636}
   - {fileID: 114850297494046112}
   EditorEvents:
@@ -43,6 +76,7 @@ MonoBehaviour:
   stringsBankWriteTime: 636621761180667946
   cacheVersion: 2
 --- !u!114 &114034485853368844
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -53,10 +87,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Tanker/Attack/Tanker_normalAttack
+  guid: 8cb91525300efa44b84f844f581be2ab
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/PC/Dealer/Walk/Walk_grass
   guid: 18700b6c3a15054b87f4799f400db2db
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -64,8 +105,48 @@ MonoBehaviour:
   - {fileID: 114209631845370618}
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 380
+--- !u!114 &114047722906173934
+=======
   Length: 400
 --- !u!114 &114039981656430930
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114079624732557494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\400-161\Desktop\RedWingsNew\redwing_fmodsound\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636620855260200746
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 531264
+  Exists: 1
+--- !u!114 &114093625458336726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -76,6 +157,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Path: event:/SFX/PC/Tanker/Walk/Walk_Rock
+  guid: 33a060f48b7fb54494e88990e7f3bd02
+  Banks:
+  - {fileID: 114079624732557494}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114047722906173934}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48
+--- !u!114 &114149993176180954
+=======
   Path: event:/SFX/PC/Hited/PC/hited_PC_goblinMagic
   guid: e15723ade085cf4b984223dfc03ce2e0
   Banks:
@@ -88,6 +183,7 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 320
 --- !u!114 &114046102647022414
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -98,26 +194,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/Monster/Death/Monster_Goblin
+  guid: c8e284d7389f054b9add45ea2be62110
+  Banks:
+  - {fileID: 114079624732557494}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114152491987460184
+=======
   Name: Parameter 1
   Min: 0
   Max: 1
   Default: 0
 --- !u!114 &114094276469563630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Parameter 1
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114100106771442352
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -128,19 +224,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: "event:/SFX/Monster/Boss - witch/\uD22C\uC0AC\uCCB4/ArrowSkill01"
+  guid: 04cb3f814343a0479f489ad5a58cef89
+  Banks:
+  - {fileID: 114079624732557494}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 700
+--- !u!114 &114172691359324238
+=======
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114100106771442352
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Tanker/Walk/Walk_grass
+  guid: b6232b89810eea42909a9b4e50695d71
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/PC/Dealer/Walk/Walk_Rock
   guid: 383fb1cdfa340c43af43281562fdda39
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
+<<<<<<< HEAD
+  - {fileID: 114493958137950612}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
+--- !u!114 &114231588235467212
+=======
   - {fileID: 114046102647022414}
   MinDistance: 1
   MaxDistance: 20
   Length: 48
 --- !u!114 &114103879272095820
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -155,7 +296,11 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
+--- !u!114 &114245327468156598
+=======
 --- !u!114 &114129062078315636
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -166,6 +311,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Dealer/Attack/Dealer_skill_frontslash
+  guid: 05c932d2802ae44794363b2972ad51b1
+  Banks:
+  - {fileID: 114079624732557494}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114255536008821156
+=======
   Path: redwing_fmodsound\Build\Desktop\Master Bank.strings.bank
   lastModified: 636621761180667946
   LoadResult: 0
@@ -174,6 +333,7 @@ MonoBehaviour:
     Value: 1966
   Exists: 1
 --- !u!114 &114149126459496024
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -184,6 +344,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Dealer/Walk/Walk_Rock
+  guid: 383fb1cdfa340c43af43281562fdda39
+  Banks:
+  - {fileID: 114079624732557494}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114231588235467212}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48
+--- !u!114 &114291121192432554
+=======
   Path: event:/SFX/PC/Hited/PC/hited_PC_Meleeattack
   guid: dd7e871c6256e844b4481d787c6a3009
   Banks:
@@ -196,6 +371,7 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 525
 --- !u!114 &114157641416640516
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -206,10 +382,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Dealer/Attack/Dealer_Attack
+  guid: 35debba175668d4a9fe10b0b8b85c011
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/PC/Tanker/Walk/Walk_grass
   guid: b6232b89810eea42909a9b4e50695d71
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -217,8 +400,13 @@ MonoBehaviour:
   - {fileID: 114752575175484146}
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 340
+--- !u!114 &114334844662348122
+=======
   Length: 400
 --- !u!114 &114191087918150100
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -229,10 +417,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: "event:/SFX/Monster/Boss - witch/\uADFC\uC811\uBC29\uCD9C/magicboom"
+  guid: e48e7f52f0f8cc448d3c92e0f4aaa19d
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/PC/Dealer/Attack/Dealer_skill_holding
   guid: 25e834d32392754a82a7466f7c225d52
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+<<<<<<< HEAD
+  Length: 900
+--- !u!114 &114391982862543516
+=======
+  Length: 0
+--- !u!114 &114209631845370618
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: "event:/SFX/Monster/Boss - witch/\uBC1C\uD310/FirePillarSkill01"
+  guid: e5cb0cefe1b1754f8affc2ae8de9d3b0
+  Banks:
+  - {fileID: 114079624732557494}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &114409975762342210
+=======
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114219852794472656
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Hited/PC/hited_PC_Meleeattack
+  guid: dd7e871c6256e844b4481d787c6a3009
+  Banks:
+  - {fileID: 114079624732557494}
+=======
+  Path: event:/SFX/AMB/AMB_nightforest
+  guid: ec1309968883374f8ec8847e0acd05cd
+  Banks:
+  - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+<<<<<<< HEAD
+  Length: 525
+--- !u!114 &114426302742942118
+=======
+  Length: 20000
+--- !u!114 &114224438179227034
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/Monster/Death/Boss_witch
+  guid: 62ddd4bd54a82d4ea408b547cf5b4406
+  Banks:
+  - {fileID: 114079624732557494}
+=======
+  Path: event:/SFX/Monster/Death/Monster_Goblin
+  guid: c8e284d7389f054b9add45ea2be62110
+  Banks:
+  - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -240,7 +533,8 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &114209631845370618
+<<<<<<< HEAD
+--- !u!114 &114493958137950612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -255,7 +549,10 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114219852794472656
+--- !u!114 &114525655806735564
+=======
+--- !u!114 &114265860761614372
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -266,40 +563,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/SFX/AMB/AMB_nightforest
-  guid: ec1309968883374f8ec8847e0acd05cd
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Dealer/Walk/Walk_grass
+  guid: 18700b6c3a15054b87f4799f400db2db
   Banks:
-  - {fileID: 114850297494046112}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 20000
---- !u!114 &114224438179227034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Monster/Death/Monster_Goblin
-  guid: c8e284d7389f054b9add45ea2be62110
-  Banks:
-  - {fileID: 114850297494046112}
+  - {fileID: 114079624732557494}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 114655040851113650}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &114265860761614372
+  Length: 400
+--- !u!114 &114598740254413210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -307,9 +584,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Path: redwing_fmodsound\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636620855260225812
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1966
+  Exists: 1
+--- !u!114 &114604039837244946
+=======
   Path: event:/SFX/PC/Tanker/Attack/Tanker_ShieldCounter
   guid: 5e094036b9dc514fb1b38ed17e6da99d
   Banks:
@@ -322,6 +608,7 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 640
 --- !u!114 &114298611443881918
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -332,16 +619,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/SFX/PC/Tanker/Attack/Tanker_normalAttack
-  guid: 8cb91525300efa44b84f844f581be2ab
+  Path: event:/SFX/Monster/Hited/Mon_HitSound
+  guid: 40a9d908f698274fbcbe7fc8bb2c644d
   Banks:
+<<<<<<< HEAD
+  - {fileID: 114079624732557494}
+=======
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 525
+--- !u!114 &114614146002988582
+=======
   Length: 380
 --- !u!114 &114338532935987520
 MonoBehaviour:
@@ -359,6 +654,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114374072917619508
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -372,15 +668,24 @@ MonoBehaviour:
   Path: event:/SFX/Monster/Hited/Mon_HitSound
   guid: 40a9d908f698274fbcbe7fc8bb2c644d
   Banks:
+<<<<<<< HEAD
+  - {fileID: 114079624732557494}
+=======
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 500
+--- !u!114 &114625813459600826
+=======
   Length: 525
 --- !u!114 &114381745524054912
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -391,18 +696,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Hited/PC/hited_PC_goblinMagic
+  guid: e15723ade085cf4b984223dfc03ce2e0
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/Monster/Death/Boss_witch
   guid: 62ddd4bd54a82d4ea408b547cf5b4406
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 320
+--- !u!114 &114637164179194054
+=======
   Length: 0
 --- !u!114 &114391914435095706
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -413,18 +730,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/AMB/AMB_nightforest
+  guid: ec1309968883374f8ec8847e0acd05cd
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/PC/Dealer/Attack/Dealer_skill_WideCut
   guid: 39718e0f85de094aa392038da46e1ace
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 20000
+--- !u!114 &114655040851113650
+=======
   Length: 1077
 --- !u!114 &114398339182596924
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -432,9 +761,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114662523776730504
+=======
   Path: event:/SFX/PC/Tanker/Attack/Tanker_ShieldGuard
   guid: 9c8ec9bd94e5454ea32d276cdf2366ab
   Banks:
@@ -447,6 +783,7 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 500
 --- !u!114 &114403109110940792
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -457,18 +794,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Dealer/Attack/Dealer_skill_WideCut
+  guid: 39718e0f85de094aa392038da46e1ace
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/PC/Tanker/Attack/Tanker_finishAttack
   guid: a41b1548c84ce64b87034720f7035131
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 1077
+--- !u!114 &114726732678303900
+=======
   Length: 408
 --- !u!114 &114437761270580012
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -482,15 +831,24 @@ MonoBehaviour:
   Path: "event:/SFX/Monster/Boss - witch/\uADFC\uC811\uBC29\uCD9C/magicboom"
   guid: e48e7f52f0f8cc448d3c92e0f4aaa19d
   Banks:
+<<<<<<< HEAD
+  - {fileID: 114079624732557494}
+=======
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 0
+--- !u!114 &114903421066359488
+=======
   Length: 900
 --- !u!114 &114458895071722688
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -501,10 +859,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Tanker/Attack/Tanker_ShieldGuard
+  guid: 9c8ec9bd94e5454ea32d276cdf2366ab
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/PC/Tanker/Walk/Walk_Rock
   guid: 33a060f48b7fb54494e88990e7f3bd02
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -512,8 +877,13 @@ MonoBehaviour:
   - {fileID: 114632506797559856}
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 500
+--- !u!114 &114903745511958128
+=======
   Length: 48
 --- !u!114 &114563349757178284
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -524,16 +894,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Tanker/Attack/Tanker_ShieldCounter
+  guid: 5e094036b9dc514fb1b38ed17e6da99d
+  Banks:
+  - {fileID: 114079624732557494}
+=======
   Path: event:/SFX/PC/Dealer/Attack/Dealer_Attack
   guid: 35debba175668d4a9fe10b0b8b85c011
   Banks:
   - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< HEAD
+  Length: 640
+--- !u!114 &114912824465532434
+=======
   Length: 340
 --- !u!114 &114632506797559856
 MonoBehaviour:
@@ -551,21 +932,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114702383029571618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Parameter 1
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114736168120638254
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -576,16 +943,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: "event:/SFX/Monster/Boss - witch/\uD22C\uC0AC\uCCB4/ArrowSkill01"
-  guid: 04cb3f814343a0479f489ad5a58cef89
+<<<<<<< HEAD
+  Path: "event:/SFX/Monster/Boss - witch/\uD22C\uC0AC\uCCB4/ArrowSkill02"
+  guid: 45e45f18bb4a224aa642781941a94518
   Banks:
-  - {fileID: 114850297494046112}
+  - {fileID: 114079624732557494}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 600
+--- !u!114 &114964404877599144
+=======
+  Name: Parameter 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114736168120638254
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  Path: event:/SFX/PC/Tanker/Attack/Tanker_finishAttack
+  guid: a41b1548c84ce64b87034720f7035131
+  Banks:
+  - {fileID: 114079624732557494}
+=======
+  Path: "event:/SFX/Monster/Boss - witch/\uD22C\uC0AC\uCCB4/ArrowSkill01"
+  guid: 04cb3f814343a0479f489ad5a58cef89
+  Banks:
+  - {fileID: 114850297494046112}
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+<<<<<<< HEAD
+  Length: 408
+=======
   Length: 700
 --- !u!114 &114752575175484146
 MonoBehaviour:
@@ -709,3 +1116,4 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2500
+>>>>>>> ca14923a2e22cf5e23b6beb1456e24700f7f582f

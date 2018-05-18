@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EliteSBullet : MonoBehaviour {
 
-    private List<EliteShamanAttack2> _EliteS = new List<EliteShamanAttack2>();
     protected EliteShaman _EliteShaman;
     protected Vector3 _direction;
     private Vector3 _target;
@@ -18,20 +17,12 @@ public class EliteSBullet : MonoBehaviour {
     void Awake()
     {
         DeleteTime = 0;
-        foreach (EliteShamanAttack2 eliteshaman in FindObjectsOfType<EliteShamanAttack2>())
-        {
-            _EliteS.Add(eliteshaman);
-        }
     }
 
     void Update()
     {
         DeleteTime += Time.deltaTime;
-
-        foreach (EliteShamanAttack2 eliteshaman in _EliteS)
-        {
-            _from = eliteshaman._from.transform;
-        }
+        _from = _EliteShaman.From;
 
         transform.Translate(_from.forward * _speed * Time.deltaTime);
 

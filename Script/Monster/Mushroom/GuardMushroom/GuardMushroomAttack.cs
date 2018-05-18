@@ -14,6 +14,7 @@ public class GuardMushroomAttack : GuardMushroomStateBase
     public override void EndState()
     {
         base.EndState();
+        GuardMushroom.AttackTimer = 0f;
     }
        
     public void AttackCheck()
@@ -35,29 +36,25 @@ public class GuardMushroomAttack : GuardMushroomStateBase
 
     void Update()
     {
-        GuardMushroom.TurnToDestination();
-        GuardMushroom.GoToPullPush();
         GuardMushroom.NowisHit();
+        GuardMushroom.GoToPullPush();
         GuardMushroom.PlayerisDead();
+        GuardMushroom.TurnToDestination();
         GuardMushroom.GetBerserkerMode();
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 1.5f)
+        if (Dltime > 1f)
         {
             if (GuardMushroom.GetDistanceFromPlayer() > GuardMushroom.MStat.AttackDistance)
             {
                 GuardMushroom.SetState(GuardMushroomState.Chase);
-                Dltime = 0;
-                GuardMushroom.AttackTimer = 0f;
                 return;
             }
 
             else
             {
                 GuardMushroom.SetState(GuardMushroomState.Return);
-                Dltime = 0;
-                GuardMushroom.AttackTimer = 0f;
                 return;
             }
         }
