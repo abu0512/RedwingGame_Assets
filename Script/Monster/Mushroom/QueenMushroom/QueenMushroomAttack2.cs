@@ -87,7 +87,6 @@ public class QueenMushroomAttack2 : QueenMushroomStateBase
         QueenMushroom.GoToPullPush();
         QueenMushroom.PlayerisDead();
         QueenMushroom.TurnToDestination();
-        QueenMushroom.TimeToHeal();
 
         Dltime += Time.deltaTime;
 

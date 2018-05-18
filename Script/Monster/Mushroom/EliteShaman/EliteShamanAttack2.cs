@@ -86,7 +86,6 @@ public class EliteShamanAttack2 : EliteShamanStateBase
         EliteShaman.GroggyCheck();
         EliteShaman.PlayerisDead();
         EliteShaman.TurnToDestination();
-        EliteShaman.TimeToHeal();
 
         Dltime += Time.deltaTime;
 

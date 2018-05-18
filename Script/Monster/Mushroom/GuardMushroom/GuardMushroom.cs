@@ -248,15 +248,7 @@ public class GuardMushroom : MonsterBase
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
             Time.deltaTime * _hitrotangle);
     }
-
-    public void TurnToDeadDestination()
-    {
-        Quaternion lookRotation = Quaternion.LookRotation(Player.position - transform.position);
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
-            0);
-    }
-
+   
     public void MoveToDestination()
     {
         _controller.Move(transform.forward * _stat.MoveSpeed * Time.deltaTime);
@@ -433,6 +425,7 @@ public class GuardMushroom : MonsterBase
 
     protected override void Update()
     {
+        print(_attackrotangle);
         Yggap(transform.position);
         FrontBackCheck();
         BerserkerTimeStart();

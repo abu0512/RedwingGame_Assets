@@ -25,16 +25,13 @@ public class GuardMushroomChase : GuardMushroomStateBase
 
         GuardMushroom.GoToDestination(GuardMushroom.Player.position, GuardMushroom.MStat.MoveSpeed, GuardMushroom.rotAnglePerSecond);
 
-        if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance)
+        if (GuardMushroom.GetDistanceFromPlayer() <= GuardMushroom.MStat.AttackDistance && GuardMushroom.AttackTimer > GuardMushroom.AttackDelay)
         {
-            if (GuardMushroom.AttackTimer > GuardMushroom.AttackDelay)
-            {
                 GuardMushroom.SetState(GuardMushroomState.Attack);
                 return;
-            }
         }
 
-        if (GuardMushroom.AttackTimer < GuardMushroom.AttackDelay && GuardMushroom.GetDistanceFromPlayer() <= GuardMushroom.MStat.AttackDistance)
+        else if (GuardMushroom.GetDistanceFromPlayer() <= GuardMushroom.MStat.AttackDistance && GuardMushroom.AttackTimer < GuardMushroom.AttackDelay)
         {
             GuardMushroom.SetState(GuardMushroomState.Return);
             return;
