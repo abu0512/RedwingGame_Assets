@@ -20,6 +20,7 @@ public class EliteShamanReturn : EliteShamanStateBase
     void Update()
     {
         EliteShaman.TurnToDestination();
+        EliteShaman.GroggyCheck();
         EliteShaman.PlayerisDead();
         EliteShaman.TimeToHeal();
 

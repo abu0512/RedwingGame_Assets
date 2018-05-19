@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SBullet : MonoBehaviour
 {
-    private List<QueenMushroomAttack2> _queens = new List<QueenMushroomAttack2>();
     protected QueenMushroom _queenMushroom;
     protected Vector3 _direction;
     private Vector3 _target;
@@ -18,20 +17,12 @@ public class SBullet : MonoBehaviour
     void Awake()
     {
         DeleteTime = 0;
-        foreach (QueenMushroomAttack2 queen in FindObjectsOfType<QueenMushroomAttack2>())
-        {
-            _queens.Add(queen);
-        }
     }
 
     void Update()
     {
         DeleteTime += Time.deltaTime;
-
-        foreach (QueenMushroomAttack2 queen in _queens)
-        {
-           _from = queen._from.transform;
-        }
+        _from = _queenMushroom.From;
 
         transform.Translate(_from.forward * _speed * Time.deltaTime);
 

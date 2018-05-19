@@ -11,6 +11,7 @@ public class Stage1 : MonoBehaviour
 
     private List<GuardMushroom> _guards = new List<GuardMushroom>();
     private List<QueenMushroom> _queens = new List<QueenMushroom>();
+    private List<EliteShaman> _eliteshaman = new List<EliteShaman>();
     private bool _changeMode;
 
     public bool ChangeMode { get { return _changeMode; } set { _changeMode = value; } }
@@ -76,6 +77,11 @@ public class Stage1 : MonoBehaviour
         {
             _queens.Add(queen);
         }
+
+        foreach (EliteShaman EliteS in FindObjectsOfType<EliteShaman>())
+        {
+            _eliteshaman.Add(EliteS);
+        }
     }
 
     /*void GuardMushroomisAllDead()
@@ -107,22 +113,32 @@ public class Stage1 : MonoBehaviour
 
         foreach (GuardMushroom guard in _guards)
         {
-            if (guard.Stat.Hp <= 100.0f)
+            if (guard.Stat.Hp <= 250.0f)
             {
                 foreach (QueenMushroom queen in _queens)
                 {
                     queen.HealTime = true;
+                }
+
+                foreach (EliteShaman eliteS in _eliteshaman)
+                {
+                    eliteS.HealTime = true;
                 }
             }
         }
         
         foreach (QueenMushroom queen in _queens)
         {
-            if (queen.Stat.Hp <= 100.0f)
+            if (queen.Stat.Hp <= 250.0f)
             {
                 foreach (QueenMushroom queens in _queens)
                 {
                     queens.HealTime = true;
+                }
+
+                foreach (EliteShaman eliteS in _eliteshaman)
+                {
+                    eliteS.HealTime = true;
                 }
             }
         }
@@ -145,6 +161,24 @@ public class Stage1 : MonoBehaviour
             queen.HealTime = false;
         }
 
+        foreach(EliteShaman eliteS in _eliteshaman)
+        {
+            if (!eliteS.HealStart)
+                continue;
+
+            foreach (QueenMushroom queen in _queens)
+            {
+                queen.SetMonsterHeal(eliteS.HealPoint);
+            }
+
+            foreach (GuardMushroom guard in _guards)
+            {
+                guard.SetMonsterHeal(eliteS.HealPoint);
+            }
+
+            eliteS.HealStart = false;
+            eliteS.HealTime = false;
+        }
     }
 
    /* void GuardModeChange()

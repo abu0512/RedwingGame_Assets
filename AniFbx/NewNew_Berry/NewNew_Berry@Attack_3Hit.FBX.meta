@@ -345,15 +345,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.22938146
-        functionName: SowrdTrue
+      - time: 0.24050634
+        functionName: PlayFinishAttackSound
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: bf83baca5ecd4eb40b2bd5e134a452d5,
+        objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
           type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.27145556
+      - time: 0.29357946
         functionName: AttackEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -370,14 +370,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.6340206
         functionName: RotationTrue
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.24050634
-        functionName: PlayFinishAttackSound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
           type: 3}

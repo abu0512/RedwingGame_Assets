@@ -7,7 +7,7 @@ public class MonsterWaveManager : MonoBehaviour
     private List<MonsterWave> _waves = new List<MonsterWave>();
     private int _curWave;
 
-    private void Awake()
+    private void Start()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -40,18 +40,16 @@ public class MonsterWaveManager : MonoBehaviour
 
         _curWave++;
 
-        _waves[_curWave].gameObject.SetActive(true);
-        _waves[_curWave].InitWave();
-        Stage1.I.InitMonsters();
+        StartWave();
     }
 
     public void StartWave()
     {
-        if (_curWave != 0)
-            return;
+        //if (_curWave != 0)
+        //    return;
 
         _waves[_curWave].gameObject.SetActive(true);
-        _waves[_curWave].InitWave();
+        //_waves[_curWave].InitWave();
         Stage1.I.InitMonsters();
 
     }

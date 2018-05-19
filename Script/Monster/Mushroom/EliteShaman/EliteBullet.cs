@@ -35,7 +35,7 @@ public class EliteBullet : MonoBehaviour {
         _EliteShaman = eliteshaman;
         from.y += 0.6f;
         from.z += 0.3f;
-        from.x += Random.Range(-1.2f, 1.2f);
+        from.x += Random.Range(-2.4f, 2.4f);
         target.y = from.y;
         transform.position = from;
         _direction = (target - from).normalized;

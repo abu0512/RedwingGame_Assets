@@ -40,6 +40,10 @@ public class QueenMushroom : MonsterBase
     private Vector3 _homePosition;
     public Vector3 HomePosition { get { return _homePosition; } }
 
+    // 투사체 방향에 사용할 변수
+    private Transform _from;
+    public Transform From { get { return _from; } }
+
     float _curTime;
     public float CurTime { set { _curTime = value; } get { return _curTime; } }
 
@@ -261,7 +265,6 @@ public class QueenMushroom : MonsterBase
             _isHit = false;
             return;
         }
-
     }
 
     private IEnumerator ChangeMat()
@@ -273,7 +276,7 @@ public class QueenMushroom : MonsterBase
 
     public override void OnDead()
     {
-        if (isDead == true)
+        if (isDead)
         {
             gameObject.SetActive(false);
         }
@@ -326,6 +329,7 @@ public class QueenMushroom : MonsterBase
         _hearTimer = 0;
         HealDelay = 10f;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _from = transform.Find("From");
         _curTime = 0;
         _home = transform.position;
         _animParamID = Animator.StringToHash("CurrentState");

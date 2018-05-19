@@ -24,7 +24,6 @@ public class QueenMushroomHealing : QueenMushroomStateBase
 
     void Update()
     {
-        QueenMushroom.NowisHit();
         QueenMushroom.GoToPullPush();
         Dltime += Time.deltaTime;
         QueenMushroom.GoToDestination(transform.position, 0, 0);
