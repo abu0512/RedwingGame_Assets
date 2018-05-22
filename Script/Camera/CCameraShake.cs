@@ -20,7 +20,6 @@ public class CCameraShake : MonoBehaviour
     }
     private void OnEnable()
     {
-        
         originalPos = camTransform.localPosition;
     }
 

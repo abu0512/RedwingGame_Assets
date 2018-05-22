@@ -60,7 +60,7 @@ public class BulletObjectPool : MonoBehaviour
             _EliteSBullets.Add(es);
         }
 
-        foreach (EliteSStunBullet se  in GetComponentsInChildren<EliteSStunBullet>())
+        foreach (EliteSStunBullet se in GetComponentsInChildren<EliteSStunBullet>())
         {
             se.gameObject.SetActive(false);
 
