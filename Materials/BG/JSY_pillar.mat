@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: JSY_pillar
-  m_Shader: {fileID: 4800000, guid: d93e732a2a8795243b6265ea639c4f72, type: 3}
+  m_Shader: {fileID: 4800000, guid: d860e37c8dfee954b9b2800d48111e2c, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
