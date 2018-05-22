@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-
 public struct EffectInfo
 {
-    public string Name;
+    public EffectType Name;
     public GameObject Effect;
 }
 
@@ -16,14 +15,17 @@ public enum EffectType
     Hero_Tanker_Attack1,
     Hero_Tanker_Attack2,
     Hero_Tanker_Attack3,
+    Hero_Tanker_Attack4,
+    Hero_Tanker_Attack5,
+    Hero_Tanker_CounterAttack,
 }
 
+[Serializable]
 public class EffectManager : MonoBehaviour
 {
     private static EffectManager _instance;
     public static EffectManager I { get { return _instance; } }
 
-    [SerializeField]
     public EffectInfo[] _effectInfos;
     private Dictionary<EffectType, List<GameObject>> _effectPool = new Dictionary<EffectType, List<GameObject>>();
 
@@ -45,12 +47,12 @@ public class EffectManager : MonoBehaviour
         //}
     }
 
-    public GameObject OnEffect(EffectType type, Transform target, Quaternion rotation, float deadTime = 0.0f)
+    public GameObject OnEffect(EffectType type, Transform target, Quaternion rotation, float deadTime = 0.0f, int posType = 0)
     {
-        return OnEffect(type, target.position, rotation, deadTime);
+        return OnEffect(type, target.position, rotation, deadTime, posType);
     }
 
-    public GameObject OnEffect(EffectType type, Vector3 target, Quaternion rotation, float deadTime = 0.0f)
+    public GameObject OnEffect(EffectType type, Vector3 target, Quaternion rotation, float deadTime = 0.0f, int posType = 0)
     {
         GameObject effect = GetEffect(type);
 
@@ -60,13 +62,24 @@ public class EffectManager : MonoBehaviour
             return null;
         }
 
-        effect.SetActive(true);
-        effect.transform.position = target;
-        effect.transform.rotation = rotation;
+        if (posType == 1)
+            effect.transform.position = target;
+        else
+            effect.transform.position += target;
+
+        if (posType == 1)
+            effect.transform.rotation = rotation;
+        else
+        {
+            Vector3 angle = effect.transform.rotation.eulerAngles;
+            angle += rotation.eulerAngles;
+            rotation.eulerAngles = angle;
+            effect.transform.rotation = rotation;
+        }
 
         if (deadTime > 0.0f)
         {
-            //StartCoroutine(Co_EffectDead(effect, deadTime));
+            StartCoroutine(Co_EffectDead(effect, deadTime));
         }
 
         return effect;
@@ -77,7 +90,10 @@ public class EffectManager : MonoBehaviour
         foreach (GameObject info in _effectPool[type])
         {
             if (!info.activeSelf)
+            {
+                info.SetActive(true);
                 return info;
+            }
         }
         return CreateEffect(type);
     }
@@ -86,18 +102,18 @@ public class EffectManager : MonoBehaviour
     {
         foreach (EffectInfo info in _effectInfos)
         {
-            if (info.Name == type.ToString())
+            if (info.Name == type)
             {
                 GameObject effect = Instantiate(info.Effect);
                 effect.transform.parent = transform;
-                effect.SetActive(false);
+                //   effect.SetActive(false);
                 _effectPool[type].Add(info.Effect);
 
                 return effect;
             }
         }
 
-        Debug.LogError("해당하는 이펙트가 없습니다. 이펙트가 제대로 들어갔는지 확인 하시고 이름을 Enum과 똑같이 설정해주세요. typename = " + type.ToString());
+        Debug.LogError("해당하는 이펙트가 없습니다. 이펙트가 제대로 들어갔는지 확인 하세요. typename = " + type.ToString());
 
         return null;
     }
@@ -105,6 +121,6 @@ public class EffectManager : MonoBehaviour
     private IEnumerator Co_EffectDead(GameObject obj, float time)
     {
         yield return new WaitForSeconds(time);
-        obj.SetActive(false);
+        //obj.SetActive(false);
     }
 }

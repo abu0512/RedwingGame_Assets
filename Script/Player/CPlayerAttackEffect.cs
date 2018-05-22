@@ -14,8 +14,8 @@ public class CPlayerAttackEffect : MonoBehaviour
 
     private void OnAttackEffect()
     {
-        //print(m_manager.m_nAttackCombo);    
-        _attackEffect[m_manager.m_nAttackCombo].SetActive(true);
+        EffectType attackEnum = (EffectType)System.Enum.Parse(typeof(EffectType), "Hero_Tanker_Attack" + (m_manager.m_nAttackCombo + 1));
+        EffectManager.I.OnEffect(attackEnum, transform.position, transform.rotation, 0.5f);
     }
 
     private void Start()
@@ -25,14 +25,14 @@ public class CPlayerAttackEffect : MonoBehaviour
     }
     private void Update()
     {
-        if (m_manager.m_nAttackCombo == 0 && !m_manager.m_bAttack)
-        {
-            EffectOff();
-        }
-        if (m_manager._PlayerAni_Contorl._PlayerAni_State_Shild == PlayerAni_State_Shild.IdleRun)
-        {
-            _AttackEffect[6].SetActive(false);
-        }
+        //if (m_manager.m_nAttackCombo == 0 && !m_manager.m_bAttack)
+        //{
+        //    EffectOff();
+        //}
+        //if (m_manager._PlayerAni_Contorl._PlayerAni_State_Shild == PlayerAni_State_Shild.IdleRun)
+        //{
+        //    _AttackEffect[6].SetActive(false);
+        //}
     }
 
     public void ShildAttackEffcet(bool one, bool two, bool three)
@@ -115,4 +115,5 @@ public class CPlayerAttackEffect : MonoBehaviour
             _AttackEffect[6].SetActive(false);
         }
     }
+
 }
