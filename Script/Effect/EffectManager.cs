@@ -62,6 +62,8 @@ public class EffectManager : MonoBehaviour
             return null;
         }
 
+        effect.SetActive(true);
+
         if (posType == 1)
             effect.transform.position = target;
         else
@@ -89,11 +91,11 @@ public class EffectManager : MonoBehaviour
     {
         foreach (GameObject info in _effectPool[type])
         {
-            if (!info.activeSelf)
-            {
-                info.SetActive(true);
-                return info;
-            }
+            //if (!info.activeSelf)
+            //{
+            //    info.SetActive(true);
+            //    return info;
+            //}
         }
         return CreateEffect(type);
     }
@@ -106,7 +108,7 @@ public class EffectManager : MonoBehaviour
             {
                 GameObject effect = Instantiate(info.Effect);
                 effect.transform.parent = transform;
-                //   effect.SetActive(false);
+                effect.SetActive(false);
                 _effectPool[type].Add(info.Effect);
 
                 return effect;
