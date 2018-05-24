@@ -32,7 +32,7 @@ public class GuardMushroomPP : GuardMushroomStateBase
                 return;
             }
 
-            else if (GuardMushroom.QueenisAllDead)
+            else if (!GuardMushroom.QueenisAllDead)
             {
                 GuardMushroom.SetState(GuardMushroomState.Return);
                 return;

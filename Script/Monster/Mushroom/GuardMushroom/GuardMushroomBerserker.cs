@@ -39,6 +39,7 @@ public class GuardMushroomBerserker : GuardMushroomStateBase
             GuardMushroom.ifEndBerserker = true;
             if (RandomeMode == 0)
             {
+                GuardMushroom.QueenisAllDead = true;
                 GuardMushroom.SetState(GuardMushroomState.BChase);
                 return;
             }

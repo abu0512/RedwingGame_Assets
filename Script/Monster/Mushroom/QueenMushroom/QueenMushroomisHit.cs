@@ -7,6 +7,7 @@ public class QueenMushroomisHit : QueenMushroomStateBase
     public override void BeginState()
     {
         Dltime = 0;
+        QueenMushroom.isHit = true;
     }
 
     public override void EndState()
@@ -23,7 +24,7 @@ public class QueenMushroomisHit : QueenMushroomStateBase
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 0.1f)
+        if (Dltime > 0.25f)
         {
             QueenMushroom.SetState(QueenMushroomState.Return);
             return;

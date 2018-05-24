@@ -7,6 +7,7 @@ public class GuardMushroomisHit : GuardMushroomStateBase
     public override void BeginState()
     {
         Dltime = 0;
+        GuardMushroom.isHit = false;
     }
 
     public override void EndState()
@@ -24,17 +25,11 @@ public class GuardMushroomisHit : GuardMushroomStateBase
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 0.15f)
+        if (Dltime > 0.25f)
         {
             if (GuardMushroom.QueenisAllDead)
             {
                 GuardMushroom.SetState(GuardMushroomState.BChase);
-                return;
-            }
-
-            else if(GuardMushroom.SBombing)
-            {
-                GuardMushroom.SetState(GuardMushroomState.Sbombing);
                 return;
             }
 
