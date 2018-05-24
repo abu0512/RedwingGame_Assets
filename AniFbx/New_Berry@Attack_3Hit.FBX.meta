@@ -348,7 +348,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.01901111
-        functionName: Effect3
+        functionName: OnAttack3Effect
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 36881a4ec6d333047b9ad2f73905cb75,
           type: 3}

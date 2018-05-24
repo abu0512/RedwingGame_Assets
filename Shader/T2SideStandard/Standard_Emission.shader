@@ -1,4 +1,4 @@
-﻿Shader "JKH/Standard_Emission" {
+﻿Shader "JKH/Standard_Emission2" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -42,7 +42,7 @@
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-			o.Emission = (tex2D(_Emission,IN.uv_MainTex)) * abs(sin(_Time.y*_GgamBack)) * _EmiColor;
+			o.Emission = (tex2D(_Emission,IN.uv_MainTex)) * abs(sin(_Time.w*1)) * _EmiColor;
 			o.Normal = UnpackNormal(tex2D(_BumpMap,IN.uv_BumpMap));
 			o.Occlusion = tex2D (_AO, IN.uv_MainTex);
 			o.Albedo = c.rgb;
