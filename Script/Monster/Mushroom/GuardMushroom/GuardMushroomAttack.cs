@@ -44,7 +44,7 @@ public class GuardMushroomAttack : GuardMushroomStateBase
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 1f)
+        if (Dltime > 1.5f)
         {
             if (GuardMushroom.GetDistanceFromPlayer() > GuardMushroom.MStat.AttackDistance)
             {
