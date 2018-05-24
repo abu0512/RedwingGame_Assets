@@ -57,6 +57,10 @@ public class GuardMushroom : MonsterBase
     private float _angle;
     public float Angle { set { _angle = value; } get { return _angle; } }
 
+    // 자폭 데미지
+    private float _sbombdamage;
+    public float SbombDamage { set { _sbombdamage = value; } get { return _sbombdamage; } }
+
     // 버서커 공격력
     private float _berserkerattackDamage;
     public float BerserkerAttackDamage { set { _berserkerattackDamage = value; } get { return _berserkerattackDamage; } }
@@ -381,6 +385,7 @@ public class GuardMushroom : MonsterBase
         _attackDamage = 10f;
         _attackDelay = 3.5f;
         _attackTimer = 0;
+        _sbombdamage = 50f;
         _SbombTimer = 0;
         _berserkermovespeed = 4f;
         _berserkerattackDamage = 20f;
@@ -425,6 +430,8 @@ public class GuardMushroom : MonsterBase
 
     protected override void Update()
     {
+        if (GetDistanceFromPlayer() < 4f)
+            print(" 444444444444444444444");
         Yggap(transform.position);
         FrontBackCheck();
         BerserkerTimeStart();

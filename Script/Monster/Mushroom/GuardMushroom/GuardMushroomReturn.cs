@@ -16,9 +16,9 @@ public class GuardMushroomReturn : GuardMushroomStateBase
 
     void Update()
     {
+        GuardMushroom.NowisHit();
         GuardMushroom.TurnToDestination();
         GuardMushroom.GoToPullPush();
-        GuardMushroom.NowisHit();
         GuardMushroom.PlayerisDead();
         GuardMushroom.GetBerserkerMode();
 
@@ -28,7 +28,7 @@ public class GuardMushroomReturn : GuardMushroomStateBase
                 return;
         }
 
-        if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.ChaseDistance && GuardMushroom.GetDistanceFromPlayer() > GuardMushroom.MStat.AttackDistance)
+       else  if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.ChaseDistance && GuardMushroom.GetDistanceFromPlayer() > GuardMushroom.MStat.AttackDistance)
         {
             GuardMushroom.SetState(GuardMushroomState.Chase);
             return;

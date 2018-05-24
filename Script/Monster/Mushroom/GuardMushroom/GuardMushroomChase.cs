@@ -17,9 +17,9 @@ public class GuardMushroomChase : GuardMushroomStateBase
 
     void Update()
     {
+        GuardMushroom.NowisHit();
         GuardMushroom.GoToPullPush();
         GuardMushroom.ModeChange();
-        GuardMushroom.NowisHit();
         GuardMushroom.PlayerisDead();
         GuardMushroom.GetBerserkerMode();
 
