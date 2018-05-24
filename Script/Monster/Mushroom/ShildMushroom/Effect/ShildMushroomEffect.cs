@@ -17,7 +17,7 @@ public class ShildMushroomEffect : MonoBehaviour {
 
     public void Groggy(Vector3 From)
     {
-        From.y += 0.7f;
+        From.y += 0.3f;
         GroggyEffect.transform.position = From;
         GroggyEffect.SetActive(true);
     }

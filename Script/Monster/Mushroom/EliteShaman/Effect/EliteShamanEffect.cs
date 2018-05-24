@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EliteShamanEffect : MonoBehaviour {
+public class EliteShamanEffect : MonoBehaviour
+{
 
     public GameObject HealEffect;
     public GameObject GroggyEffect;
@@ -24,7 +25,8 @@ public class EliteShamanEffect : MonoBehaviour {
 
     public void Groggy(Vector3 From)
     {
-        From.y += 0.7f;
+        From.y += 0.3f;
+        From.x -= 0.15f;
         GroggyEffect.transform.position = From;
         GroggyEffect.SetActive(true);
     }
