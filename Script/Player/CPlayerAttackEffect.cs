@@ -15,7 +15,7 @@ public class CPlayerAttackEffect : MonoBehaviour
     private void OnAttackEffect()
     {
         EffectType attackEnum = (EffectType)System.Enum.Parse(typeof(EffectType), "Hero_Tanker_Attack" + (m_manager.m_nAttackCombo + 1));
-        EffectManager.I.OnEffect(attackEnum, transform.position, transform.rotation, 0.5f);
+        EffectManager.I.OnEffect(attackEnum, transform, 0.3f);
     }
 
     private void Start()
@@ -57,10 +57,10 @@ public class CPlayerAttackEffect : MonoBehaviour
                 _ScytheAttackEffect[i].SetActive(false);
         }
     }
-    public void HitEffect1Off()
-    {
-        _AttackEffect[0].SetActive(false);
-    }
+    //public void HitEffect1Off()
+    //{
+    //    _AttackEffect[0].SetActive(false);
+    //}
     
     public void Effect1()
     {

@@ -63,7 +63,7 @@ public class CPlayerSwap : CPlayerBase
     void Update ()
     {
         SwapKey();
-        EffectTimer();
+        //EffectTimer();
         SwapAttacker();
         TelPoEffect();
         BlinkPlayer();
@@ -247,7 +247,6 @@ public class CPlayerSwap : CPlayerBase
             _PlayerManager.isPull = true;
             m_bSwapAttack = true;
         }
-
         Common();
     }
     void ShildReset()

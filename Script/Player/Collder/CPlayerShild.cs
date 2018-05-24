@@ -16,7 +16,7 @@ public class CPlayerShild : CPlayerBase
 
 
     void Start () {
-        _BoxCollider.enabled = false;
+        //_BoxCollider.enabled = false;
         m_bShildCollider = false;
         m_fShildTimer = 0;
     }
