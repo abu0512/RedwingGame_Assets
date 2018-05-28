@@ -8,7 +8,8 @@ public class EliteShamanHealing : EliteShamanStateBase
 
     public override void BeginState()
     {
-       _effect.EffectofHeal(transform.position);
+        _effect = GetComponent<EliteShamanEffect>();
+        _effect.EffectofHeal(transform.position);
         Dltime = 0;
     }
 
@@ -17,15 +18,10 @@ public class EliteShamanHealing : EliteShamanStateBase
         base.EndState();
     }
 
-    public void HealCheck()
+    public void EliteSHealCheck()
     {
         EliteShaman.HealStart = true;
         EliteShaman.HealTimer = 0;
-    }
-
-    private void Awake()
-    {
-        _effect = GetComponent<EliteShamanEffect>();
     }
 
     void Update()
@@ -38,7 +34,7 @@ public class EliteShamanHealing : EliteShamanStateBase
         if (Dltime > 2f)
         {
             _effect.HealEffect.SetActive(false);
-            EliteShaman.SetState(EliteShamanState.Chase);
+            EliteShaman.SetState(EliteShamanState.Return);
             return;
         }
     }

@@ -12,6 +12,7 @@ public class ShildMushroomAttack : ShildMushroomStateBase
     public override void EndState()
     {
         base.EndState();
+        ShildMushroom.AttackTimer = 0f;
     }
 
     public void ShildAttackCheck()
@@ -43,16 +44,12 @@ public class ShildMushroomAttack : ShildMushroomStateBase
             if (ShildMushroom.GetDistanceFromPlayer() > ShildMushroom.Stat.AttackDistance)
             {
                 ShildMushroom.SetState(ShildMushroomState.Chase);
-                Dltime = 0;
-                ShildMushroom.AttackTimer = 0f;
                 return;
             }
 
             else
             {
                 ShildMushroom.SetState(ShildMushroomState.Return);
-                Dltime = 0;
-                ShildMushroom.AttackTimer = 0f;
                 return;
             }
         }

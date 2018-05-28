@@ -5,18 +5,20 @@ using UnityEngine;
 
 public class GuardMushroomAttack : GuardMushroomStateBase
 {
-    
+
     public override void BeginState()
     {
         Dltime = 0f;
+        GuardMushroom.RADelay = Random.Range(3f, 6f);
     }
 
     public override void EndState()
     {
         base.EndState();
         GuardMushroom.AttackTimer = 0f;
+        GuardMushroom.AttackDelay = GuardMushroom.RADelay;
     }
-       
+
     public void AttackCheck()
     {
         if (GuardMushroom.GetDistanceFromPlayer() < GuardMushroom.MStat.AttackDistance + 4.5f 

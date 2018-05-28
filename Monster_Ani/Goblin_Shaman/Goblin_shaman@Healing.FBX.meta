@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 92cc63a55a5af5e43b63d80cb6f289c3
-timeCreated: 1526458455
+timeCreated: 1527237303
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -149,7 +149,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5945122
+      - time: 0.6097561
         functionName: QueenHealCheck
         data: 
         objectReferenceParameter: {instanceID: 0}

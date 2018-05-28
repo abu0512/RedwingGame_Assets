@@ -28,7 +28,7 @@ public class CPlayerCounterAttack : MonoBehaviour
 
             else if (other.tag == "EliteShaman")
             {
-                other.GetComponent<EliteShaman>().AddGroggyValue(105f);
+                other.GetComponent<EliteShaman>().AddGroggyValue(100f);
                 other.GetComponent<EliteShaman>().OnDamage(InspectorManager._InspectorManager.fCountAttackDamge);
             }
 
