@@ -45,6 +45,10 @@ public class GuardMushroom : MonsterBase
     private float _attackDelay;
     public float AttackDelay { set { _attackDelay = value; } get { return _attackDelay; } }
 
+    // 공격 딜레이 속도 랜덤값 담을 변수
+    private float _raDelay;
+    public float RADelay { set { _raDelay = value; } get { return _raDelay; } }
+
     // 공격 딜레이 시간
     private float _attackTimer;
     public float AttackTimer { set { _attackTimer = value; } get { return _attackTimer; } }
@@ -384,6 +388,7 @@ public class GuardMushroom : MonsterBase
         Stat.MoveSpeed = 2f;
         _attackDamage = 10f;
         _attackDelay = 3.5f;
+        _raDelay = 0;
         _attackTimer = 0;
         _sbombdamage = 50f;
         _SbombTimer = 0;
@@ -430,8 +435,7 @@ public class GuardMushroom : MonsterBase
 
     protected override void Update()
     {
-        if (GetDistanceFromPlayer() < 4f)
-            print(" 444444444444444444444");
+        print(_attackDelay);
         Yggap(transform.position);
         FrontBackCheck();
         BerserkerTimeStart();

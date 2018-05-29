@@ -8,11 +8,13 @@ public class GuardMushroomBAttack : GuardMushroomStateBase
     public override void BeginState()
     {
         Dltime = 0f;
+        GuardMushroom.BerserkerMoveSpeed = 0;
     }
 
     public override void EndState()
     {
         base.EndState();
+        GuardMushroom.BerserkerMoveSpeed = 4f;
     }
 
     public void BAttackCheck()
@@ -36,14 +38,15 @@ public class GuardMushroomBAttack : GuardMushroomStateBase
 
     void Update()
     {
-        GuardMushroom.TurnToDestination();
+        GuardMushroom.GoToDestination(GuardMushroom.Player.position, 0, GuardMushroom.rotAnglePerSecond);
+
         GuardMushroom.GoToPullPush();
         GuardMushroom.NowisHit();
         GuardMushroom.PlayerisDead();
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 0.4f)
+        if (Dltime > 1.5f)
         {
                 GuardMushroom.SetState(GuardMushroomState.BChase);
                 Dltime = 0;

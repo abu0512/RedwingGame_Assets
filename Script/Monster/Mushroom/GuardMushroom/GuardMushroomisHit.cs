@@ -35,8 +35,17 @@ public class GuardMushroomisHit : GuardMushroomStateBase
 
             else
             {
-                GuardMushroom.SetState(GuardMushroomState.Return);
-                return;
+                if (GuardMushroom.GetDistanceFromPlayer() > GuardMushroom.MStat.AttackDistance)
+                {
+                    GuardMushroom.SetState(GuardMushroomState.Chase);
+                    return;
+                }
+
+                else
+                {
+                    GuardMushroom.SetState(GuardMushroomState.Return);
+                    return;
+                }
             }
         }
     }

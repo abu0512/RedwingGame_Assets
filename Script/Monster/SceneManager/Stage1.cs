@@ -47,6 +47,22 @@ public class Stage1 : MonoBehaviour
         }
     }
 
+    public int EliteShamanCount
+    {
+        get
+        {
+            int cnt = 0;
+
+            foreach (EliteShaman elites in _eliteshaman)
+            {
+                if (elites.gameObject.activeInHierarchy)
+                    cnt++;
+            }
+
+            return cnt;
+        }
+    }
+
     private void Awake()
     {
         //_queen = GameObject.FindGameObjectWithTag("Queen").GetComponent<QueenMushroom>();
@@ -109,7 +125,14 @@ public class Stage1 : MonoBehaviour
     void HealTimeCheck()
     {
         if (GuardCount == 0 && QueenCount == 0)
+        {
+            foreach (QueenMushroom queen in _queens)
+            {
+                queen.HealStart = false;
+                queen.HealTime = false;
+            }
             return;
+        }
 
         foreach (GuardMushroom guard in _guards)
         {
@@ -119,14 +142,9 @@ public class Stage1 : MonoBehaviour
                 {
                     queen.HealTime = true;
                 }
-
-                foreach (EliteShaman eliteS in _eliteshaman)
-                {
-                    eliteS.HealTime = true;
-                }
             }
         }
-        
+
         foreach (QueenMushroom queen in _queens)
         {
             if (queen.Stat.Hp <= 250.0f)
@@ -135,7 +153,37 @@ public class Stage1 : MonoBehaviour
                 {
                     queens.HealTime = true;
                 }
+            }
+        }
+    }
 
+    void EliteHealTimeCheck()
+    {
+        if (GuardCount == 0 && QueenCount == 0)
+        {
+            foreach (EliteShaman eliteS in _eliteshaman)
+            {
+                eliteS.HealStart = false;
+                eliteS.HealTime = false;
+            }
+            return;
+        }
+
+        foreach (GuardMushroom guard in _guards)
+        {
+            if (guard.Stat.Hp <= 250.0f)
+            {
+                foreach (EliteShaman eliteS in _eliteshaman)
+                {
+                    eliteS.HealTime = true;
+                }
+            }
+        }
+
+        foreach (QueenMushroom queen in _queens)
+        {
+            if (queen.Stat.Hp <= 250.0f)
+            {
                 foreach (EliteShaman eliteS in _eliteshaman)
                 {
                     eliteS.HealTime = true;
@@ -144,24 +192,9 @@ public class Stage1 : MonoBehaviour
         }
     }
 
-    void HealTimeStart()
+    void EliteHealStart()
     {
-        foreach (QueenMushroom queen in _queens)
-        {
-            if (!queen.HealStart)
-                continue;
-
-               queen.SetMonsterHeal(queen.HealPoint);
-            foreach (GuardMushroom guard in _guards)
-            {
-                guard.SetMonsterHeal(queen.HealPoint);
-            }
-
-            queen.HealStart = false;
-            queen.HealTime = false;
-        }
-
-        foreach(EliteShaman eliteS in _eliteshaman)
+        foreach (EliteShaman eliteS in _eliteshaman)
         {
             if (!eliteS.HealStart)
                 continue;
@@ -181,35 +214,53 @@ public class Stage1 : MonoBehaviour
         }
     }
 
-   /* void GuardModeChange()
+    void HealTimeStart()
     {
-        if (QueenCount > 0)
-            return;
-
-        if (_changeMode)
-            return;
-
-        int cnt = 0;
-
-        foreach (GuardMushroom guard in _guards)
+        foreach (QueenMushroom queen in _queens)
         {
-            guard.SBombing = true;
-            cnt++;
-
-            if (cnt >= GuardCount / 2)
-                break;
-        }
-
-        foreach (GuardMushroom guard in _guards)
-        {
-            if (guard.SBombing)
+            if (!queen.HealStart)
                 continue;
 
-            guard.QueenisAllDead = true;
-        }
+            queen.SetMonsterHeal(queen.HealPoint);
+            foreach (GuardMushroom guard in _guards)
+            {
+                guard.SetMonsterHeal(queen.HealPoint);
+            }
 
-        _changeMode = true;
-    }*/
+            queen.HealStart = false;
+            queen.HealTime = false;
+        }
+    }
+
+    /* void GuardModeChange()
+     {
+         if (QueenCount > 0)
+             return;
+
+         if (_changeMode)
+             return;
+
+         int cnt = 0;
+
+         foreach (GuardMushroom guard in _guards)
+         {
+             guard.SBombing = true;
+             cnt++;
+
+             if (cnt >= GuardCount / 2)
+                 break;
+         }
+
+         foreach (GuardMushroom guard in _guards)
+         {
+             if (guard.SBombing)
+                 continue;
+
+             guard.QueenisAllDead = true;
+         }
+
+         _changeMode = true;
+     }*/
 
     //void OnTriggerEnter(Collider other)
     //{
@@ -222,6 +273,8 @@ public class Stage1 : MonoBehaviour
     void Update()
     {
         //BulletPoolSet();
+        EliteHealTimeCheck();
+        EliteHealStart();
         HealTimeCheck();
         HealTimeStart();
         //GuardModeChange();
