@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GuardMushroomSbombing : GuardMushroomStateBase
 {
-    public ParticleSystem SbombEffect;
+    GuardMushroomEffect _guardeffect;
 
     public override void BeginState()
     {
         base.BeginState();
+        _guardeffect = GetComponent<GuardMushroomEffect>();
     }
 
     public override void EndState()
@@ -16,12 +17,12 @@ public class GuardMushroomSbombing : GuardMushroomStateBase
         base.EndState();
     }
 
-    public void EffectofSbomb(Vector3 From)
-    {
-        From.y += 1f;
-        transform.position = From;
-        Instantiate(SbombEffect, transform.position, Quaternion.identity);
-    }
+    //public void EffectofSbomb(Vector3 From)
+    //{
+    //    From.y += 1f;
+    //    transform.position = From;
+    //    Instantiate(SbombEffect, transform.position, Quaternion.identity);
+    //}
 
     void Update()
     {
@@ -29,7 +30,7 @@ public class GuardMushroomSbombing : GuardMushroomStateBase
 
         if (GuardMushroom.SbombTimer > 6f)
         {
-            EffectofSbomb(transform.position);
+            _guardeffect.BombEffect(transform.position);
             if (GuardMushroom.GetDistanceFromPlayer() < 4f)
             {
                 CPlayerManager._instance.PlayerHp(0.2f, 1, GuardMushroom.SbombDamage);

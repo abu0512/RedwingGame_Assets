@@ -22,7 +22,8 @@ public class GuardMushroom : MonsterBase
 {
     public Material _Mat; // 기본 매터리얼
     public Material _HitMat; // 피격 매터리얼
-    public GameObject _GuardMat;
+    public GameObject _GuardMat; // 몸체 오브젝트
+    public GameObject HealEffect; // 힐 이펙트
 
     public GuardMushroomState startState;
     public GuardMushroomState currentState;
@@ -117,6 +118,14 @@ public class GuardMushroom : MonsterBase
     private bool _CharacterisDead;
     public bool CharacterisDead { set { _CharacterisDead = value; } get { return _CharacterisDead; } }
 
+    // Y값 고정
+    private Vector3 _gravity;
+    public Vector3 Gravity { set { _gravity = value; } get { return _gravity; } }
+
+    // Y값 고정 해제
+    private bool _exitgravity;
+    public bool ExitGravity { set { _exitgravity = value; } get { return _exitgravity; } }
+
     public float rotAnglePerSecond;// 몬스터 초당 회전 속도
     public bool isDead; // 죽었는지 체크
     public bool QueenisAllDead; // 공주 버섯이 전부 죽었는지 체크해서 버서커 모드로 보내기 위한 bool
@@ -131,7 +140,6 @@ public class GuardMushroom : MonsterBase
     public MonsterStat MStat { get { return _stat; } set { _stat = value; } }
 
     private int _animParamID;
-    private Vector3 _gojjung;
 
     public GuardMushroomStateBase GetCurrentState()
     {
@@ -305,6 +313,7 @@ public class GuardMushroom : MonsterBase
 
     public void SetMonsterHeal(float Heal)
     {
+        StartCoroutine(StartHeal());
         Stat.Hp += Heal;
         Stat.Hp = Mathf.Clamp(Stat.Hp, 0, Stat.MaxHp);
     }
@@ -315,6 +324,13 @@ public class GuardMushroom : MonsterBase
         {
             gameObject.SetActive(false);
         }
+    }
+
+    private IEnumerator StartHeal()
+    {
+        HealEffect.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        HealEffect.SetActive(false);
     }
 
     public void NowisHit()
@@ -356,10 +372,13 @@ public class GuardMushroom : MonsterBase
         }
     }
 
-    public void Yggap(Vector3 From)
+    public void CharicterGravity(Vector3 From)
     {
-        From.y = _gojjung.y;
-        transform.position = From;
+        if (!_exitgravity)
+        {
+            From.y = Mathf.Clamp(_gravity.y, 0, 0.5f);
+            transform.position = From;
+        }
     }
 
     public void FrontBackCheck()
@@ -406,7 +425,7 @@ public class GuardMushroom : MonsterBase
         QueenisAllDead = false;
         SBombing = false;
         _ppending = true;
-        _gojjung = transform.position;
+        _gravity = transform.position;
 
         GuardMushroomState[] stateValues = (GuardMushroomState[])Enum.GetValues(typeof(GuardMushroomState));
         foreach (GuardMushroomState s in stateValues)
@@ -435,8 +454,7 @@ public class GuardMushroom : MonsterBase
 
     protected override void Update()
     {
-        print(_attackDelay);
-        Yggap(transform.position);
+        //CharicterGravity(transform.position);
         FrontBackCheck();
         BerserkerTimeStart();
         AttackTimer += Time.deltaTime;

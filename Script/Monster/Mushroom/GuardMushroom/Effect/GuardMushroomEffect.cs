@@ -9,6 +9,7 @@ public class GuardMushroomEffect : MonoBehaviour
     public GameObject[] ScytheHitEffects;
     public GameObject EffectPosition;
     public GameObject PCSwapEffect;
+    public GameObject SbombingEffect;
 
 
     public float[] ShildHitTime;
@@ -92,11 +93,19 @@ public class GuardMushroomEffect : MonoBehaviour
             }
         }
     }
+
     public void BerserkerModeEffect(Vector3 From)
     {
-        From.y += 1.35f;
         BerserkerEffect.transform.position = From;
         BerserkerEffect.SetActive(true);
+    }
+
+    public void BombEffect(Vector3 From)
+    {
+        From.y += 1.45f;
+        SbombingEffect.transform.position = From;
+        SbombingEffect.SetActive(true);
+        Instantiate(SbombingEffect, SbombingEffect.transform.position, Quaternion.identity);
     }
 
     public void SetHitEffect()
