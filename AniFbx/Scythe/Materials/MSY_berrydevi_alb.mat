@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MSY_berrydevi_alb
-  m_Shader: {fileID: 4800000, guid: fadd7f5bbd5c2f740a1907e01a051da3, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 7ba6f02cd29e065479fff2cd7abe2041, type: 3}
+        m_Texture: {fileID: 2800000, guid: 364da4c22b1d7634b98cd449d048a43c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -68,7 +68,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FakeSpecpow: 138
-    - _GlossMapScale: 0.95
+    - _GlossMapScale: 0.742
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
