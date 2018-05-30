@@ -189,7 +189,11 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+<<<<<<< HEAD
+      loopBlend: 0
+=======
       loopBlend: 1
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1

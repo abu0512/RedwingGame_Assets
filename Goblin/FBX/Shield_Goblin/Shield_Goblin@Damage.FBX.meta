@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 6cdef7933d9bfa149b797f1bb8a43269
+timeCreated: 1527657999
+=======
 guid: 298848b0baa3fc54b9fd2c8aa25fa80a
 timeCreated: 1527566888
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -171,9 +176,51 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+<<<<<<< HEAD
+      might lower retargeting quality:\n\t'Bip001 Head' has translation animation
+      that will be discarded.\n\t'Bip001 L UpperArm' has translation animation that
+      will be discarded.\n\t'Bip001 L Forearm' has translation animation that will
+      be discarded.\n\t'Bip001 L Hand' has translation animation that will be discarded.\n\t'Bip001
+      L Finger0' has translation animation that will be discarded.\n\t'Bip001 L Finger01'
+      has translation animation that will be discarded.\n\t'Bip001 L Finger02' has
+      translation animation that will be discarded.\n\t'Bip001 L Finger1' has translation
+      animation that will be discarded.\n\t'Bip001 L Finger11' has translation animation
+      that will be discarded.\n\t'Bip001 L Finger12' has translation animation that
+      will be discarded.\n\t'Bip001 L Finger2' has translation animation that will
+      be discarded.\n\t'Bip001 L Finger21' has translation animation that will be
+      discarded.\n\t'Bip001 L Finger22' has translation animation that will be discarded.\n\t'Bip001
+      L Finger3' has translation animation that will be discarded.\n\t'Bip001 L Finger31'
+      has translation animation that will be discarded.\n\t'Bip001 L Finger32' has
+      translation animation that will be discarded.\n\t'Bip001 L Finger4' has translation
+      animation that will be discarded.\n\t'Bip001 L Finger41' has translation animation
+      that will be discarded.\n\t'Bip001 L Finger42' has translation animation that
+      will be discarded.\n\t'Bip001 R UpperArm' has translation animation that will
+      be discarded.\n\t'Bip001 R Forearm' has translation animation that will be discarded.\n\t'Bip001
+      R Hand' has translation animation that will be discarded.\n\t'Bip001 R Finger0'
+      has translation animation that will be discarded.\n\t'Bip001 R Finger01' has
+      translation animation that will be discarded.\n\t'Bip001 R Finger02' has translation
+      animation that will be discarded.\n\t'Bip001 R Finger1' has translation animation
+      that will be discarded.\n\t'Bip001 R Finger11' has translation animation that
+      will be discarded.\n\t'Bip001 R Finger12' has translation animation that will
+      be discarded.\n\t'Bip001 R Finger2' has translation animation that will be discarded.\n\t'Bip001
+      R Finger21' has translation animation that will be discarded.\n\t'Bip001 R Finger22'
+      has translation animation that will be discarded.\n\t'Bip001 R Finger3' has
+      translation animation that will be discarded.\n\t'Bip001 R Finger31' has translation
+      animation that will be discarded.\n\t'Bip001 R Finger32' has translation animation
+      that will be discarded.\n\t'Bip001 R Finger4' has translation animation that
+      will be discarded.\n\t'Bip001 R Finger41' has translation animation that will
+      be discarded.\n\t'Bip001 R Finger42' has translation animation that will be
+      discarded.\n\t'Bip001 L Calf' has translation animation that will be discarded.\n\t'Bip001
+      L Foot' has translation animation that will be discarded.\n\t'Bip001 L Toe0'
+      has translation animation that will be discarded.\n\t'Bip001 R Calf' has translation
+      animation that will be discarded.\n\t'Bip001 R Foot' has translation animation
+      that will be discarded.\n\t'Bip001 R Toe0' has translation animation that will
+      be discarded.\n"
+=======
       might lower retargeting quality:\n\t'Bip001 R Hand' has translation animation
       that will be discarded.\n\t'Bip001 R Finger2' has translation animation that
       will be discarded.\n"
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
@@ -188,7 +235,11 @@ ModelImporter:
       name: Damage
       takeName: Take 001
       firstFrame: 0
+<<<<<<< HEAD
+      lastFrame: 30
+=======
       lastFrame: 45
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -199,10 +250,17 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
+<<<<<<< HEAD
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+=======
       loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000

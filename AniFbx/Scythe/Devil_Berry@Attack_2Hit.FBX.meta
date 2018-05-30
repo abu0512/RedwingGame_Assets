@@ -328,12 +328,12 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: Effect2
+        functionName: PlayerEffectOn
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 36881a4ec6d333047b9ad2f73905cb75,
+        objectReferenceParameter: {fileID: 11500000, guid: e5fe9d570e9ec9449883488f5dd91694,
           type: 3}
         floatParameter: 0
-        intParameter: 0
+        intParameter: 12
         messageOptions: 0
       - time: 0.1247216
         functionName: AttackComboAdd

@@ -301,13 +301,20 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.3121672
-        functionName: Effect5
+      - time: 0.35443038
+        functionName: PlayWideCutSound
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: bf83baca5ecd4eb40b2bd5e134a452d5,
-          type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
+        messageOptions: 0
+      - time: 0.38505352
+        functionName: PlayerEffectOn
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: e5fe9d570e9ec9449883488f5dd91694,
+          type: 3}
+        floatParameter: 0
+        intParameter: 8
         messageOptions: 0
       - time: 0.44303796
         functionName: ScytheTrue
@@ -322,13 +329,6 @@ ModelImporter:
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: bf83baca5ecd4eb40b2bd5e134a452d5,
           type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.35443038
-        functionName: PlayWideCutSound
-        data: 
-        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

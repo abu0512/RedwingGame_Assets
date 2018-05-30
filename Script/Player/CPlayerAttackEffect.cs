@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CPlayerAttackEffect : MonoBehaviour
 {
+    /*
     public static CPlayerAttackEffect _instance = null;
 
     CPlayerManager m_manager;
@@ -115,5 +116,5 @@ public class CPlayerAttackEffect : MonoBehaviour
             _AttackEffect[6].SetActive(false);
         }
     }
-
+    */
 }

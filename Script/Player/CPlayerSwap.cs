@@ -42,13 +42,13 @@ public class CPlayerSwap : CPlayerBase
     private float fBlinkTime;
 
     private bool isBlinkSwapKey;
+    private bool isBlinkOut;
     void Start()
     {
         m_fDisMin = 1.5f;
         m_fMoveDir = 5.0f;
 
         fEffectTime = 0;
-        EffectModle(false, false);
         m_bSwapAttack = false;
         m_fSwapAttackTime = 0.0f;
 
@@ -58,6 +58,7 @@ public class CPlayerSwap : CPlayerBase
         isCoolTimeSwap = true;
         isBlink = false;
         isBlinkSwapKey = false;
+        isBlinkOut = true;
 
     }
     void Update ()
@@ -120,7 +121,6 @@ public class CPlayerSwap : CPlayerBase
             fEffectTime += Time.deltaTime;
             if (fEffectTime >= 2.0f)
             {
-                EffectModle(false, false);
                 isEffect = false;
             }
         }
@@ -134,8 +134,8 @@ public class CPlayerSwap : CPlayerBase
 
         if(isEffectTelpo)
         {
-            _EffectTelpo[0].SetActive(false);
-            _EffectTelpo[0].SetActive(true);
+            // 이펙트
+            EffectManager.I.EventOnEffect(15);
             isEffectTelpo = false;
         }
     }
@@ -161,11 +161,7 @@ public class CPlayerSwap : CPlayerBase
             }
         }
     }
-    void EffectModle(bool a, bool b)
-    {
-        _EffectModle[0].SetActive(a);
-        _EffectModle[1].SetActive(b);
-    }
+   
     public void RayCastChack()
     {
         isEffectTelpo = true;
@@ -202,9 +198,8 @@ public class CPlayerSwap : CPlayerBase
     
     void BlinkStart()
     {
+        isBlinkOut = true;
         isBlinkSwapKey = true;
-        _EffectTelpo[0].SetActive(false);
-        _EffectTelpo[1].SetActive(false);
         isBlink = true;
         fBlinkTime = 0;
     }
@@ -213,6 +208,7 @@ public class CPlayerSwap : CPlayerBase
     {
         if (!isBlink)
             return;
+            
 
         fBlinkTime += Time.deltaTime;
         
@@ -220,15 +216,19 @@ public class CPlayerSwap : CPlayerBase
         {
             isBlinkSwapKey = false;
             CSwapSystem._instance.ObjSwap(false, true);
-            _EffectTelpo[1].SetActive(true);
+            if(isBlinkOut)
+            {
+                EffectManager.I.EventOnEffect(16);
+                isBlinkOut = false;
+            }
         }
         if (fBlinkTime > 0.8f)
         {
-            _EffectTelpo[0].SetActive(false);
+            //_EffectTelpo[0].SetActive(false);
         }
         if (fBlinkTime > 2.0f)
         {
-            _EffectTelpo[1].SetActive(false);
+            // _EffectTelpo[1].SetActive(false);
             isBlink = false;
         }
     }
@@ -237,13 +237,14 @@ public class CPlayerSwap : CPlayerBase
 
     void ScytheReset(int type = 0)
     {
+        EffectManager.I.EventOnEffect(9);
         CSwapSystem._instance.ScytheObjs(type);
-        EffectModle(false, true);
         StartCoroutine("ScytheHpDown");
         _PlayerMode = PlayerMode.Scythe;
 
         if (type == 1)
         {
+            //EffectManager.I.EventOnEffect(8);
             _PlayerManager.isPull = true;
             m_bSwapAttack = true;
         }
@@ -251,14 +252,12 @@ public class CPlayerSwap : CPlayerBase
     }
     void ShildReset()
     {
-        _EffectTelpo[0].SetActive(false);
-        _EffectTelpo[1].SetActive(false);
+        EffectManager.I.EventOnEffect(10);
         _PlayerManager.PlayerHitCamera(CCameraRayObj._instance.MaxDistanceValue, 0.8f);
         CSwapSystem._instance.ShildObjs();
         StopCoroutine("ScytheHpDown");
         nScytheNum = 0;
         nScytheExponential = 1;
-        EffectModle(true, false);
         _PlayerMode = PlayerMode.Shield;
         _PlayerManager.isPush = true;
         isBlink = false;

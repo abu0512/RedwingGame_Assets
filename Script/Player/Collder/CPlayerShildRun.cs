@@ -34,7 +34,7 @@ public class CPlayerShildRun : MonoBehaviour
                 other.GetComponent<WitchBoss>().OnDamage(InspectorManager._InspectorManager.fShildRunDamge);
             }
 
-            CPlayerAttackEffect._instance.Effect8();
+            //CPlayerAttackEffect._instance.Effect8(); 이펙트
             CPlayerManager._instance._PlayerAni_Contorl.AniStiff();
         }
     }

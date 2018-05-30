@@ -379,12 +379,12 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.2638298
-        functionName: OnAttackEffect
+        functionName: PlayerEffectOn
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
+        objectReferenceParameter: {fileID: 11500000, guid: e5fe9d570e9ec9449883488f5dd91694,
           type: 3}
         floatParameter: 0
-        intParameter: 0
+        intParameter: 3
         messageOptions: 0
       - time: 0.33755273
         functionName: AttackEnd
@@ -402,12 +402,12 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.48085105
-        functionName: OnAttackEffect
+        functionName: PlayerEffectOn
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8a8c6971f58ae08448aef87dda3849be,
+        objectReferenceParameter: {fileID: 11500000, guid: e5fe9d570e9ec9449883488f5dd91694,
           type: 3}
         floatParameter: 0
-        intParameter: 0
+        intParameter: 4
         messageOptions: 0
       - time: 0.4940471
         functionName: SowrdTrue

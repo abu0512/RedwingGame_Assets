@@ -454,7 +454,12 @@ public class GuardMushroom : MonsterBase
 
     protected override void Update()
     {
+<<<<<<< HEAD
+
+        Yggap(transform.position);
+=======
         //CharicterGravity(transform.position);
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
         FrontBackCheck();
         BerserkerTimeStart();
         AttackTimer += Time.deltaTime;

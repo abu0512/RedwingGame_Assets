@@ -216,6 +216,9 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
+<<<<<<< HEAD
+      events: []
+=======
       events:
       - time: 0.66867477
         functionName: StartAttack
@@ -231,6 +234,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
       transformMask:
       - path: 
         weight: 1
