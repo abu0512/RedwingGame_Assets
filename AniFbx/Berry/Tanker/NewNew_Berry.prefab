@@ -94,7 +94,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4733086856519310}
-  - component: {fileID: 95314007836046432}
   m_Layer: 0
   m_Name: NewNew_Berry
   m_TagString: Untagged
@@ -2495,7 +2494,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633693165630080}
-  m_LocalRotation: {x: -0.6964988, y: -0.00027831053, z: 0.71755785, w: -0.00028473337}
+  m_LocalRotation: {x: -0.6964989, y: -0.00027831056, z: 0.7175579, w: -0.0002847334}
   m_LocalPosition: {x: -13.386375, y: -3.764511, z: 2.1795917}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
@@ -3273,7 +3272,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1724827273835150}
-  m_LocalRotation: {x: 0.6964988, y: 0.000276319, z: 0.71755785, w: -0.00028666382}
+  m_LocalRotation: {x: 0.6964989, y: 0.00027631904, z: 0.7175579, w: -0.00028666385}
   m_LocalPosition: {x: -13.386375, y: -3.7644987, z: -2.1796126}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
@@ -3349,7 +3348,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062149116881906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 107.44298, y: 0, z: 43.329224}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4212009108617560}
@@ -3653,23 +3652,6 @@ Transform:
   m_Father: {fileID: 4732272534346790}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95314007836046432
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062149116881906}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: bbc3a5504e899114187271cc61378e1f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 85778d772271778489206b7afe8de2fd, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!137 &137248038469838186
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -54,7 +54,7 @@ public class InspectorManager : MonoBehaviour
     void Awake ()
     {
         _InspectorManager = this;
-        StartCoroutine("StartAutoStm");
+        //StartCoroutine("StartAutoStm");
     }
 
     IEnumerator StartAutoStm()
