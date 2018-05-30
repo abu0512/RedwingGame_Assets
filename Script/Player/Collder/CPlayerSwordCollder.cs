@@ -16,23 +16,29 @@ public class CPlayerSwordCollder : MonoBehaviour
 
                 if (other.tag == "Guard")
                 {
-                    other.GetComponent<MonsterBase>().isHit = true;
-                    other.GetComponent<GuardMushroomEffect>().GuardMHitEffect();
-                    other.GetComponent<GuardMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo]);
-                    SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
+                    if (other.GetComponent<GuardMushroom>().Stat.Hp > 0)
+                    {
+                        other.GetComponent<MonsterBase>().isHit = true;
+                        other.GetComponent<GuardMushroomEffect>().GuardMHitEffect();
+                        other.GetComponent<GuardMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo]);
+                        SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
+                    }
                 }
 
                 else if (other.tag == "Queen")
                 {
-                    other.GetComponent<MonsterBase>().isHit = true;
-                    other.GetComponent<QueenMushroomEffect>().QueenMHitEffect();
-                    other.GetComponent<QueenMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo]);
-                    SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
+                    if (other.GetComponent<QueenMushroom>().Stat.Hp > 0)
+                    {
+                        other.GetComponent<MonsterBase>().isHit = true;
+                        other.GetComponent<QueenMushroomEffect>().QueenMHitEffect();
+                        other.GetComponent<QueenMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo]);
+                        SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
+                    }
                 }
 
                 else if (other.tag == "ShildMushroom")
                 {
-                    if (other.GetComponent<ShildMushroom>().PlayerisFront == false)
+                    if (other.GetComponent<ShildMushroom>().PlayerisFront == false && other.GetComponent<ShildMushroom>().Stat.Hp > 0)
                     {
                         other.GetComponent<ShildMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo], InspectorManager._InspectorManager.nGroggyShild[nCombo]);
                         other.GetComponent<ShildMushroomEffect>().ShildMHitEffect();
@@ -41,7 +47,7 @@ public class CPlayerSwordCollder : MonoBehaviour
 
                 else if (other.tag == "EliteShaman")
                 {
-                    if (other.GetComponent<EliteShaman>().PlayerisFront == false)
+                    if (other.GetComponent<EliteShaman>().PlayerisFront == false && other.GetComponent<EliteShaman>().Stat.Hp > 0)
                     {
                         other.GetComponent<EliteShaman>().OnDamage(InspectorManager._InspectorManager.nDamgeShild[nCombo], InspectorManager._InspectorManager.nGroggyShild[nCombo]);
                         other.GetComponent<EliteShamanEffect>().EliteShamanHitEffect();
@@ -58,25 +64,31 @@ public class CPlayerSwordCollder : MonoBehaviour
             {
                 if (other.tag == "Guard")
                 {
-                    other.GetComponent<MonsterBase>().isHit = true;
-                    other.GetComponent<GuardMushroomEffect>().GuardMHitEffect();
-                    other.GetComponent<GuardMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeScythe[nCombo]);
-                    CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
-                    SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
+                    if (other.GetComponent<GuardMushroom>().Stat.Hp > 0)
+                    {
+                        other.GetComponent<MonsterBase>().isHit = true;
+                        other.GetComponent<GuardMushroomEffect>().GuardMHitEffect();
+                        other.GetComponent<GuardMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeScythe[nCombo]);
+                        CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
+                        SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
+                    }
                 }
 
                 else if (other.tag == "Queen")
                 {
-                    other.GetComponent<MonsterBase>().isHit = true;
-                    other.GetComponent<QueenMushroomEffect>().QueenMHitEffect();
-                    other.GetComponent<QueenMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeScythe[nCombo]);
-                    CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
-                    SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
+                    if (other.GetComponent<QueenMushroom>().Stat.Hp > 0)
+                    {
+                        other.GetComponent<MonsterBase>().isHit = true;
+                        other.GetComponent<QueenMushroomEffect>().QueenMHitEffect();
+                        other.GetComponent<QueenMushroom>().OnDamage(InspectorManager._InspectorManager.nDamgeScythe[nCombo]);
+                        CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
+                        SoundManager.I.PlaySound(other.transform, PlaySoundId.Hit_StandardMonster);
+                    }
                 }
 
                 else if (other.tag == "ShildMushroom")
                 {
-                    if (other.GetComponent<ShildMushroom>().PlayerisFront == false)
+                    if (other.GetComponent<ShildMushroom>().PlayerisFront == false && other.GetComponent<ShildMushroom>().Stat.Hp > 0)
                     {
                         other.GetComponent<ShildMushroomEffect>().ShildMHitEffect();
                         CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;
@@ -86,7 +98,7 @@ public class CPlayerSwordCollder : MonoBehaviour
 
                 else if (other.tag == "EliteShaman")
                 {
-                    if (other.GetComponent<EliteShaman>().PlayerisFront == false)
+                    if (other.GetComponent<EliteShaman>().PlayerisFront == false && other.GetComponent<EliteShaman>().Stat.Hp > 0)
                     {
                         other.GetComponent<EliteShamanEffect>().EliteShamanHitEffect();
                         CPlayerManager._instance.m_ScyPlayerHp += InspectorManager._InspectorManager.fScytheAttackHpAdd;

@@ -25,8 +25,7 @@ public class EliteShamanEffect : MonoBehaviour
 
     public void Groggy(Vector3 From)
     {
-        From.y += 0.3f;
-        From.x -= 0.15f;
+        From.y -= 1.1f;
         GroggyEffect.transform.position = From;
         GroggyEffect.SetActive(true);
     }
@@ -35,7 +34,7 @@ public class EliteShamanEffect : MonoBehaviour
     {
         if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Scythe)
         {
-            _home.y += 2f;
+            _home.y += 2.5f;
 
             for (int i = 0; i < 3; i++)
             {

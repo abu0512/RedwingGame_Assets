@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: cc6a0f737563e5f408ba068a313a53d2
 timeCreated: 1527657997
+=======
+guid: 64f28865734070c4f9f5c6bd6ccb33df
+timeCreated: 1527566793
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -183,6 +188,7 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+<<<<<<< HEAD
       might lower retargeting quality:\n\t'Bip001 Head' has translation animation
       that will be discarded.\n\t'Bip001 L UpperArm' has translation animation that
       will be discarded.\n\t'Bip001 L Forearm' has translation animation that will
@@ -221,6 +227,10 @@ ModelImporter:
       has translation animation that will be discarded.\n\t'Bip001 R Calf' has translation
       animation that will be discarded.\n\t'Bip001 R Foot' has translation animation
       that will be discarded.\n\t'Bip001 R Toe0' has translation animation that will
+=======
+      might lower retargeting quality:\n\t'Bip001 L Finger1' has translation animation
+      that will be discarded.\n\t'Bip001 R Hand' has translation animation that will
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
       be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
@@ -247,10 +257,17 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
+<<<<<<< HEAD
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
+=======
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000

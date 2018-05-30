@@ -90,7 +90,7 @@ public class QueenMushroomAttack2 : QueenMushroomStateBase
 
         Dltime += Time.deltaTime;
 
-        if (_exitattack && Dltime > 1f)
+        if (_exitattack && Dltime > 1.5f)
         {
             if (QueenMushroom.GetDistanceFromPlayer() > QueenMushroom.MStat.AttackDistance)
             {

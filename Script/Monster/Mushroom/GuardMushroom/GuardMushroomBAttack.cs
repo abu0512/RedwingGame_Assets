@@ -9,6 +9,7 @@ public class GuardMushroomBAttack : GuardMushroomStateBase
     {
         Dltime = 0f;
         GuardMushroom.BerserkerMoveSpeed = 0;
+        GuardMushroom.Stat.MoveSpeed = 0;
     }
 
     public override void EndState()

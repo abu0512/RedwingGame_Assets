@@ -295,15 +295,20 @@ public class QueenMushroom : MonsterBase
     {
         if(HealTime && _hearTimer > HealDelay)
         {
-            SetState(QueenMushroomState.Healing);
-            return;
+            if (currentState == QueenMushroomState.Attack || currentState == QueenMushroomState.Attack2)
+                return;
+
+            else
+            {
+                SetState(QueenMushroomState.Healing);
+                return;
+            }
         }
     }
 
     public void EffectofHeal(Vector3 From)
     {
-        From.y += 1f;
-        HealEffect.transform.position = From;
+        //From.y += 1f;
         HealEffect.SetActive(true);
     }
 

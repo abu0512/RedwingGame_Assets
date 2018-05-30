@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 79214b80b91449742bcb8083c953281a
 timeCreated: 1527657994
+=======
+guid: d82fd092566186648958353830bea71b
+timeCreated: 1527566133
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -167,6 +172,7 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+<<<<<<< HEAD
       might lower retargeting quality:\n\t'Bip001 Head' has translation animation
       that will be discarded.\n\t'Bip001 L UpperArm' has translation animation that
       will be discarded.\n\t'Bip001 L Forearm' has translation animation that will
@@ -205,6 +211,11 @@ ModelImporter:
       has translation animation that will be discarded.\n\t'Bip001 R Calf' has translation
       animation that will be discarded.\n\t'Bip001 R Foot' has translation animation
       that will be discarded.\n\t'Bip001 R Toe0' has translation animation that will
+=======
+      might lower retargeting quality:\n\t'Bip001 L Finger3' has translation animation
+      that will be discarded.\n\t'Bip001 R Finger3' has translation animation that
+      will be discarded.\n\t'Bip001 R Finger4' has translation animation that will
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
       be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
@@ -227,6 +238,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
+<<<<<<< HEAD
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
@@ -235,6 +247,16 @@ ModelImporter:
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
+=======
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+>>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000

@@ -7,13 +7,13 @@ public class QueenMushroomHealing : QueenMushroomStateBase
 
     public override void BeginState()
     {
-       QueenMushroom.EffectofHeal(transform.position);
         Dltime = 0;
     }
 
     public override void EndState()
     {
         base.EndState();
+        QueenMushroom.HealEffect.SetActive(false);
     }
 
     public void HealCheck()
@@ -24,6 +24,7 @@ public class QueenMushroomHealing : QueenMushroomStateBase
 
     void Update()
     {
+        QueenMushroom.EffectofHeal(transform.position);
         QueenMushroom.GoToPullPush();
         Dltime += Time.deltaTime;
         QueenMushroom.GoToDestination(transform.position, 0, 0);
