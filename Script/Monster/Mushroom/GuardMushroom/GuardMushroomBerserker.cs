@@ -23,7 +23,6 @@ public class GuardMushroomBerserker : GuardMushroomStateBase
     public override void EndState()
     {
         base.EndState();
-        _guardeffect.BerserkerEffect.SetActive(false);
         GuardMushroom.imsi = false;
         GuardMushroom.ifEndBerserker = true;
     }

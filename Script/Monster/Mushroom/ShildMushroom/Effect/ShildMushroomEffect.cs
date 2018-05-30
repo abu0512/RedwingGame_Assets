@@ -17,7 +17,7 @@ public class ShildMushroomEffect : MonoBehaviour {
 
     public void Groggy(Vector3 From)
     {
-        From.y += 0.3f;
+        From.y -= 0.27f;
         GroggyEffect.transform.position = From;
         GroggyEffect.SetActive(true);
     }
@@ -26,7 +26,7 @@ public class ShildMushroomEffect : MonoBehaviour {
     {
         if (CPlayerManager._instance._PlayerSwap._PlayerMode == PlayerMode.Scythe)
         {
-            _home.y += 2.7f;
+            _home.y += 2f;
 
             for (int i = 0; i < 3; i++)
             {

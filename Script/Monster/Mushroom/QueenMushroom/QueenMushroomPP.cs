@@ -7,6 +7,8 @@ public class QueenMushroomPP : QueenMushroomStateBase
     public override void BeginState()
     {
         Dltime = 0;
+        QueenMushroom.HealTime = false;
+        QueenMushroom.HealStart = false;
     }
 
     public override void EndState()

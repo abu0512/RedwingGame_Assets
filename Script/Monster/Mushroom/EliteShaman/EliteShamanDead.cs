@@ -21,6 +21,7 @@ public class EliteShamanDead : EliteShamanStateBase
         if (EliteShaman.isDead)
         {
             EliteShaman.rotAnglePerSecond = 0;
+            EliteShaman.AttackRotAngle = 0;
             EliteShaman.Stat.MoveSpeed = 0;
             DeadTime += Time.deltaTime;
             EliteShaman.CharacterisDead = true;

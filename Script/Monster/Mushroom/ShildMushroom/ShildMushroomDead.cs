@@ -21,6 +21,7 @@ public class ShildMushroomDead : ShildMushroomStateBase
         if (ShildMushroom.isDead)
         {
             ShildMushroom.rotAnglePerSecond = 0;
+            ShildMushroom.AttackRotAngle = 0;
             ShildMushroom.Stat.MoveSpeed = 0;
             DeadTime += Time.deltaTime;
             ShildMushroom.CharacterisDead = true;

@@ -214,6 +214,7 @@ public class ShildMushroom : MonsterBase
 
     protected override void Awake()
     {
+        print(_groggy);
         base.Awake();
         Stat.MaxHp = 400;
         Stat.Hp = Stat.MaxHp;
