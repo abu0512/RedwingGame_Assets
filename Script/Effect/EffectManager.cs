@@ -19,12 +19,27 @@ public enum EffectType
     Hero_Tanker_Attack4,
     Hero_Tanker_Attack5,
     Hero_Tanker_CounterAttack,
-    Hero_Dealer_Attack1,
+    Hero_Tanker_Shield,
+    Hero_Tanker_DashAttack,
+    Hero_SwapAttack_Scythe,
+    Hero_Swap_Scythe,
+    Hero_Swap_Shield,
+    Hero_Scythe_Attack1,
+    Hero_Scythe_Attack2,
+    Hero_Scythe_Attack3,
+    Hero_Scythe_JunBang,
+    Hero_Scythe_BlinkIn,
+    Hero_Scythe_BlinkOut,
+
 }
+
+
 
 [Serializable]
 public class EffectManager : MonoBehaviour
 {
+    public EffectType _EffectType;
+
     private static EffectManager _instance;
     public static EffectManager I { get { return _instance; } }
 
@@ -39,15 +54,18 @@ public class EffectManager : MonoBehaviour
 
         foreach (EffectType type in types)
             _effectPool[type] = new List<GameObject>();
-
     }
+    
+    public int EventOnEffect(int types)
+    {
+        OnEffect((EffectType)types, CPlayerManager._instance.transform, 2.0f);
+        Debug.Log((EffectType)types);
+        return types;
+    }
+
 
     private void Update()
     {
-        //if(Input.GetMouseButtonDown(0))
-        //{
-        //    OnEffect(EffectType.Hero_Tanker_Attack1, CPlayerManager._instance.transform, CPlayerManager._instance.transform.rotation, 5.0f);
-        //}
     }
 
     public GameObject OnEffect(EffectType type, Transform target, float deadTime = 0.0f)

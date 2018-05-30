@@ -140,7 +140,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 508f700951439d74684edbb3770d20c4, type: 3}
+    m_Motion: {fileID: 7400000, guid: c939283e4af02c742a5ccaee7ce15309, type: 3}
     m_Threshold: 0.02
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -148,7 +148,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 24e017a452b6c1e4bb896411ff121c14, type: 3}
+    m_Motion: {fileID: 7400000, guid: c9caa247323f0834ea3c89dc2030f7e8, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1505,7 +1505,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 26f0ccdf137e2c04dab3fe6532bac32c, type: 3}
+  m_Motion: {fileID: 7400000, guid: 134ce28ed5b067d41bfa941bece56eb2, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1679,7 +1679,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Dash
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101313207889824698}
@@ -1749,7 +1749,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5a897dbafd2796d49882fe174182876a, type: 3}
+  m_Motion: {fileID: 7400000, guid: 4a460b9d1675eeb4e98e1821f1104c08, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

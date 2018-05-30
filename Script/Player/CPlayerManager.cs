@@ -263,7 +263,7 @@ public class CPlayerManager : MonoBehaviour
                 // 플레이어 무적 시작
                 PlayerHornOn();
                 // 이펙트 호출
-                CPlayerAttackEffect._instance.Effect9();
+                // CPlayerAttackEffect._instance.Effect9(); 이펙트
             }
         }
         // 방패일때 데미지안들어가~
@@ -392,5 +392,13 @@ public class CPlayerManager : MonoBehaviour
     private void DashStm()
     {
         m_PlayerStm -= InspectorManager._InspectorManager.fStmDash;
+    }
+
+    public int PlayerEffectOn(int type)
+    {
+        Debug.Log("type : " + type);
+        EffectManager.I.EventOnEffect(type);
+
+        return type;
     }
 }

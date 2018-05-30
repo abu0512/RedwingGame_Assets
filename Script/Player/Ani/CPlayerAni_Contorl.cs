@@ -247,7 +247,8 @@ public class CPlayerAni_Contorl : CPlayerBase
                 break;
             case PlayerAni_State_Shild.Defense_ModeBack:
                 {
-                    CPlayerAttackEffect._instance.Effect9(); 
+                    //CPlayerAttackEffect._instance.Effect9();
+                    EffectManager.I.EventOnEffect(6);
                     Animation_Change(8);
                 }
                 break;
@@ -403,7 +404,7 @@ public class CPlayerAni_Contorl : CPlayerBase
         {
             if(!isSweatChackSet)
             {
-                CPlayerAttackEffect._instance.Effect9();
+                //CPlayerAttackEffect._instance.Effect9(); 이펙트
                 StartCoroutine("TimeSweatCountTime");
                 isSweatCountTime = true;
                 isSweatChackSet = true;

@@ -435,7 +435,7 @@ public class GuardMushroom : MonsterBase
 
     protected override void Update()
     {
-        print(_attackDelay);
+
         Yggap(transform.position);
         FrontBackCheck();
         BerserkerTimeStart();
