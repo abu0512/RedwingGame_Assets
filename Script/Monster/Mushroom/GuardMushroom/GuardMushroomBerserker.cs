@@ -30,7 +30,6 @@ public class GuardMushroomBerserker : GuardMushroomStateBase
 
     void Update()
     {
-        Debug.Log(RandomeMode);
         Dltime += Time.deltaTime;
         GuardMushroom.GoToDestination(SavePosition, 0, 0);
 
@@ -39,6 +38,7 @@ public class GuardMushroomBerserker : GuardMushroomStateBase
             GuardMushroom.ifEndBerserker = true;
             if (RandomeMode == 0)
             {
+                GuardMushroom.QueenisAllDead = true;
                 GuardMushroom.SetState(GuardMushroomState.BChase);
                 return;
             }

@@ -25,20 +25,17 @@ public class GuardMushroomSbombing : GuardMushroomStateBase
 
     void Update()
     {
-        GuardMushroom.GoToPullPush();
         GuardMushroom.GoToDestination(GuardMushroom.Player.position, GuardMushroom.BerserkerMoveSpeed, GuardMushroom.rotAnglePerSecond);
-
-        if (GuardMushroom.GetDistanceFromPlayer() < 1f)
-        {
-            EffectofSbomb(transform.position);
-            GuardMushroom.OnDead();
-        }
 
         if (GuardMushroom.SbombTimer > 6f)
         {
             EffectofSbomb(transform.position);
+            if (GuardMushroom.GetDistanceFromPlayer() < 4f)
+            {
+                CPlayerManager._instance.PlayerHp(0.2f, 1, GuardMushroom.SbombDamage);
+            }
+            GuardMushroom.isDead = true;
             GuardMushroom.OnDead();
         }
-
     }
 }

@@ -21,12 +21,12 @@ public class EliteShamanAnimatorEvent : MonoBehaviour {
         EliteShamanAttack2 _EliteShamanAttaked = _EliteShaman.GetCurrentState() as EliteShamanAttack2;
     }
 
-    void QueenHealCheck()
+    void EliteSHealing()
     {
         EliteShamanHealing _EliteShamanHeal = _EliteShaman.GetCurrentState() as EliteShamanHealing;
         if (_EliteShamanHeal != null)
         {
-            _EliteShamanHeal.HealCheck();
+            _EliteShamanHeal.EliteSHealCheck();
         }
     }
 }

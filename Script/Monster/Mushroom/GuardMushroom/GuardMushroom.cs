@@ -45,6 +45,10 @@ public class GuardMushroom : MonsterBase
     private float _attackDelay;
     public float AttackDelay { set { _attackDelay = value; } get { return _attackDelay; } }
 
+    // 공격 딜레이 속도 랜덤값 담을 변수
+    private float _raDelay;
+    public float RADelay { set { _raDelay = value; } get { return _raDelay; } }
+
     // 공격 딜레이 시간
     private float _attackTimer;
     public float AttackTimer { set { _attackTimer = value; } get { return _attackTimer; } }
@@ -56,6 +60,10 @@ public class GuardMushroom : MonsterBase
     // 내적 계산에 사용할 앵글
     private float _angle;
     public float Angle { set { _angle = value; } get { return _angle; } }
+
+    // 자폭 데미지
+    private float _sbombdamage;
+    public float SbombDamage { set { _sbombdamage = value; } get { return _sbombdamage; } }
 
     // 버서커 공격력
     private float _berserkerattackDamage;
@@ -380,7 +388,9 @@ public class GuardMushroom : MonsterBase
         Stat.MoveSpeed = 2f;
         _attackDamage = 10f;
         _attackDelay = 3.5f;
+        _raDelay = 0;
         _attackTimer = 0;
+        _sbombdamage = 50f;
         _SbombTimer = 0;
         _berserkermovespeed = 4f;
         _berserkerattackDamage = 20f;
@@ -425,7 +435,7 @@ public class GuardMushroom : MonsterBase
 
     protected override void Update()
     {
-        print(_attackrotangle);
+        print(_attackDelay);
         Yggap(transform.position);
         FrontBackCheck();
         BerserkerTimeStart();

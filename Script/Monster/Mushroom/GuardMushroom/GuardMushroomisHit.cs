@@ -7,6 +7,7 @@ public class GuardMushroomisHit : GuardMushroomStateBase
     public override void BeginState()
     {
         Dltime = 0;
+        GuardMushroom.isHit = false;
     }
 
     public override void EndState()
@@ -24,7 +25,7 @@ public class GuardMushroomisHit : GuardMushroomStateBase
 
         Dltime += Time.deltaTime;
 
-        if (Dltime > 0.15f)
+        if (Dltime > 0.25f)
         {
             if (GuardMushroom.QueenisAllDead)
             {
@@ -32,16 +33,19 @@ public class GuardMushroomisHit : GuardMushroomStateBase
                 return;
             }
 
-            else if(GuardMushroom.SBombing)
-            {
-                GuardMushroom.SetState(GuardMushroomState.Sbombing);
-                return;
-            }
-
             else
             {
-                GuardMushroom.SetState(GuardMushroomState.Return);
-                return;
+                if (GuardMushroom.GetDistanceFromPlayer() > GuardMushroom.MStat.AttackDistance)
+                {
+                    GuardMushroom.SetState(GuardMushroomState.Chase);
+                    return;
+                }
+
+                else
+                {
+                    GuardMushroom.SetState(GuardMushroomState.Return);
+                    return;
+                }
             }
         }
     }

@@ -190,10 +190,10 @@ public class EliteShaman : MonsterBase
 
     public void GroggyCheck()
     {
-        if (_groggy < 100f)
+        if (_groggy < 99f)
             return;
 
-        if (_groggy >= 100f)
+        if (_groggy >= 99f)
         {
             _groggy = 0;
             SetState(EliteShamanState.Groggy);
@@ -270,7 +270,7 @@ public class EliteShaman : MonsterBase
         _angle = 180f;
         _from = transform.Find("From");
         _groggy = 0;
-        _maxgroggy = 105f;
+        _maxgroggy = 100f;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _home = transform.position;
         _animParamID = Animator.StringToHash("CurrentState");
@@ -306,7 +306,6 @@ public class EliteShaman : MonsterBase
 
     protected override void Update()
     {
-        print(_groggy);
         FrontBackCheck();
         GroggySet();
         AttackTimer += Time.deltaTime;
