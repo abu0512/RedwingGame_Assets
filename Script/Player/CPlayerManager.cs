@@ -8,11 +8,11 @@ public class CPlayerManager : MonoBehaviour
 
     private CPlayerMove _CPlayerMove = null;
     public CPlayerMove _PlayerMove { get { return _CPlayerMove; } }
-    
-    private CPlayerAni_Contorl _CPlayerAni_Contorl = null;
-    public CPlayerAni_Contorl _PlayerAni_Contorl {  get { return _CPlayerAni_Contorl; } }
 
-    public CPlayerAniEvent _CPlayerAniEvent = null;    
+    private CPlayerAni_Contorl _CPlayerAni_Contorl = null;
+    public CPlayerAni_Contorl _PlayerAni_Contorl { get { return _CPlayerAni_Contorl; } }
+
+    public CPlayerAniEvent _CPlayerAniEvent = null;
 
     private CPlayerSwap _CPlayerSwap = null;
     public CPlayerSwap _PlayerSwap { get { return _CPlayerSwap; } }
@@ -26,8 +26,8 @@ public class CPlayerManager : MonoBehaviour
     [SerializeField]
     private float m_fMoveSpeed;
     public float m_MoveSpeed { get { return m_fMoveSpeed; } set { m_fMoveSpeed = value; } }
-
     // 플레이어 중력
+
     [SerializeField]
     private float m_fGravity;
     public float m_Gravity { get { return m_fGravity; } set { m_fGravity = value; } }
@@ -51,7 +51,7 @@ public class CPlayerManager : MonoBehaviour
     [SerializeField]
     private float m_fscyPlayerMaxHp;
     public float m_ScyPlayerMaxHp { get { return m_fscyPlayerMaxHp; } set { m_fscyPlayerMaxHp = value; } }
-
+    
     // 플레이어 스테미나
     [SerializeField]
     private float m_fPlayerStm;
@@ -76,6 +76,7 @@ public class CPlayerManager : MonoBehaviour
     [SerializeField]
     private int[] m_nPlayerShildHitDmg = new int[5];
     public int[] m_PlayerShildHitDmg { get { return m_nPlayerShildHitDmg; } set { m_nPlayerShildHitDmg = value; } }
+    
     // 플레이어 낫모드 공격력
     [SerializeField]
     private int[] m_nPlayerScytheHitDmg = new int[3];
@@ -114,7 +115,7 @@ public class CPlayerManager : MonoBehaviour
     public bool _isCountAttack { get { return isCountAttack; } set { isCountAttack = value; } }
 
     private bool isPlayerHorn; // 플레이어 무적
-    public bool _isPlayerHorn {  get { return isPlayerHorn; } set { isPlayerHorn = value; } }
+    public bool _isPlayerHorn { get { return isPlayerHorn; } set { isPlayerHorn = value; } }
 
     void Awake()
     {
@@ -122,6 +123,7 @@ public class CPlayerManager : MonoBehaviour
 
         Init();
     }
+
     void Init()
     {
         _CPlayerMove = GetComponent<CPlayerMove>();
@@ -131,6 +133,7 @@ public class CPlayerManager : MonoBehaviour
         _CPlayerShild = GetComponent<CPlayerShild>();
         _CPlayerAniEvent = GetComponent<CPlayerAniEvent>();
         _CPlayerCountAttack = GetComponent<CPlayerCountAttack>();
+        
         // 플레이어 스탯 설정
         m_fMoveSpeed = 6;
         m_fGravity = 20;
@@ -150,6 +153,7 @@ public class CPlayerManager : MonoBehaviour
         m_isRotationAttack = true;
         isPlayerHorn = false;
     }
+
     void Update()
     {
         // 수치조절
@@ -173,7 +177,7 @@ public class CPlayerManager : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if( m_bAttack)
+        if (m_bAttack)
         {
             EDITOR_ROTATIONSPEED = EDITOR_ROTATIONSPEED * 1000;
         }
@@ -192,7 +196,6 @@ public class CPlayerManager : MonoBehaviour
         nPowerGauge = Mathf.Clamp(nPowerGauge, 0, 300);
     }
 
-
     // 플레이어 사망시
     public void PlayerDead()
     {
@@ -208,7 +211,7 @@ public class CPlayerManager : MonoBehaviour
         if (!m_isRotationAttack)
             return;
 
-        if(CCameraFind._instance.m_bCamera)
+        if (CCameraFind._instance.m_bCamera)
         {
             Vector3 Forward = _CPlayerMove.m_moveDir;
             vPlayerQuaternion = transform.rotation;
@@ -221,16 +224,16 @@ public class CPlayerManager : MonoBehaviour
                     EDITOR_ROTATIONSPEED * Time.deltaTime);
                 m_isRotation = true;
             }
-        
+
             transform.rotation = vPlayerQuaternion;
-        
+
             if (Vector3.Distance(Forward, transform.forward) <= EDITOR_MOVEANGLE)
             {
                 m_isRotation = false;
             }
         }
     }
- 
+
     // 플레이어 데미지 처리 
     public float PlayerHp(float shake = 0.0f, int type = 1, float sizeHp = 0)
     {
@@ -263,9 +266,10 @@ public class CPlayerManager : MonoBehaviour
                 // 플레이어 무적 시작
                 PlayerHornOn();
                 // 이펙트 호출
-                CPlayerAttackEffect._instance.Effect9();
+                // CPlayerAttackEffect._instance.Effect9(); 이펙트
             }
         }
+
         // 방패일때 데미지안들어가~
         else if (type == 2)
         {
@@ -275,6 +279,7 @@ public class CPlayerManager : MonoBehaviour
             // 체력대신 스테미너 깎음
             m_fPlayerStm -= sizeHp * InspectorManager._InspectorManager.fShildDamge;
         }
+
         else
             m_fscyPlayerHp -= sizeHp;
 
@@ -283,10 +288,10 @@ public class CPlayerManager : MonoBehaviour
 
         return m_fPlayerHp;
     }
+
     // 카메라 연출 줌,인 연출 함수
     public void PlayerHitCamera(float hitDitance, float shake = 0)
     {
-        //EffectManager.I.OnEffect
         //CCameraRayObj._instance.MaxCamera(hitDitance);
         CCameraShake._instance.shake = shake;
     }
@@ -304,6 +309,7 @@ public class CPlayerManager : MonoBehaviour
                 m_isRotationAttack = false;
             }
         }
+
         else
             return;
     }
@@ -312,6 +318,7 @@ public class CPlayerManager : MonoBehaviour
     public void SwapHpType(int type)
     {
         // 2 흑화 -> 실드
+
         if (type == 1)
         {
             m_fPlayerHp = m_fscyPlayerHp * 2;
@@ -321,6 +328,7 @@ public class CPlayerManager : MonoBehaviour
             m_fscyPlayerHp = m_fPlayerHp / 2;
         }
     }
+
     // 쉴드 상태에서 n초간 카운터 어택 유지
     public void PlayerSound(int type)
     {
@@ -329,15 +337,18 @@ public class CPlayerManager : MonoBehaviour
 
         CSoundManager._instance.PlaySoundType(type);
     }
+
     public void SoundStop()
     {
         CSoundManager._instance._AS_Audio.Stop();
     }
+
     public void StartShildCounter()
     {
         isCountAttack = true;
         StartCoroutine(CountAttackReturn());
     }
+
     // 카운트어택을 사용할 수있는 시간
     IEnumerator CountAttackReturn()
     {
@@ -393,5 +404,13 @@ public class CPlayerManager : MonoBehaviour
     private void DashStm()
     {
         m_PlayerStm -= InspectorManager._InspectorManager.fStmDash;
+    }
+
+    public int PlayerEffectOn(int type)
+    {
+        Debug.Log("type : " + type);
+        EffectManager.I.EventOnEffect(type);
+
+        return type;
     }
 }

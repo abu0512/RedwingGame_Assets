@@ -126,6 +126,10 @@ public class GuardMushroom : MonsterBase
     private bool _exitgravity;
     public bool ExitGravity { set { _exitgravity = value; } get { return _exitgravity; } }
 
+    // 힐 이팩트 꺼야하는 상황
+    private bool _exithealEffect;
+    public bool ExitHealEffect { set { _exithealEffect = value; } get { return _exithealEffect; } }
+
     public float rotAnglePerSecond;// 몬스터 초당 회전 속도
     public bool isDead; // 죽었는지 체크
     public bool QueenisAllDead; // 공주 버섯이 전부 죽었는지 체크해서 버서커 모드로 보내기 위한 bool
@@ -264,7 +268,7 @@ public class GuardMushroom : MonsterBase
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation,
             Time.deltaTime * _hitrotangle);
     }
-   
+
     public void MoveToDestination()
     {
         _controller.Move(transform.forward * _stat.MoveSpeed * Time.deltaTime);
@@ -313,9 +317,15 @@ public class GuardMushroom : MonsterBase
 
     public void SetMonsterHeal(float Heal)
     {
-        StartCoroutine(StartHeal());
         Stat.Hp += Heal;
         Stat.Hp = Mathf.Clamp(Stat.Hp, 0, Stat.MaxHp);
+        HealingEffect();
+    }
+
+    public void HealingEffect()
+    {
+        HealEffect.SetActive(false);
+        HealEffect.SetActive(true);
     }
 
     public override void OnDead()
@@ -324,13 +334,6 @@ public class GuardMushroom : MonsterBase
         {
             gameObject.SetActive(false);
         }
-    }
-
-    private IEnumerator StartHeal()
-    {
-        HealEffect.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
-        HealEffect.SetActive(false);
     }
 
     public void NowisHit()
@@ -357,7 +360,7 @@ public class GuardMushroom : MonsterBase
 
     public void BerserkerTimeStart()
     {
-        if(_gotoberserker)
+        if (_gotoberserker)
         {
             _berserkertime += Time.deltaTime;
         }
@@ -417,7 +420,7 @@ public class GuardMushroom : MonsterBase
         _angle = 180f;
         _attackrotangle = 200f;
         _hitrotangle = 1000f;
-        rotAnglePerSecond = 360f; 
+        rotAnglePerSecond = 360f;
         _berserkertime = 0;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _animParamID = Animator.StringToHash("CurrentState");
@@ -426,6 +429,7 @@ public class GuardMushroom : MonsterBase
         SBombing = false;
         _ppending = true;
         _gravity = transform.position;
+        _exithealEffect = true;
 
         GuardMushroomState[] stateValues = (GuardMushroomState[])Enum.GetValues(typeof(GuardMushroomState));
         foreach (GuardMushroomState s in stateValues)
@@ -454,12 +458,7 @@ public class GuardMushroom : MonsterBase
 
     protected override void Update()
     {
-<<<<<<< HEAD
-
-        Yggap(transform.position);
-=======
         //CharicterGravity(transform.position);
->>>>>>> eb7076f24a4b4dfdaabff427f70a6ea79d697ac6
         FrontBackCheck();
         BerserkerTimeStart();
         AttackTimer += Time.deltaTime;
